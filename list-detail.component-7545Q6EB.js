@@ -1,0 +1,2530 @@
+import {
+  ApiService,
+  BasePortalOutlet,
+  CdkPortalOutlet,
+  ComponentPortal,
+  MatChipOption,
+  MatChipSet,
+  MatChipsModule,
+  MatMenu,
+  MatMenuItem,
+  MatMenuModule,
+  MatMenuTrigger,
+  MatToolbar,
+  MatToolbarModule,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+  OverlayConfig,
+  OverlayModule,
+  PortalModule,
+  TemplatePortal,
+  createGlobalPositionStrategy,
+  createOverlayRef
+} from "./chunk-OFOPXV5V.js";
+import {
+  BreakpointObserver,
+  Breakpoints,
+  LiveAnnouncer,
+  MatButton,
+  MatButtonModule,
+  MatCard,
+  MatCardContent,
+  MatCardModule,
+  MatCommonModule,
+  MatIcon,
+  MatIconButton,
+  MatIconModule,
+  MatProgressSpinner,
+  MatProgressSpinnerModule,
+  MatRipple,
+  Platform,
+  _CdkPrivateStyleLoader,
+  _IdGenerator,
+  _StructuralStylesLoader,
+  _animationsDisabled
+} from "./chunk-MITVACRJ.js";
+import {
+  ActivatedRoute,
+  CommonModule,
+  NgForOf,
+  NgIf,
+  Router,
+  RouterLink,
+  RouterModule
+} from "./chunk-WO6GHJVH.js";
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  DOCUMENT,
+  Directive,
+  ElementRef,
+  EventEmitter,
+  HostAttributeToken,
+  Injectable,
+  InjectionToken,
+  Injector,
+  Input,
+  NgModule,
+  NgZone,
+  Output,
+  Subject,
+  TemplateRef,
+  ViewChild,
+  ViewEncapsulation,
+  __name,
+  __publicField,
+  __spreadValues,
+  afterNextRender,
+  booleanAttribute,
+  forwardRef,
+  inject,
+  numberAttribute,
+  of,
+  setClassMetadata,
+  signal,
+  takeUntil,
+  ɵsetClassDebugInfo,
+  ɵɵInheritDefinitionFeature,
+  ɵɵNgOnChangesFeature,
+  ɵɵProvidersFeature,
+  ɵɵadvance,
+  ɵɵattribute,
+  ɵɵclassMap,
+  ɵɵclassProp,
+  ɵɵconditional,
+  ɵɵconditionalCreate,
+  ɵɵdefineComponent,
+  ɵɵdefineDirective,
+  ɵɵdefineInjectable,
+  ɵɵdefineInjector,
+  ɵɵdefineNgModule,
+  ɵɵdirectiveInject,
+  ɵɵdomProperty,
+  ɵɵelement,
+  ɵɵelementEnd,
+  ɵɵelementStart,
+  ɵɵgetCurrentView,
+  ɵɵlistener,
+  ɵɵloadQuery,
+  ɵɵnamespaceHTML,
+  ɵɵnamespaceSVG,
+  ɵɵnextContext,
+  ɵɵprojection,
+  ɵɵprojectionDef,
+  ɵɵproperty,
+  ɵɵpureFunction0,
+  ɵɵpureFunction1,
+  ɵɵqueryRefresh,
+  ɵɵreference,
+  ɵɵresetView,
+  ɵɵrestoreView,
+  ɵɵsanitizeUrl,
+  ɵɵstyleProp,
+  ɵɵtemplate,
+  ɵɵtext,
+  ɵɵtextInterpolate,
+  ɵɵtextInterpolate1,
+  ɵɵviewQuery
+} from "./chunk-2D7222YK.js";
+
+// node_modules/@angular/material/fesm2022/snack-bar.mjs
+function SimpleSnackBar_Conditional_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 1)(1, "button", 2);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function SimpleSnackBar_Conditional_2_Template_button_click_1_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.action());
+    }, "SimpleSnackBar_Conditional_2_Template_button_click_1_listener"));
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1(" ", ctx_r1.data.action, " ");
+  }
+}
+__name(SimpleSnackBar_Conditional_2_Template, "SimpleSnackBar_Conditional_2_Template");
+var _c0 = ["label"];
+function MatSnackBarContainer_ng_template_4_Template(rf, ctx) {
+}
+__name(MatSnackBarContainer_ng_template_4_Template, "MatSnackBarContainer_ng_template_4_Template");
+var MAX_TIMEOUT = Math.pow(2, 31) - 1;
+var _MatSnackBarRef = class _MatSnackBarRef {
+  _overlayRef;
+  /** The instance of the component making up the content of the snack bar. */
+  instance;
+  /**
+   * The instance of the component making up the content of the snack bar.
+   * @docs-private
+   */
+  containerInstance;
+  /** Subject for notifying the user that the snack bar has been dismissed. */
+  _afterDismissed = new Subject();
+  /** Subject for notifying the user that the snack bar has opened and appeared. */
+  _afterOpened = new Subject();
+  /** Subject for notifying the user that the snack bar action was called. */
+  _onAction = new Subject();
+  /**
+   * Timeout ID for the duration setTimeout call. Used to clear the timeout if the snackbar is
+   * dismissed before the duration passes.
+   */
+  _durationTimeoutId;
+  /** Whether the snack bar was dismissed using the action button. */
+  _dismissedByAction = false;
+  constructor(containerInstance, _overlayRef) {
+    this._overlayRef = _overlayRef;
+    this.containerInstance = containerInstance;
+    containerInstance._onExit.subscribe(() => this._finishDismiss());
+  }
+  /** Dismisses the snack bar. */
+  dismiss() {
+    if (!this._afterDismissed.closed) {
+      this.containerInstance.exit();
+    }
+    clearTimeout(this._durationTimeoutId);
+  }
+  /** Marks the snackbar action clicked. */
+  dismissWithAction() {
+    if (!this._onAction.closed) {
+      this._dismissedByAction = true;
+      this._onAction.next();
+      this._onAction.complete();
+      this.dismiss();
+    }
+    clearTimeout(this._durationTimeoutId);
+  }
+  /**
+   * Marks the snackbar action clicked.
+   * @deprecated Use `dismissWithAction` instead.
+   * @breaking-change 8.0.0
+   */
+  closeWithAction() {
+    this.dismissWithAction();
+  }
+  /** Dismisses the snack bar after some duration */
+  _dismissAfter(duration) {
+    this._durationTimeoutId = setTimeout(() => this.dismiss(), Math.min(duration, MAX_TIMEOUT));
+  }
+  /** Marks the snackbar as opened */
+  _open() {
+    if (!this._afterOpened.closed) {
+      this._afterOpened.next();
+      this._afterOpened.complete();
+    }
+  }
+  /** Cleans up the DOM after closing. */
+  _finishDismiss() {
+    this._overlayRef.dispose();
+    if (!this._onAction.closed) {
+      this._onAction.complete();
+    }
+    this._afterDismissed.next({
+      dismissedByAction: this._dismissedByAction
+    });
+    this._afterDismissed.complete();
+    this._dismissedByAction = false;
+  }
+  /** Gets an observable that is notified when the snack bar is finished closing. */
+  afterDismissed() {
+    return this._afterDismissed;
+  }
+  /** Gets an observable that is notified when the snack bar has opened and appeared. */
+  afterOpened() {
+    return this.containerInstance._onEnter;
+  }
+  /** Gets an observable that is notified when the snack bar action is called. */
+  onAction() {
+    return this._onAction;
+  }
+};
+__name(_MatSnackBarRef, "MatSnackBarRef");
+var MatSnackBarRef = _MatSnackBarRef;
+var MAT_SNACK_BAR_DATA = new InjectionToken("MatSnackBarData");
+var _MatSnackBarConfig = class _MatSnackBarConfig {
+  /** The politeness level for the MatAriaLiveAnnouncer announcement. */
+  politeness = "polite";
+  /**
+   * Message to be announced by the LiveAnnouncer. When opening a snackbar without a custom
+   * component or template, the announcement message will default to the specified message.
+   */
+  announcementMessage = "";
+  /**
+   * The view container that serves as the parent for the snackbar for the purposes of dependency
+   * injection. Note: this does not affect where the snackbar is inserted in the DOM.
+   */
+  viewContainerRef;
+  /** The length of time in milliseconds to wait before automatically dismissing the snack bar. */
+  duration = 0;
+  /** Extra CSS classes to be added to the snack bar container. */
+  panelClass;
+  /** Text layout direction for the snack bar. */
+  direction;
+  /** Data being injected into the child component. */
+  data = null;
+  /** The horizontal position to place the snack bar. */
+  horizontalPosition = "center";
+  /** The vertical position to place the snack bar. */
+  verticalPosition = "bottom";
+};
+__name(_MatSnackBarConfig, "MatSnackBarConfig");
+var MatSnackBarConfig = _MatSnackBarConfig;
+var _MatSnackBarLabel = class _MatSnackBarLabel {
+};
+__name(_MatSnackBarLabel, "MatSnackBarLabel");
+__publicField(_MatSnackBarLabel, "\u0275fac", /* @__PURE__ */ __name(function MatSnackBarLabel_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _MatSnackBarLabel)();
+}, "MatSnackBarLabel_Factory"));
+__publicField(_MatSnackBarLabel, "\u0275dir", /* @__PURE__ */ \u0275\u0275defineDirective({
+  type: _MatSnackBarLabel,
+  selectors: [["", "matSnackBarLabel", ""]],
+  hostAttrs: [1, "mat-mdc-snack-bar-label", "mdc-snackbar__label"]
+}));
+var MatSnackBarLabel = _MatSnackBarLabel;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarLabel, [{
+    type: Directive,
+    args: [{
+      selector: `[matSnackBarLabel]`,
+      host: {
+        "class": "mat-mdc-snack-bar-label mdc-snackbar__label"
+      }
+    }]
+  }], null, null);
+})();
+var _MatSnackBarActions = class _MatSnackBarActions {
+};
+__name(_MatSnackBarActions, "MatSnackBarActions");
+__publicField(_MatSnackBarActions, "\u0275fac", /* @__PURE__ */ __name(function MatSnackBarActions_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _MatSnackBarActions)();
+}, "MatSnackBarActions_Factory"));
+__publicField(_MatSnackBarActions, "\u0275dir", /* @__PURE__ */ \u0275\u0275defineDirective({
+  type: _MatSnackBarActions,
+  selectors: [["", "matSnackBarActions", ""]],
+  hostAttrs: [1, "mat-mdc-snack-bar-actions", "mdc-snackbar__actions"]
+}));
+var MatSnackBarActions = _MatSnackBarActions;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarActions, [{
+    type: Directive,
+    args: [{
+      selector: `[matSnackBarActions]`,
+      host: {
+        "class": "mat-mdc-snack-bar-actions mdc-snackbar__actions"
+      }
+    }]
+  }], null, null);
+})();
+var _MatSnackBarAction = class _MatSnackBarAction {
+};
+__name(_MatSnackBarAction, "MatSnackBarAction");
+__publicField(_MatSnackBarAction, "\u0275fac", /* @__PURE__ */ __name(function MatSnackBarAction_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _MatSnackBarAction)();
+}, "MatSnackBarAction_Factory"));
+__publicField(_MatSnackBarAction, "\u0275dir", /* @__PURE__ */ \u0275\u0275defineDirective({
+  type: _MatSnackBarAction,
+  selectors: [["", "matSnackBarAction", ""]],
+  hostAttrs: [1, "mat-mdc-snack-bar-action", "mdc-snackbar__action"]
+}));
+var MatSnackBarAction = _MatSnackBarAction;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarAction, [{
+    type: Directive,
+    args: [{
+      selector: `[matSnackBarAction]`,
+      host: {
+        "class": "mat-mdc-snack-bar-action mdc-snackbar__action"
+      }
+    }]
+  }], null, null);
+})();
+var _SimpleSnackBar = class _SimpleSnackBar {
+  snackBarRef = inject(MatSnackBarRef);
+  data = inject(MAT_SNACK_BAR_DATA);
+  constructor() {
+  }
+  /** Performs the action on the snack bar. */
+  action() {
+    this.snackBarRef.dismissWithAction();
+  }
+  /** If the action button should be shown. */
+  get hasAction() {
+    return !!this.data.action;
+  }
+};
+__name(_SimpleSnackBar, "SimpleSnackBar");
+__publicField(_SimpleSnackBar, "\u0275fac", /* @__PURE__ */ __name(function SimpleSnackBar_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _SimpleSnackBar)();
+}, "SimpleSnackBar_Factory"));
+__publicField(_SimpleSnackBar, "\u0275cmp", /* @__PURE__ */ \u0275\u0275defineComponent({
+  type: _SimpleSnackBar,
+  selectors: [["simple-snack-bar"]],
+  hostAttrs: [1, "mat-mdc-simple-snack-bar"],
+  exportAs: ["matSnackBar"],
+  decls: 3,
+  vars: 2,
+  consts: [["matSnackBarLabel", ""], ["matSnackBarActions", ""], ["matButton", "", "matSnackBarAction", "", 3, "click"]],
+  template: /* @__PURE__ */ __name(function SimpleSnackBar_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275elementStart(0, "div", 0);
+      \u0275\u0275text(1);
+      \u0275\u0275elementEnd();
+      \u0275\u0275conditionalCreate(2, SimpleSnackBar_Conditional_2_Template, 3, 1, "div", 1);
+    }
+    if (rf & 2) {
+      \u0275\u0275advance();
+      \u0275\u0275textInterpolate1(" ", ctx.data.message, "\n");
+      \u0275\u0275advance();
+      \u0275\u0275conditional(ctx.hasAction ? 2 : -1);
+    }
+  }, "SimpleSnackBar_Template"),
+  dependencies: [MatButton, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction],
+  styles: [".mat-mdc-simple-snack-bar{display:flex}\n"],
+  encapsulation: 2,
+  changeDetection: 0
+}));
+var SimpleSnackBar = _SimpleSnackBar;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SimpleSnackBar, [{
+    type: Component,
+    args: [{
+      selector: "simple-snack-bar",
+      exportAs: "matSnackBar",
+      encapsulation: ViewEncapsulation.None,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      imports: [MatButton, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction],
+      host: {
+        "class": "mat-mdc-simple-snack-bar"
+      },
+      template: '<div matSnackBarLabel>\n  {{data.message}}\n</div>\n\n@if (hasAction) {\n  <div matSnackBarActions>\n    <button matButton matSnackBarAction (click)="action()">\n      {{data.action}}\n    </button>\n  </div>\n}\n',
+      styles: [".mat-mdc-simple-snack-bar{display:flex}\n"]
+    }]
+  }], () => [], null);
+})();
+var ENTER_ANIMATION = "_mat-snack-bar-enter";
+var EXIT_ANIMATION = "_mat-snack-bar-exit";
+var _MatSnackBarContainer = class _MatSnackBarContainer extends BasePortalOutlet {
+  _ngZone = inject(NgZone);
+  _elementRef = inject(ElementRef);
+  _changeDetectorRef = inject(ChangeDetectorRef);
+  _platform = inject(Platform);
+  _animationsDisabled = _animationsDisabled();
+  snackBarConfig = inject(MatSnackBarConfig);
+  _document = inject(DOCUMENT);
+  _trackedModals = /* @__PURE__ */ new Set();
+  _enterFallback;
+  _exitFallback;
+  _injector = inject(Injector);
+  /** The number of milliseconds to wait before announcing the snack bar's content. */
+  _announceDelay = 150;
+  /** The timeout for announcing the snack bar's content. */
+  _announceTimeoutId;
+  /** Whether the component has been destroyed. */
+  _destroyed = false;
+  /** The portal outlet inside of this container into which the snack bar content will be loaded. */
+  _portalOutlet;
+  /** Subject for notifying that the snack bar has announced to screen readers. */
+  _onAnnounce = new Subject();
+  /** Subject for notifying that the snack bar has exited from view. */
+  _onExit = new Subject();
+  /** Subject for notifying that the snack bar has finished entering the view. */
+  _onEnter = new Subject();
+  /** The state of the snack bar animations. */
+  _animationState = "void";
+  /** aria-live value for the live region. */
+  _live;
+  /**
+   * Element that will have the `mdc-snackbar__label` class applied if the attached component
+   * or template does not have it. This ensures that the appropriate structure, typography, and
+   * color is applied to the attached view.
+   */
+  _label;
+  /**
+   * Role of the live region. This is only for Firefox as there is a known issue where Firefox +
+   * JAWS does not read out aria-live message.
+   */
+  _role;
+  /** Unique ID of the aria-live element. */
+  _liveElementId = inject(_IdGenerator).getId("mat-snack-bar-container-live-");
+  constructor() {
+    super();
+    const config = this.snackBarConfig;
+    if (config.politeness === "assertive" && !config.announcementMessage) {
+      this._live = "assertive";
+    } else if (config.politeness === "off") {
+      this._live = "off";
+    } else {
+      this._live = "polite";
+    }
+    if (this._platform.FIREFOX) {
+      if (this._live === "polite") {
+        this._role = "status";
+      }
+      if (this._live === "assertive") {
+        this._role = "alert";
+      }
+    }
+  }
+  /** Attach a component portal as content to this snack bar container. */
+  attachComponentPortal(portal) {
+    this._assertNotAttached();
+    const result = this._portalOutlet.attachComponentPortal(portal);
+    this._afterPortalAttached();
+    return result;
+  }
+  /** Attach a template portal as content to this snack bar container. */
+  attachTemplatePortal(portal) {
+    this._assertNotAttached();
+    const result = this._portalOutlet.attachTemplatePortal(portal);
+    this._afterPortalAttached();
+    return result;
+  }
+  /**
+   * Attaches a DOM portal to the snack bar container.
+   * @deprecated To be turned into a method.
+   * @breaking-change 10.0.0
+   */
+  attachDomPortal = /* @__PURE__ */ __name((portal) => {
+    this._assertNotAttached();
+    const result = this._portalOutlet.attachDomPortal(portal);
+    this._afterPortalAttached();
+    return result;
+  }, "attachDomPortal");
+  /** Handle end of animations, updating the state of the snackbar. */
+  onAnimationEnd(animationName) {
+    if (animationName === EXIT_ANIMATION) {
+      this._completeExit();
+    } else if (animationName === ENTER_ANIMATION) {
+      clearTimeout(this._enterFallback);
+      this._ngZone.run(() => {
+        this._onEnter.next();
+        this._onEnter.complete();
+      });
+    }
+  }
+  /** Begin animation of snack bar entrance into view. */
+  enter() {
+    if (!this._destroyed) {
+      this._animationState = "visible";
+      this._changeDetectorRef.markForCheck();
+      this._changeDetectorRef.detectChanges();
+      this._screenReaderAnnounce();
+      if (this._animationsDisabled) {
+        afterNextRender(() => {
+          this._ngZone.run(() => queueMicrotask(() => this.onAnimationEnd(ENTER_ANIMATION)));
+        }, {
+          injector: this._injector
+        });
+      } else {
+        clearTimeout(this._enterFallback);
+        this._enterFallback = setTimeout(() => {
+          this._elementRef.nativeElement.classList.add("mat-snack-bar-fallback-visible");
+          this.onAnimationEnd(ENTER_ANIMATION);
+        }, 200);
+      }
+    }
+  }
+  /** Begin animation of the snack bar exiting from view. */
+  exit() {
+    if (this._destroyed) {
+      return of(void 0);
+    }
+    this._ngZone.run(() => {
+      this._animationState = "hidden";
+      this._changeDetectorRef.markForCheck();
+      this._elementRef.nativeElement.setAttribute("mat-exit", "");
+      clearTimeout(this._announceTimeoutId);
+      if (this._animationsDisabled) {
+        afterNextRender(() => {
+          this._ngZone.run(() => queueMicrotask(() => this.onAnimationEnd(EXIT_ANIMATION)));
+        }, {
+          injector: this._injector
+        });
+      } else {
+        clearTimeout(this._exitFallback);
+        this._exitFallback = setTimeout(() => this.onAnimationEnd(EXIT_ANIMATION), 200);
+      }
+    });
+    return this._onExit;
+  }
+  /** Makes sure the exit callbacks have been invoked when the element is destroyed. */
+  ngOnDestroy() {
+    this._destroyed = true;
+    this._clearFromModals();
+    this._completeExit();
+  }
+  _completeExit() {
+    clearTimeout(this._exitFallback);
+    queueMicrotask(() => {
+      this._onExit.next();
+      this._onExit.complete();
+    });
+  }
+  /**
+   * Called after the portal contents have been attached. Can be
+   * used to modify the DOM once it's guaranteed to be in place.
+   */
+  _afterPortalAttached() {
+    const element = this._elementRef.nativeElement;
+    const panelClasses = this.snackBarConfig.panelClass;
+    if (panelClasses) {
+      if (Array.isArray(panelClasses)) {
+        panelClasses.forEach((cssClass) => element.classList.add(cssClass));
+      } else {
+        element.classList.add(panelClasses);
+      }
+    }
+    this._exposeToModals();
+    const label = this._label.nativeElement;
+    const labelClass = "mdc-snackbar__label";
+    label.classList.toggle(labelClass, !label.querySelector(`.${labelClass}`));
+  }
+  /**
+   * Some browsers won't expose the accessibility node of the live element if there is an
+   * `aria-modal` and the live element is outside of it. This method works around the issue by
+   * pointing the `aria-owns` of all modals to the live element.
+   */
+  _exposeToModals() {
+    const id = this._liveElementId;
+    const modals = this._document.querySelectorAll('body > .cdk-overlay-container [aria-modal="true"]');
+    for (let i = 0; i < modals.length; i++) {
+      const modal = modals[i];
+      const ariaOwns = modal.getAttribute("aria-owns");
+      this._trackedModals.add(modal);
+      if (!ariaOwns) {
+        modal.setAttribute("aria-owns", id);
+      } else if (ariaOwns.indexOf(id) === -1) {
+        modal.setAttribute("aria-owns", ariaOwns + " " + id);
+      }
+    }
+  }
+  /** Clears the references to the live element from any modals it was added to. */
+  _clearFromModals() {
+    this._trackedModals.forEach((modal) => {
+      const ariaOwns = modal.getAttribute("aria-owns");
+      if (ariaOwns) {
+        const newValue = ariaOwns.replace(this._liveElementId, "").trim();
+        if (newValue.length > 0) {
+          modal.setAttribute("aria-owns", newValue);
+        } else {
+          modal.removeAttribute("aria-owns");
+        }
+      }
+    });
+    this._trackedModals.clear();
+  }
+  /** Asserts that no content is already attached to the container. */
+  _assertNotAttached() {
+    if (this._portalOutlet.hasAttached() && (typeof ngDevMode === "undefined" || ngDevMode)) {
+      throw Error("Attempting to attach snack bar content after content is already attached");
+    }
+  }
+  /**
+   * Starts a timeout to move the snack bar content to the live region so screen readers will
+   * announce it.
+   */
+  _screenReaderAnnounce() {
+    if (this._announceTimeoutId) {
+      return;
+    }
+    this._ngZone.runOutsideAngular(() => {
+      this._announceTimeoutId = setTimeout(() => {
+        if (this._destroyed) {
+          return;
+        }
+        const element = this._elementRef.nativeElement;
+        const inertElement = element.querySelector("[aria-hidden]");
+        const liveElement = element.querySelector("[aria-live]");
+        if (inertElement && liveElement) {
+          let focusedElement = null;
+          if (this._platform.isBrowser && document.activeElement instanceof HTMLElement && inertElement.contains(document.activeElement)) {
+            focusedElement = document.activeElement;
+          }
+          inertElement.removeAttribute("aria-hidden");
+          liveElement.appendChild(inertElement);
+          focusedElement?.focus();
+          this._onAnnounce.next();
+          this._onAnnounce.complete();
+        }
+      }, this._announceDelay);
+    });
+  }
+};
+__name(_MatSnackBarContainer, "MatSnackBarContainer");
+__publicField(_MatSnackBarContainer, "\u0275fac", /* @__PURE__ */ __name(function MatSnackBarContainer_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _MatSnackBarContainer)();
+}, "MatSnackBarContainer_Factory"));
+__publicField(_MatSnackBarContainer, "\u0275cmp", /* @__PURE__ */ \u0275\u0275defineComponent({
+  type: _MatSnackBarContainer,
+  selectors: [["mat-snack-bar-container"]],
+  viewQuery: /* @__PURE__ */ __name(function MatSnackBarContainer_Query(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275viewQuery(CdkPortalOutlet, 7);
+      \u0275\u0275viewQuery(_c0, 7);
+    }
+    if (rf & 2) {
+      let _t;
+      \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._portalOutlet = _t.first);
+      \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._label = _t.first);
+    }
+  }, "MatSnackBarContainer_Query"),
+  hostAttrs: [1, "mdc-snackbar", "mat-mdc-snack-bar-container"],
+  hostVars: 6,
+  hostBindings: /* @__PURE__ */ __name(function MatSnackBarContainer_HostBindings(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275listener("animationend", /* @__PURE__ */ __name(function MatSnackBarContainer_animationend_HostBindingHandler($event) {
+        return ctx.onAnimationEnd($event.animationName);
+      }, "MatSnackBarContainer_animationend_HostBindingHandler"))("animationcancel", /* @__PURE__ */ __name(function MatSnackBarContainer_animationcancel_HostBindingHandler($event) {
+        return ctx.onAnimationEnd($event.animationName);
+      }, "MatSnackBarContainer_animationcancel_HostBindingHandler"));
+    }
+    if (rf & 2) {
+      \u0275\u0275classProp("mat-snack-bar-container-enter", ctx._animationState === "visible")("mat-snack-bar-container-exit", ctx._animationState === "hidden")("mat-snack-bar-container-animations-enabled", !ctx._animationsDisabled);
+    }
+  }, "MatSnackBarContainer_HostBindings"),
+  features: [\u0275\u0275InheritDefinitionFeature],
+  decls: 6,
+  vars: 3,
+  consts: [["label", ""], [1, "mdc-snackbar__surface", "mat-mdc-snackbar-surface"], [1, "mat-mdc-snack-bar-label"], ["aria-hidden", "true"], ["cdkPortalOutlet", ""]],
+  template: /* @__PURE__ */ __name(function MatSnackBarContainer_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275elementStart(0, "div", 1)(1, "div", 2, 0)(3, "div", 3);
+      \u0275\u0275template(4, MatSnackBarContainer_ng_template_4_Template, 0, 0, "ng-template", 4);
+      \u0275\u0275elementEnd();
+      \u0275\u0275element(5, "div");
+      \u0275\u0275elementEnd()();
+    }
+    if (rf & 2) {
+      \u0275\u0275advance(5);
+      \u0275\u0275attribute("aria-live", ctx._live)("role", ctx._role)("id", ctx._liveElementId);
+    }
+  }, "MatSnackBarContainer_Template"),
+  dependencies: [CdkPortalOutlet],
+  styles: ["@keyframes _mat-snack-bar-enter{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}@keyframes _mat-snack-bar-exit{from{opacity:1}to{opacity:0}}.mat-mdc-snack-bar-container{display:flex;align-items:center;justify-content:center;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);margin:8px}.mat-mdc-snack-bar-handset .mat-mdc-snack-bar-container{width:100vw}.mat-snack-bar-container-animations-enabled{opacity:0}.mat-snack-bar-container-animations-enabled.mat-snack-bar-fallback-visible{opacity:1}.mat-snack-bar-container-animations-enabled.mat-snack-bar-container-enter{animation:_mat-snack-bar-enter 150ms cubic-bezier(0, 0, 0.2, 1) forwards}.mat-snack-bar-container-animations-enabled.mat-snack-bar-container-exit{animation:_mat-snack-bar-exit 75ms cubic-bezier(0.4, 0, 1, 1) forwards}.mat-mdc-snackbar-surface{box-shadow:0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);display:flex;align-items:center;justify-content:flex-start;box-sizing:border-box;padding-left:0;padding-right:8px}[dir=rtl] .mat-mdc-snackbar-surface{padding-right:0;padding-left:8px}.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface{min-width:344px;max-width:672px}.mat-mdc-snack-bar-handset .mat-mdc-snackbar-surface{width:100%;min-width:0}@media(forced-colors: active){.mat-mdc-snackbar-surface{outline:solid 1px}}.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface{color:var(--mat-snack-bar-supporting-text-color, var(--mat-sys-inverse-on-surface));border-radius:var(--mat-snack-bar-container-shape, var(--mat-sys-corner-extra-small));background-color:var(--mat-snack-bar-container-color, var(--mat-sys-inverse-surface))}.mdc-snackbar__label{width:100%;flex-grow:1;box-sizing:border-box;margin:0;padding:14px 8px 14px 16px}[dir=rtl] .mdc-snackbar__label{padding-left:8px;padding-right:16px}.mat-mdc-snack-bar-container .mdc-snackbar__label{font-family:var(--mat-snack-bar-supporting-text-font, var(--mat-sys-body-medium-font));font-size:var(--mat-snack-bar-supporting-text-size, var(--mat-sys-body-medium-size));font-weight:var(--mat-snack-bar-supporting-text-weight, var(--mat-sys-body-medium-weight));line-height:var(--mat-snack-bar-supporting-text-line-height, var(--mat-sys-body-medium-line-height))}.mat-mdc-snack-bar-actions{display:flex;flex-shrink:0;align-items:center;box-sizing:border-box}.mat-mdc-snack-bar-handset,.mat-mdc-snack-bar-container,.mat-mdc-snack-bar-label{flex:1 1 auto}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled){--mat-button-text-state-layer-color: currentColor;--mat-button-text-ripple-color: currentColor}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled).mat-unthemed{color:var(--mat-snack-bar-button-color, var(--mat-sys-inverse-primary))}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) .mat-ripple-element{opacity:.1}\n"],
+  encapsulation: 2
+}));
+var MatSnackBarContainer = _MatSnackBarContainer;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarContainer, [{
+    type: Component,
+    args: [{
+      selector: "mat-snack-bar-container",
+      changeDetection: ChangeDetectionStrategy.Default,
+      encapsulation: ViewEncapsulation.None,
+      imports: [CdkPortalOutlet],
+      host: {
+        "class": "mdc-snackbar mat-mdc-snack-bar-container",
+        "[class.mat-snack-bar-container-enter]": '_animationState === "visible"',
+        "[class.mat-snack-bar-container-exit]": '_animationState === "hidden"',
+        "[class.mat-snack-bar-container-animations-enabled]": "!_animationsDisabled",
+        "(animationend)": "onAnimationEnd($event.animationName)",
+        "(animationcancel)": "onAnimationEnd($event.animationName)"
+      },
+      template: '<div class="mdc-snackbar__surface mat-mdc-snackbar-surface">\n  <!--\n    This outer label wrapper will have the class `mdc-snackbar__label` applied if\n    the attached template/component does not contain it.\n  -->\n  <div class="mat-mdc-snack-bar-label" #label>\n    <!-- Initialy holds the snack bar content, will be empty after announcing to screen readers. -->\n    <div aria-hidden="true">\n      <ng-template cdkPortalOutlet />\n    </div>\n\n    <!-- Will receive the snack bar content from the non-live div, move will happen a short delay after opening -->\n    <div [attr.aria-live]="_live" [attr.role]="_role" [attr.id]="_liveElementId"></div>\n  </div>\n</div>\n',
+      styles: ["@keyframes _mat-snack-bar-enter{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}@keyframes _mat-snack-bar-exit{from{opacity:1}to{opacity:0}}.mat-mdc-snack-bar-container{display:flex;align-items:center;justify-content:center;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);margin:8px}.mat-mdc-snack-bar-handset .mat-mdc-snack-bar-container{width:100vw}.mat-snack-bar-container-animations-enabled{opacity:0}.mat-snack-bar-container-animations-enabled.mat-snack-bar-fallback-visible{opacity:1}.mat-snack-bar-container-animations-enabled.mat-snack-bar-container-enter{animation:_mat-snack-bar-enter 150ms cubic-bezier(0, 0, 0.2, 1) forwards}.mat-snack-bar-container-animations-enabled.mat-snack-bar-container-exit{animation:_mat-snack-bar-exit 75ms cubic-bezier(0.4, 0, 1, 1) forwards}.mat-mdc-snackbar-surface{box-shadow:0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);display:flex;align-items:center;justify-content:flex-start;box-sizing:border-box;padding-left:0;padding-right:8px}[dir=rtl] .mat-mdc-snackbar-surface{padding-right:0;padding-left:8px}.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface{min-width:344px;max-width:672px}.mat-mdc-snack-bar-handset .mat-mdc-snackbar-surface{width:100%;min-width:0}@media(forced-colors: active){.mat-mdc-snackbar-surface{outline:solid 1px}}.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface{color:var(--mat-snack-bar-supporting-text-color, var(--mat-sys-inverse-on-surface));border-radius:var(--mat-snack-bar-container-shape, var(--mat-sys-corner-extra-small));background-color:var(--mat-snack-bar-container-color, var(--mat-sys-inverse-surface))}.mdc-snackbar__label{width:100%;flex-grow:1;box-sizing:border-box;margin:0;padding:14px 8px 14px 16px}[dir=rtl] .mdc-snackbar__label{padding-left:8px;padding-right:16px}.mat-mdc-snack-bar-container .mdc-snackbar__label{font-family:var(--mat-snack-bar-supporting-text-font, var(--mat-sys-body-medium-font));font-size:var(--mat-snack-bar-supporting-text-size, var(--mat-sys-body-medium-size));font-weight:var(--mat-snack-bar-supporting-text-weight, var(--mat-sys-body-medium-weight));line-height:var(--mat-snack-bar-supporting-text-line-height, var(--mat-sys-body-medium-line-height))}.mat-mdc-snack-bar-actions{display:flex;flex-shrink:0;align-items:center;box-sizing:border-box}.mat-mdc-snack-bar-handset,.mat-mdc-snack-bar-container,.mat-mdc-snack-bar-label{flex:1 1 auto}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled){--mat-button-text-state-layer-color: currentColor;--mat-button-text-ripple-color: currentColor}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled).mat-unthemed{color:var(--mat-snack-bar-button-color, var(--mat-sys-inverse-primary))}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) .mat-ripple-element{opacity:.1}\n"]
+    }]
+  }], () => [], {
+    _portalOutlet: [{
+      type: ViewChild,
+      args: [CdkPortalOutlet, {
+        static: true
+      }]
+    }],
+    _label: [{
+      type: ViewChild,
+      args: ["label", {
+        static: true
+      }]
+    }]
+  });
+})();
+function MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY() {
+  return new MatSnackBarConfig();
+}
+__name(MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY, "MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY");
+var MAT_SNACK_BAR_DEFAULT_OPTIONS = new InjectionToken("mat-snack-bar-default-options", {
+  providedIn: "root",
+  factory: MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY
+});
+var _MatSnackBar = class _MatSnackBar {
+  _live = inject(LiveAnnouncer);
+  _injector = inject(Injector);
+  _breakpointObserver = inject(BreakpointObserver);
+  _parentSnackBar = inject(_MatSnackBar, {
+    optional: true,
+    skipSelf: true
+  });
+  _defaultConfig = inject(MAT_SNACK_BAR_DEFAULT_OPTIONS);
+  _animationsDisabled = _animationsDisabled();
+  /**
+   * Reference to the current snack bar in the view *at this level* (in the Angular injector tree).
+   * If there is a parent snack-bar service, all operations should delegate to that parent
+   * via `_openedSnackBarRef`.
+   */
+  _snackBarRefAtThisLevel = null;
+  /** The component that should be rendered as the snack bar's simple component. */
+  simpleSnackBarComponent = SimpleSnackBar;
+  /** The container component that attaches the provided template or component. */
+  snackBarContainerComponent = MatSnackBarContainer;
+  /** The CSS class to apply for handset mode. */
+  handsetCssClass = "mat-mdc-snack-bar-handset";
+  /** Reference to the currently opened snackbar at *any* level. */
+  get _openedSnackBarRef() {
+    const parent = this._parentSnackBar;
+    return parent ? parent._openedSnackBarRef : this._snackBarRefAtThisLevel;
+  }
+  set _openedSnackBarRef(value) {
+    if (this._parentSnackBar) {
+      this._parentSnackBar._openedSnackBarRef = value;
+    } else {
+      this._snackBarRefAtThisLevel = value;
+    }
+  }
+  constructor() {
+  }
+  /**
+   * Creates and dispatches a snack bar with a custom component for the content, removing any
+   * currently opened snack bars.
+   *
+   * @param component Component to be instantiated.
+   * @param config Extra configuration for the snack bar.
+   */
+  openFromComponent(component, config) {
+    return this._attach(component, config);
+  }
+  /**
+   * Creates and dispatches a snack bar with a custom template for the content, removing any
+   * currently opened snack bars.
+   *
+   * @param template Template to be instantiated.
+   * @param config Extra configuration for the snack bar.
+   */
+  openFromTemplate(template, config) {
+    return this._attach(template, config);
+  }
+  /**
+   * Opens a snackbar with a message and an optional action.
+   * @param message The message to show in the snackbar.
+   * @param action The label for the snackbar action.
+   * @param config Additional configuration options for the snackbar.
+   */
+  open(message, action = "", config) {
+    const _config = __spreadValues(__spreadValues({}, this._defaultConfig), config);
+    _config.data = {
+      message,
+      action
+    };
+    if (_config.announcementMessage === message) {
+      _config.announcementMessage = void 0;
+    }
+    return this.openFromComponent(this.simpleSnackBarComponent, _config);
+  }
+  /**
+   * Dismisses the currently-visible snack bar.
+   */
+  dismiss() {
+    if (this._openedSnackBarRef) {
+      this._openedSnackBarRef.dismiss();
+    }
+  }
+  ngOnDestroy() {
+    if (this._snackBarRefAtThisLevel) {
+      this._snackBarRefAtThisLevel.dismiss();
+    }
+  }
+  /**
+   * Attaches the snack bar container component to the overlay.
+   */
+  _attachSnackBarContainer(overlayRef, config) {
+    const userInjector = config && config.viewContainerRef && config.viewContainerRef.injector;
+    const injector = Injector.create({
+      parent: userInjector || this._injector,
+      providers: [{
+        provide: MatSnackBarConfig,
+        useValue: config
+      }]
+    });
+    const containerPortal = new ComponentPortal(this.snackBarContainerComponent, config.viewContainerRef, injector);
+    const containerRef = overlayRef.attach(containerPortal);
+    containerRef.instance.snackBarConfig = config;
+    return containerRef.instance;
+  }
+  /**
+   * Places a new component or a template as the content of the snack bar container.
+   */
+  _attach(content, userConfig) {
+    const config = __spreadValues(__spreadValues(__spreadValues({}, new MatSnackBarConfig()), this._defaultConfig), userConfig);
+    const overlayRef = this._createOverlay(config);
+    const container = this._attachSnackBarContainer(overlayRef, config);
+    const snackBarRef = new MatSnackBarRef(container, overlayRef);
+    if (content instanceof TemplateRef) {
+      const portal = new TemplatePortal(content, null, {
+        $implicit: config.data,
+        snackBarRef
+      });
+      snackBarRef.instance = container.attachTemplatePortal(portal);
+    } else {
+      const injector = this._createInjector(config, snackBarRef);
+      const portal = new ComponentPortal(content, void 0, injector);
+      const contentRef = container.attachComponentPortal(portal);
+      snackBarRef.instance = contentRef.instance;
+    }
+    this._breakpointObserver.observe(Breakpoints.HandsetPortrait).pipe(takeUntil(overlayRef.detachments())).subscribe((state) => {
+      overlayRef.overlayElement.classList.toggle(this.handsetCssClass, state.matches);
+    });
+    if (config.announcementMessage) {
+      container._onAnnounce.subscribe(() => {
+        this._live.announce(config.announcementMessage, config.politeness);
+      });
+    }
+    this._animateSnackBar(snackBarRef, config);
+    this._openedSnackBarRef = snackBarRef;
+    return this._openedSnackBarRef;
+  }
+  /** Animates the old snack bar out and the new one in. */
+  _animateSnackBar(snackBarRef, config) {
+    snackBarRef.afterDismissed().subscribe(() => {
+      if (this._openedSnackBarRef == snackBarRef) {
+        this._openedSnackBarRef = null;
+      }
+      if (config.announcementMessage) {
+        this._live.clear();
+      }
+    });
+    if (config.duration && config.duration > 0) {
+      snackBarRef.afterOpened().subscribe(() => snackBarRef._dismissAfter(config.duration));
+    }
+    if (this._openedSnackBarRef) {
+      this._openedSnackBarRef.afterDismissed().subscribe(() => {
+        snackBarRef.containerInstance.enter();
+      });
+      this._openedSnackBarRef.dismiss();
+    } else {
+      snackBarRef.containerInstance.enter();
+    }
+  }
+  /**
+   * Creates a new overlay and places it in the correct location.
+   * @param config The user-specified snack bar config.
+   */
+  _createOverlay(config) {
+    const overlayConfig = new OverlayConfig();
+    overlayConfig.direction = config.direction;
+    const positionStrategy = createGlobalPositionStrategy(this._injector);
+    const isRtl = config.direction === "rtl";
+    const isLeft = config.horizontalPosition === "left" || config.horizontalPosition === "start" && !isRtl || config.horizontalPosition === "end" && isRtl;
+    const isRight = !isLeft && config.horizontalPosition !== "center";
+    if (isLeft) {
+      positionStrategy.left("0");
+    } else if (isRight) {
+      positionStrategy.right("0");
+    } else {
+      positionStrategy.centerHorizontally();
+    }
+    if (config.verticalPosition === "top") {
+      positionStrategy.top("0");
+    } else {
+      positionStrategy.bottom("0");
+    }
+    overlayConfig.positionStrategy = positionStrategy;
+    overlayConfig.disableAnimations = this._animationsDisabled;
+    return createOverlayRef(this._injector, overlayConfig);
+  }
+  /**
+   * Creates an injector to be used inside of a snack bar component.
+   * @param config Config that was used to create the snack bar.
+   * @param snackBarRef Reference to the snack bar.
+   */
+  _createInjector(config, snackBarRef) {
+    const userInjector = config && config.viewContainerRef && config.viewContainerRef.injector;
+    return Injector.create({
+      parent: userInjector || this._injector,
+      providers: [{
+        provide: MatSnackBarRef,
+        useValue: snackBarRef
+      }, {
+        provide: MAT_SNACK_BAR_DATA,
+        useValue: config.data
+      }]
+    });
+  }
+};
+__name(_MatSnackBar, "MatSnackBar");
+__publicField(_MatSnackBar, "\u0275fac", /* @__PURE__ */ __name(function MatSnackBar_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _MatSnackBar)();
+}, "MatSnackBar_Factory"));
+__publicField(_MatSnackBar, "\u0275prov", /* @__PURE__ */ \u0275\u0275defineInjectable({
+  token: _MatSnackBar,
+  factory: _MatSnackBar.\u0275fac,
+  providedIn: "root"
+}));
+var MatSnackBar = _MatSnackBar;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBar, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], () => [], null);
+})();
+var DIRECTIVES = [MatSnackBarContainer, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction];
+var _MatSnackBarModule = class _MatSnackBarModule {
+};
+__name(_MatSnackBarModule, "MatSnackBarModule");
+__publicField(_MatSnackBarModule, "\u0275fac", /* @__PURE__ */ __name(function MatSnackBarModule_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _MatSnackBarModule)();
+}, "MatSnackBarModule_Factory"));
+__publicField(_MatSnackBarModule, "\u0275mod", /* @__PURE__ */ \u0275\u0275defineNgModule({
+  type: _MatSnackBarModule,
+  imports: [OverlayModule, PortalModule, MatButtonModule, MatCommonModule, SimpleSnackBar, MatSnackBarContainer, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction],
+  exports: [MatCommonModule, MatSnackBarContainer, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction]
+}));
+__publicField(_MatSnackBarModule, "\u0275inj", /* @__PURE__ */ \u0275\u0275defineInjector({
+  providers: [MatSnackBar],
+  imports: [OverlayModule, PortalModule, MatButtonModule, MatCommonModule, SimpleSnackBar, MatCommonModule]
+}));
+var MatSnackBarModule = _MatSnackBarModule;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarModule, [{
+    type: NgModule,
+    args: [{
+      imports: [OverlayModule, PortalModule, MatButtonModule, MatCommonModule, SimpleSnackBar, ...DIRECTIVES],
+      exports: [MatCommonModule, ...DIRECTIVES],
+      providers: [MatSnackBar]
+    }]
+  }], null, null);
+})();
+
+// node_modules/@angular/material/fesm2022/internal-form-field.mjs
+var _c02 = ["mat-internal-form-field", ""];
+var _c1 = ["*"];
+var __MatInternalFormField = class __MatInternalFormField {
+  /** Position of the label relative to the content. */
+  labelPosition;
+};
+__name(__MatInternalFormField, "_MatInternalFormField");
+__publicField(__MatInternalFormField, "\u0275fac", /* @__PURE__ */ __name(function _MatInternalFormField_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || __MatInternalFormField)();
+}, "_MatInternalFormField_Factory"));
+__publicField(__MatInternalFormField, "\u0275cmp", /* @__PURE__ */ \u0275\u0275defineComponent({
+  type: __MatInternalFormField,
+  selectors: [["div", "mat-internal-form-field", ""]],
+  hostAttrs: [1, "mdc-form-field", "mat-internal-form-field"],
+  hostVars: 2,
+  hostBindings: /* @__PURE__ */ __name(function _MatInternalFormField_HostBindings(rf, ctx) {
+    if (rf & 2) {
+      \u0275\u0275classProp("mdc-form-field--align-end", ctx.labelPosition === "before");
+    }
+  }, "_MatInternalFormField_HostBindings"),
+  inputs: {
+    labelPosition: "labelPosition"
+  },
+  attrs: _c02,
+  ngContentSelectors: _c1,
+  decls: 1,
+  vars: 0,
+  template: /* @__PURE__ */ __name(function _MatInternalFormField_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275projectionDef();
+      \u0275\u0275projection(0);
+    }
+  }, "_MatInternalFormField_Template"),
+  styles: [".mat-internal-form-field{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-flex;align-items:center;vertical-align:middle}.mat-internal-form-field>label{margin-left:0;margin-right:auto;padding-left:4px;padding-right:0;order:0}[dir=rtl] .mat-internal-form-field>label{margin-left:auto;margin-right:0;padding-left:0;padding-right:4px}.mdc-form-field--align-end>label{margin-left:auto;margin-right:0;padding-left:0;padding-right:4px;order:-1}[dir=rtl] .mdc-form-field--align-end .mdc-form-field--align-end label{margin-left:0;margin-right:auto;padding-left:4px;padding-right:0}\n"],
+  encapsulation: 2,
+  changeDetection: 0
+}));
+var _MatInternalFormField = __MatInternalFormField;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_MatInternalFormField, [{
+    type: Component,
+    args: [{
+      selector: "div[mat-internal-form-field]",
+      template: "<ng-content></ng-content>",
+      encapsulation: ViewEncapsulation.None,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      host: {
+        "class": "mdc-form-field mat-internal-form-field",
+        "[class.mdc-form-field--align-end]": 'labelPosition === "before"'
+      },
+      styles: [".mat-internal-form-field{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-flex;align-items:center;vertical-align:middle}.mat-internal-form-field>label{margin-left:0;margin-right:auto;padding-left:4px;padding-right:0;order:0}[dir=rtl] .mat-internal-form-field>label{margin-left:auto;margin-right:0;padding-left:0;padding-right:4px}.mdc-form-field--align-end>label{margin-left:auto;margin-right:0;padding-left:0;padding-right:4px;order:-1}[dir=rtl] .mdc-form-field--align-end .mdc-form-field--align-end label{margin-left:0;margin-right:auto;padding-left:4px;padding-right:0}\n"]
+    }]
+  }], null, {
+    labelPosition: [{
+      type: Input,
+      args: [{
+        required: true
+      }]
+    }]
+  });
+})();
+
+// node_modules/@angular/material/fesm2022/checkbox.mjs
+var _c03 = ["input"];
+var _c12 = ["label"];
+var _c2 = ["*"];
+var MAT_CHECKBOX_DEFAULT_OPTIONS = new InjectionToken("mat-checkbox-default-options", {
+  providedIn: "root",
+  factory: MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY
+});
+function MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY() {
+  return {
+    color: "accent",
+    clickAction: "check-indeterminate",
+    disabledInteractive: false
+  };
+}
+__name(MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY, "MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY");
+var TransitionCheckState;
+(function(TransitionCheckState2) {
+  TransitionCheckState2[TransitionCheckState2["Init"] = 0] = "Init";
+  TransitionCheckState2[TransitionCheckState2["Checked"] = 1] = "Checked";
+  TransitionCheckState2[TransitionCheckState2["Unchecked"] = 2] = "Unchecked";
+  TransitionCheckState2[TransitionCheckState2["Indeterminate"] = 3] = "Indeterminate";
+})(TransitionCheckState || (TransitionCheckState = {}));
+var _MatCheckboxChange = class _MatCheckboxChange {
+  /** The source checkbox of the event. */
+  source;
+  /** The new `checked` value of the checkbox. */
+  checked;
+};
+__name(_MatCheckboxChange, "MatCheckboxChange");
+var MatCheckboxChange = _MatCheckboxChange;
+var defaults = MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY();
+var _MatCheckbox = class _MatCheckbox {
+  _elementRef = inject(ElementRef);
+  _changeDetectorRef = inject(ChangeDetectorRef);
+  _ngZone = inject(NgZone);
+  _animationsDisabled = _animationsDisabled();
+  _options = inject(MAT_CHECKBOX_DEFAULT_OPTIONS, {
+    optional: true
+  });
+  /** Focuses the checkbox. */
+  focus() {
+    this._inputElement.nativeElement.focus();
+  }
+  /** Creates the change event that will be emitted by the checkbox. */
+  _createChangeEvent(isChecked) {
+    const event = new MatCheckboxChange();
+    event.source = this;
+    event.checked = isChecked;
+    return event;
+  }
+  /** Gets the element on which to add the animation CSS classes. */
+  _getAnimationTargetElement() {
+    return this._inputElement?.nativeElement;
+  }
+  /** CSS classes to add when transitioning between the different checkbox states. */
+  _animationClasses = {
+    uncheckedToChecked: "mdc-checkbox--anim-unchecked-checked",
+    uncheckedToIndeterminate: "mdc-checkbox--anim-unchecked-indeterminate",
+    checkedToUnchecked: "mdc-checkbox--anim-checked-unchecked",
+    checkedToIndeterminate: "mdc-checkbox--anim-checked-indeterminate",
+    indeterminateToChecked: "mdc-checkbox--anim-indeterminate-checked",
+    indeterminateToUnchecked: "mdc-checkbox--anim-indeterminate-unchecked"
+  };
+  /**
+   * Attached to the aria-label attribute of the host element. In most cases, aria-labelledby will
+   * take precedence so this may be omitted.
+   */
+  ariaLabel = "";
+  /**
+   * Users can specify the `aria-labelledby` attribute which will be forwarded to the input element
+   */
+  ariaLabelledby = null;
+  /** The 'aria-describedby' attribute is read after the element's label and field type. */
+  ariaDescribedby;
+  /**
+   * Users can specify the `aria-expanded` attribute which will be forwarded to the input element
+   */
+  ariaExpanded;
+  /**
+   * Users can specify the `aria-controls` attribute which will be forwarded to the input element
+   */
+  ariaControls;
+  /** Users can specify the `aria-owns` attribute which will be forwarded to the input element */
+  ariaOwns;
+  _uniqueId;
+  /** A unique id for the checkbox input. If none is supplied, it will be auto-generated. */
+  id;
+  /** Returns the unique id for the visual hidden input. */
+  get inputId() {
+    return `${this.id || this._uniqueId}-input`;
+  }
+  /** Whether the checkbox is required. */
+  required;
+  /** Whether the label should appear after or before the checkbox. Defaults to 'after' */
+  labelPosition = "after";
+  /** Name value will be applied to the input element if present */
+  name = null;
+  /** Event emitted when the checkbox's `checked` value changes. */
+  change = new EventEmitter();
+  /** Event emitted when the checkbox's `indeterminate` value changes. */
+  indeterminateChange = new EventEmitter();
+  /** The value attribute of the native input element */
+  value;
+  /** Whether the checkbox has a ripple. */
+  disableRipple;
+  /** The native `<input type="checkbox">` element */
+  _inputElement;
+  /** The native `<label>` element */
+  _labelElement;
+  /** Tabindex for the checkbox. */
+  tabIndex;
+  // TODO(crisbeto): this should be a ThemePalette, but some internal apps were abusing
+  // the lack of type checking previously and assigning random strings.
+  /**
+   * Theme color of the checkbox. This API is supported in M2 themes only, it
+   * has no effect in M3 themes. For color customization in M3, see https://material.angular.dev/components/checkbox/styling.
+   *
+   * For information on applying color variants in M3, see
+   * https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
+   */
+  color;
+  /** Whether the checkbox should remain interactive when it is disabled. */
+  disabledInteractive;
+  /**
+   * Called when the checkbox is blurred. Needed to properly implement ControlValueAccessor.
+   * @docs-private
+   */
+  _onTouched = /* @__PURE__ */ __name(() => {
+  }, "_onTouched");
+  _currentAnimationClass = "";
+  _currentCheckState = TransitionCheckState.Init;
+  _controlValueAccessorChangeFn = /* @__PURE__ */ __name(() => {
+  }, "_controlValueAccessorChangeFn");
+  _validatorChangeFn = /* @__PURE__ */ __name(() => {
+  }, "_validatorChangeFn");
+  constructor() {
+    inject(_CdkPrivateStyleLoader).load(_StructuralStylesLoader);
+    const tabIndex = inject(new HostAttributeToken("tabindex"), {
+      optional: true
+    });
+    this._options = this._options || defaults;
+    this.color = this._options.color || defaults.color;
+    this.tabIndex = tabIndex == null ? 0 : parseInt(tabIndex) || 0;
+    this.id = this._uniqueId = inject(_IdGenerator).getId("mat-mdc-checkbox-");
+    this.disabledInteractive = this._options?.disabledInteractive ?? false;
+  }
+  ngOnChanges(changes) {
+    if (changes["required"]) {
+      this._validatorChangeFn();
+    }
+  }
+  ngAfterViewInit() {
+    this._syncIndeterminate(this.indeterminate);
+  }
+  /** Whether the checkbox is checked. */
+  get checked() {
+    return this._checked;
+  }
+  set checked(value) {
+    if (value != this.checked) {
+      this._checked = value;
+      this._changeDetectorRef.markForCheck();
+    }
+  }
+  _checked = false;
+  /** Whether the checkbox is disabled. */
+  get disabled() {
+    return this._disabled;
+  }
+  set disabled(value) {
+    if (value !== this.disabled) {
+      this._disabled = value;
+      this._changeDetectorRef.markForCheck();
+    }
+  }
+  _disabled = false;
+  /**
+   * Whether the checkbox is indeterminate. This is also known as "mixed" mode and can be used to
+   * represent a checkbox with three states, e.g. a checkbox that represents a nested list of
+   * checkable items. Note that whenever checkbox is manually clicked, indeterminate is immediately
+   * set to false.
+   */
+  get indeterminate() {
+    return this._indeterminate();
+  }
+  set indeterminate(value) {
+    const changed = value != this._indeterminate();
+    this._indeterminate.set(value);
+    if (changed) {
+      if (value) {
+        this._transitionCheckState(TransitionCheckState.Indeterminate);
+      } else {
+        this._transitionCheckState(this.checked ? TransitionCheckState.Checked : TransitionCheckState.Unchecked);
+      }
+      this.indeterminateChange.emit(value);
+    }
+    this._syncIndeterminate(value);
+  }
+  _indeterminate = signal(false, ...ngDevMode ? [{
+    debugName: "_indeterminate"
+  }] : []);
+  _isRippleDisabled() {
+    return this.disableRipple || this.disabled;
+  }
+  /** Method being called whenever the label text changes. */
+  _onLabelTextChange() {
+    this._changeDetectorRef.detectChanges();
+  }
+  // Implemented as part of ControlValueAccessor.
+  writeValue(value) {
+    this.checked = !!value;
+  }
+  // Implemented as part of ControlValueAccessor.
+  registerOnChange(fn) {
+    this._controlValueAccessorChangeFn = fn;
+  }
+  // Implemented as part of ControlValueAccessor.
+  registerOnTouched(fn) {
+    this._onTouched = fn;
+  }
+  // Implemented as part of ControlValueAccessor.
+  setDisabledState(isDisabled) {
+    this.disabled = isDisabled;
+  }
+  // Implemented as a part of Validator.
+  validate(control) {
+    return this.required && control.value !== true ? {
+      "required": true
+    } : null;
+  }
+  // Implemented as a part of Validator.
+  registerOnValidatorChange(fn) {
+    this._validatorChangeFn = fn;
+  }
+  _transitionCheckState(newState) {
+    let oldState = this._currentCheckState;
+    let element = this._getAnimationTargetElement();
+    if (oldState === newState || !element) {
+      return;
+    }
+    if (this._currentAnimationClass) {
+      element.classList.remove(this._currentAnimationClass);
+    }
+    this._currentAnimationClass = this._getAnimationClassForCheckStateTransition(oldState, newState);
+    this._currentCheckState = newState;
+    if (this._currentAnimationClass.length > 0) {
+      element.classList.add(this._currentAnimationClass);
+      const animationClass = this._currentAnimationClass;
+      this._ngZone.runOutsideAngular(() => {
+        setTimeout(() => {
+          element.classList.remove(animationClass);
+        }, 1e3);
+      });
+    }
+  }
+  _emitChangeEvent() {
+    this._controlValueAccessorChangeFn(this.checked);
+    this.change.emit(this._createChangeEvent(this.checked));
+    if (this._inputElement) {
+      this._inputElement.nativeElement.checked = this.checked;
+    }
+  }
+  /** Toggles the `checked` state of the checkbox. */
+  toggle() {
+    this.checked = !this.checked;
+    this._controlValueAccessorChangeFn(this.checked);
+  }
+  _handleInputClick() {
+    const clickAction = this._options?.clickAction;
+    if (!this.disabled && clickAction !== "noop") {
+      if (this.indeterminate && clickAction !== "check") {
+        Promise.resolve().then(() => {
+          this._indeterminate.set(false);
+          this.indeterminateChange.emit(false);
+        });
+      }
+      this._checked = !this._checked;
+      this._transitionCheckState(this._checked ? TransitionCheckState.Checked : TransitionCheckState.Unchecked);
+      this._emitChangeEvent();
+    } else if (this.disabled && this.disabledInteractive || !this.disabled && clickAction === "noop") {
+      this._inputElement.nativeElement.checked = this.checked;
+      this._inputElement.nativeElement.indeterminate = this.indeterminate;
+    }
+  }
+  _onInteractionEvent(event) {
+    event.stopPropagation();
+  }
+  _onBlur() {
+    Promise.resolve().then(() => {
+      this._onTouched();
+      this._changeDetectorRef.markForCheck();
+    });
+  }
+  _getAnimationClassForCheckStateTransition(oldState, newState) {
+    if (this._animationsDisabled) {
+      return "";
+    }
+    switch (oldState) {
+      case TransitionCheckState.Init:
+        if (newState === TransitionCheckState.Checked) {
+          return this._animationClasses.uncheckedToChecked;
+        } else if (newState == TransitionCheckState.Indeterminate) {
+          return this._checked ? this._animationClasses.checkedToIndeterminate : this._animationClasses.uncheckedToIndeterminate;
+        }
+        break;
+      case TransitionCheckState.Unchecked:
+        return newState === TransitionCheckState.Checked ? this._animationClasses.uncheckedToChecked : this._animationClasses.uncheckedToIndeterminate;
+      case TransitionCheckState.Checked:
+        return newState === TransitionCheckState.Unchecked ? this._animationClasses.checkedToUnchecked : this._animationClasses.checkedToIndeterminate;
+      case TransitionCheckState.Indeterminate:
+        return newState === TransitionCheckState.Checked ? this._animationClasses.indeterminateToChecked : this._animationClasses.indeterminateToUnchecked;
+    }
+    return "";
+  }
+  /**
+   * Syncs the indeterminate value with the checkbox DOM node.
+   *
+   * We sync `indeterminate` directly on the DOM node, because in Ivy the check for whether a
+   * property is supported on an element boils down to `if (propName in element)`. Domino's
+   * HTMLInputElement doesn't have an `indeterminate` property so Ivy will warn during
+   * server-side rendering.
+   */
+  _syncIndeterminate(value) {
+    const nativeCheckbox = this._inputElement;
+    if (nativeCheckbox) {
+      nativeCheckbox.nativeElement.indeterminate = value;
+    }
+  }
+  _onInputClick() {
+    this._handleInputClick();
+  }
+  _onTouchTargetClick() {
+    this._handleInputClick();
+    if (!this.disabled) {
+      this._inputElement.nativeElement.focus();
+    }
+  }
+  /**
+   *  Prevent click events that come from the `<label/>` element from bubbling. This prevents the
+   *  click handler on the host from triggering twice when clicking on the `<label/>` element. After
+   *  the click event on the `<label/>` propagates, the browsers dispatches click on the associated
+   *  `<input/>`. By preventing clicks on the label by bubbling, we ensure only one click event
+   *  bubbles when the label is clicked.
+   */
+  _preventBubblingFromLabel(event) {
+    if (!!event.target && this._labelElement.nativeElement.contains(event.target)) {
+      event.stopPropagation();
+    }
+  }
+};
+__name(_MatCheckbox, "MatCheckbox");
+__publicField(_MatCheckbox, "\u0275fac", /* @__PURE__ */ __name(function MatCheckbox_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _MatCheckbox)();
+}, "MatCheckbox_Factory"));
+__publicField(_MatCheckbox, "\u0275cmp", /* @__PURE__ */ \u0275\u0275defineComponent({
+  type: _MatCheckbox,
+  selectors: [["mat-checkbox"]],
+  viewQuery: /* @__PURE__ */ __name(function MatCheckbox_Query(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275viewQuery(_c03, 5);
+      \u0275\u0275viewQuery(_c12, 5);
+    }
+    if (rf & 2) {
+      let _t;
+      \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._inputElement = _t.first);
+      \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._labelElement = _t.first);
+    }
+  }, "MatCheckbox_Query"),
+  hostAttrs: [1, "mat-mdc-checkbox"],
+  hostVars: 16,
+  hostBindings: /* @__PURE__ */ __name(function MatCheckbox_HostBindings(rf, ctx) {
+    if (rf & 2) {
+      \u0275\u0275domProperty("id", ctx.id);
+      \u0275\u0275attribute("tabindex", null)("aria-label", null)("aria-labelledby", null);
+      \u0275\u0275classMap(ctx.color ? "mat-" + ctx.color : "mat-accent");
+      \u0275\u0275classProp("_mat-animation-noopable", ctx._animationsDisabled)("mdc-checkbox--disabled", ctx.disabled)("mat-mdc-checkbox-disabled", ctx.disabled)("mat-mdc-checkbox-checked", ctx.checked)("mat-mdc-checkbox-disabled-interactive", ctx.disabledInteractive);
+    }
+  }, "MatCheckbox_HostBindings"),
+  inputs: {
+    ariaLabel: [0, "aria-label", "ariaLabel"],
+    ariaLabelledby: [0, "aria-labelledby", "ariaLabelledby"],
+    ariaDescribedby: [0, "aria-describedby", "ariaDescribedby"],
+    ariaExpanded: [2, "aria-expanded", "ariaExpanded", booleanAttribute],
+    ariaControls: [0, "aria-controls", "ariaControls"],
+    ariaOwns: [0, "aria-owns", "ariaOwns"],
+    id: "id",
+    required: [2, "required", "required", booleanAttribute],
+    labelPosition: "labelPosition",
+    name: "name",
+    value: "value",
+    disableRipple: [2, "disableRipple", "disableRipple", booleanAttribute],
+    tabIndex: [2, "tabIndex", "tabIndex", (value) => value == null ? void 0 : numberAttribute(value)],
+    color: "color",
+    disabledInteractive: [2, "disabledInteractive", "disabledInteractive", booleanAttribute],
+    checked: [2, "checked", "checked", booleanAttribute],
+    disabled: [2, "disabled", "disabled", booleanAttribute],
+    indeterminate: [2, "indeterminate", "indeterminate", booleanAttribute]
+  },
+  outputs: {
+    change: "change",
+    indeterminateChange: "indeterminateChange"
+  },
+  exportAs: ["matCheckbox"],
+  features: [\u0275\u0275ProvidersFeature([{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => _MatCheckbox),
+    multi: true
+  }, {
+    provide: NG_VALIDATORS,
+    useExisting: _MatCheckbox,
+    multi: true
+  }]), \u0275\u0275NgOnChangesFeature],
+  ngContentSelectors: _c2,
+  decls: 15,
+  vars: 23,
+  consts: [["checkbox", ""], ["input", ""], ["label", ""], ["mat-internal-form-field", "", 3, "click", "labelPosition"], [1, "mdc-checkbox"], [1, "mat-mdc-checkbox-touch-target", 3, "click"], ["type", "checkbox", 1, "mdc-checkbox__native-control", 3, "blur", "click", "change", "checked", "indeterminate", "disabled", "id", "required", "tabIndex"], [1, "mdc-checkbox__ripple"], [1, "mdc-checkbox__background"], ["focusable", "false", "viewBox", "0 0 24 24", "aria-hidden", "true", 1, "mdc-checkbox__checkmark"], ["fill", "none", "d", "M1.73,12.91 8.1,19.28 22.79,4.59", 1, "mdc-checkbox__checkmark-path"], [1, "mdc-checkbox__mixedmark"], ["mat-ripple", "", 1, "mat-mdc-checkbox-ripple", "mat-focus-indicator", 3, "matRippleTrigger", "matRippleDisabled", "matRippleCentered"], [1, "mdc-label", 3, "for"]],
+  template: /* @__PURE__ */ __name(function MatCheckbox_Template(rf, ctx) {
+    if (rf & 1) {
+      const _r1 = \u0275\u0275getCurrentView();
+      \u0275\u0275projectionDef();
+      \u0275\u0275elementStart(0, "div", 3);
+      \u0275\u0275listener("click", /* @__PURE__ */ __name(function MatCheckbox_Template_div_click_0_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx._preventBubblingFromLabel($event));
+      }, "MatCheckbox_Template_div_click_0_listener"));
+      \u0275\u0275elementStart(1, "div", 4, 0)(3, "div", 5);
+      \u0275\u0275listener("click", /* @__PURE__ */ __name(function MatCheckbox_Template_div_click_3_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx._onTouchTargetClick());
+      }, "MatCheckbox_Template_div_click_3_listener"));
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(4, "input", 6, 1);
+      \u0275\u0275listener("blur", /* @__PURE__ */ __name(function MatCheckbox_Template_input_blur_4_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx._onBlur());
+      }, "MatCheckbox_Template_input_blur_4_listener"))("click", /* @__PURE__ */ __name(function MatCheckbox_Template_input_click_4_listener() {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx._onInputClick());
+      }, "MatCheckbox_Template_input_click_4_listener"))("change", /* @__PURE__ */ __name(function MatCheckbox_Template_input_change_4_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx._onInteractionEvent($event));
+      }, "MatCheckbox_Template_input_change_4_listener"));
+      \u0275\u0275elementEnd();
+      \u0275\u0275element(6, "div", 7);
+      \u0275\u0275elementStart(7, "div", 8);
+      \u0275\u0275namespaceSVG();
+      \u0275\u0275elementStart(8, "svg", 9);
+      \u0275\u0275element(9, "path", 10);
+      \u0275\u0275elementEnd();
+      \u0275\u0275namespaceHTML();
+      \u0275\u0275element(10, "div", 11);
+      \u0275\u0275elementEnd();
+      \u0275\u0275element(11, "div", 12);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(12, "label", 13, 2);
+      \u0275\u0275projection(14);
+      \u0275\u0275elementEnd()();
+    }
+    if (rf & 2) {
+      const checkbox_r2 = \u0275\u0275reference(2);
+      \u0275\u0275property("labelPosition", ctx.labelPosition);
+      \u0275\u0275advance(4);
+      \u0275\u0275classProp("mdc-checkbox--selected", ctx.checked);
+      \u0275\u0275property("checked", ctx.checked)("indeterminate", ctx.indeterminate)("disabled", ctx.disabled && !ctx.disabledInteractive)("id", ctx.inputId)("required", ctx.required)("tabIndex", ctx.disabled && !ctx.disabledInteractive ? -1 : ctx.tabIndex);
+      \u0275\u0275attribute("aria-label", ctx.ariaLabel || null)("aria-labelledby", ctx.ariaLabelledby)("aria-describedby", ctx.ariaDescribedby)("aria-checked", ctx.indeterminate ? "mixed" : null)("aria-controls", ctx.ariaControls)("aria-disabled", ctx.disabled && ctx.disabledInteractive ? true : null)("aria-expanded", ctx.ariaExpanded)("aria-owns", ctx.ariaOwns)("name", ctx.name)("value", ctx.value);
+      \u0275\u0275advance(7);
+      \u0275\u0275property("matRippleTrigger", checkbox_r2)("matRippleDisabled", ctx.disableRipple || ctx.disabled)("matRippleCentered", true);
+      \u0275\u0275advance();
+      \u0275\u0275property("for", ctx.inputId);
+    }
+  }, "MatCheckbox_Template"),
+  dependencies: [MatRipple, _MatInternalFormField],
+  styles: ['.mdc-checkbox{display:inline-block;position:relative;flex:0 0 18px;box-sizing:content-box;width:18px;height:18px;line-height:0;white-space:nowrap;cursor:pointer;vertical-align:bottom;padding:calc((var(--mat-checkbox-state-layer-size, 40px) - 18px)/2);margin:calc((var(--mat-checkbox-state-layer-size, 40px) - var(--mat-checkbox-state-layer-size, 40px))/2)}.mdc-checkbox:hover>.mdc-checkbox__ripple{opacity:var(--mat-checkbox-unselected-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));background-color:var(--mat-checkbox-unselected-hover-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox:hover>.mat-mdc-checkbox-ripple>.mat-ripple-element{background-color:var(--mat-checkbox-unselected-hover-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox .mdc-checkbox__native-control:focus+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-unselected-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity));background-color:var(--mat-checkbox-unselected-focus-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox .mdc-checkbox__native-control:focus~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-unselected-focus-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox:active>.mdc-checkbox__native-control+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-unselected-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));background-color:var(--mat-checkbox-unselected-pressed-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox:active>.mdc-checkbox__native-control~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-unselected-pressed-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox:hover .mdc-checkbox__native-control:checked+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-selected-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));background-color:var(--mat-checkbox-selected-hover-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox:hover .mdc-checkbox__native-control:checked~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-selected-hover-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox .mdc-checkbox__native-control:focus:checked+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-selected-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity));background-color:var(--mat-checkbox-selected-focus-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox .mdc-checkbox__native-control:focus:checked~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-selected-focus-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox:active>.mdc-checkbox__native-control:checked+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-selected-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));background-color:var(--mat-checkbox-selected-pressed-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox:active>.mdc-checkbox__native-control:checked~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-selected-pressed-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox .mdc-checkbox__native-control~.mat-mdc-checkbox-ripple .mat-ripple-element,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox .mdc-checkbox__native-control+.mdc-checkbox__ripple{background-color:var(--mat-checkbox-unselected-hover-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox .mdc-checkbox__native-control{position:absolute;margin:0;padding:0;opacity:0;cursor:inherit;z-index:1;width:var(--mat-checkbox-state-layer-size, 40px);height:var(--mat-checkbox-state-layer-size, 40px);top:calc((var(--mat-checkbox-state-layer-size, 40px) - var(--mat-checkbox-state-layer-size, 40px))/2);right:calc((var(--mat-checkbox-state-layer-size, 40px) - var(--mat-checkbox-state-layer-size, 40px))/2);left:calc((var(--mat-checkbox-state-layer-size, 40px) - var(--mat-checkbox-state-layer-size, 40px))/2)}.mdc-checkbox--disabled{cursor:default;pointer-events:none}@media(forced-colors: active){.mdc-checkbox--disabled{opacity:.5}}.mdc-checkbox__background{display:inline-flex;position:absolute;align-items:center;justify-content:center;box-sizing:border-box;width:18px;height:18px;border:2px solid currentColor;border-radius:2px;background-color:rgba(0,0,0,0);pointer-events:none;will-change:background-color,border-color;transition:background-color 90ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms cubic-bezier(0.4, 0, 0.6, 1);-webkit-print-color-adjust:exact;color-adjust:exact;border-color:var(--mat-checkbox-unselected-icon-color, var(--mat-sys-on-surface-variant));top:calc((var(--mat-checkbox-state-layer-size, 40px) - 18px)/2);left:calc((var(--mat-checkbox-state-layer-size, 40px) - 18px)/2)}.mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background{border-color:var(--mat-checkbox-selected-icon-color, var(--mat-sys-primary));background-color:var(--mat-checkbox-selected-icon-color, var(--mat-sys-primary))}.mdc-checkbox--disabled .mdc-checkbox__background{border-color:var(--mat-checkbox-disabled-unselected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mdc-checkbox__native-control:disabled:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:disabled:indeterminate~.mdc-checkbox__background{background-color:var(--mat-checkbox-disabled-selected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:rgba(0,0,0,0)}.mdc-checkbox:hover>.mdc-checkbox__native-control:not(:checked)~.mdc-checkbox__background,.mdc-checkbox:hover>.mdc-checkbox__native-control:not(:indeterminate)~.mdc-checkbox__background{border-color:var(--mat-checkbox-unselected-hover-icon-color, var(--mat-sys-on-surface));background-color:rgba(0,0,0,0)}.mdc-checkbox:hover>.mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mdc-checkbox:hover>.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{border-color:var(--mat-checkbox-selected-hover-icon-color, var(--mat-sys-primary));background-color:var(--mat-checkbox-selected-hover-icon-color, var(--mat-sys-primary))}.mdc-checkbox__native-control:focus:focus:not(:checked)~.mdc-checkbox__background,.mdc-checkbox__native-control:focus:focus:not(:indeterminate)~.mdc-checkbox__background{border-color:var(--mat-checkbox-unselected-focus-icon-color, var(--mat-sys-on-surface))}.mdc-checkbox__native-control:focus:focus:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:focus:focus:indeterminate~.mdc-checkbox__background{border-color:var(--mat-checkbox-selected-focus-icon-color, var(--mat-sys-primary));background-color:var(--mat-checkbox-selected-focus-icon-color, var(--mat-sys-primary))}.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox:hover>.mdc-checkbox__native-control~.mdc-checkbox__background,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox .mdc-checkbox__native-control:focus~.mdc-checkbox__background,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__background{border-color:var(--mat-checkbox-disabled-unselected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{background-color:var(--mat-checkbox-disabled-selected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:rgba(0,0,0,0)}.mdc-checkbox__checkmark{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;opacity:0;transition:opacity 180ms cubic-bezier(0.4, 0, 0.6, 1);color:var(--mat-checkbox-selected-checkmark-color, var(--mat-sys-on-primary))}@media(forced-colors: active){.mdc-checkbox__checkmark{color:CanvasText}}.mdc-checkbox--disabled .mdc-checkbox__checkmark,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__checkmark{color:var(--mat-checkbox-disabled-selected-checkmark-color, var(--mat-sys-surface))}@media(forced-colors: active){.mdc-checkbox--disabled .mdc-checkbox__checkmark,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__checkmark{color:CanvasText}}.mdc-checkbox__checkmark-path{transition:stroke-dashoffset 180ms cubic-bezier(0.4, 0, 0.6, 1);stroke:currentColor;stroke-width:3.12px;stroke-dashoffset:29.7833385;stroke-dasharray:29.7833385}.mdc-checkbox__mixedmark{width:100%;height:0;transform:scaleX(0) rotate(0deg);border-width:1px;border-style:solid;opacity:0;transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1);border-color:var(--mat-checkbox-selected-checkmark-color, var(--mat-sys-on-primary))}@media(forced-colors: active){.mdc-checkbox__mixedmark{margin:0 1px}}.mdc-checkbox--disabled .mdc-checkbox__mixedmark,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__mixedmark{border-color:var(--mat-checkbox-disabled-selected-checkmark-color, var(--mat-sys-surface))}.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__background,.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__background,.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__background,.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__background{animation-duration:180ms;animation-timing-function:linear}.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-unchecked-checked-checkmark-path 180ms linear;transition:none}.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-unchecked-indeterminate-mixedmark 90ms linear;transition:none}.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-checked-unchecked-checkmark-path 90ms linear;transition:none}.mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__checkmark{animation:mdc-checkbox-checked-indeterminate-checkmark 90ms linear;transition:none}.mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-checked-indeterminate-mixedmark 90ms linear;transition:none}.mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__checkmark{animation:mdc-checkbox-indeterminate-checked-checkmark 500ms linear;transition:none}.mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-checked-mixedmark 500ms linear;transition:none}.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-unchecked-mixedmark 300ms linear;transition:none}.mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{transition:border-color 90ms cubic-bezier(0, 0, 0.2, 1),background-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path{stroke-dashoffset:0}.mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__checkmark{transition:opacity 180ms cubic-bezier(0, 0, 0.2, 1),transform 180ms cubic-bezier(0, 0, 0.2, 1);opacity:1}.mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__mixedmark{transform:scaleX(1) rotate(-45deg)}.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__checkmark{transform:rotate(45deg);opacity:0;transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__mixedmark{transform:scaleX(1) rotate(0deg);opacity:1}@keyframes mdc-checkbox-unchecked-checked-checkmark-path{0%,50%{stroke-dashoffset:29.7833385}50%{animation-timing-function:cubic-bezier(0, 0, 0.2, 1)}100%{stroke-dashoffset:0}}@keyframes mdc-checkbox-unchecked-indeterminate-mixedmark{0%,68.2%{transform:scaleX(0)}68.2%{animation-timing-function:cubic-bezier(0, 0, 0, 1)}100%{transform:scaleX(1)}}@keyframes mdc-checkbox-checked-unchecked-checkmark-path{from{animation-timing-function:cubic-bezier(0.4, 0, 1, 1);opacity:1;stroke-dashoffset:0}to{opacity:0;stroke-dashoffset:-29.7833385}}@keyframes mdc-checkbox-checked-indeterminate-checkmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(45deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-checked-checkmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(45deg);opacity:0}to{transform:rotate(360deg);opacity:1}}@keyframes mdc-checkbox-checked-indeterminate-mixedmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 1);transform:rotate(-45deg);opacity:0}to{transform:rotate(0deg);opacity:1}}@keyframes mdc-checkbox-indeterminate-checked-mixedmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(315deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-unchecked-mixedmark{0%{animation-timing-function:linear;transform:scaleX(1);opacity:1}32.8%,100%{transform:scaleX(0);opacity:0}}.mat-mdc-checkbox{display:inline-block;position:relative;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mat-mdc-checkbox-touch-target,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__native-control,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__ripple,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mat-mdc-checkbox-ripple::before,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__background,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__mixedmark{transition:none !important;animation:none !important}.mat-mdc-checkbox label{cursor:pointer}.mat-mdc-checkbox .mat-internal-form-field{color:var(--mat-checkbox-label-text-color, var(--mat-sys-on-surface));font-family:var(--mat-checkbox-label-text-font, var(--mat-sys-body-medium-font));line-height:var(--mat-checkbox-label-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mat-checkbox-label-text-size, var(--mat-sys-body-medium-size));letter-spacing:var(--mat-checkbox-label-text-tracking, var(--mat-sys-body-medium-tracking));font-weight:var(--mat-checkbox-label-text-weight, var(--mat-sys-body-medium-weight))}.mat-mdc-checkbox.mat-mdc-checkbox-disabled.mat-mdc-checkbox-disabled-interactive{pointer-events:auto}.mat-mdc-checkbox.mat-mdc-checkbox-disabled.mat-mdc-checkbox-disabled-interactive input{cursor:default}.mat-mdc-checkbox.mat-mdc-checkbox-disabled label{cursor:default;color:var(--mat-checkbox-disabled-label-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-checkbox label:empty{display:none}.mat-mdc-checkbox .mdc-checkbox__ripple{opacity:0}.mat-mdc-checkbox .mat-mdc-checkbox-ripple,.mdc-checkbox__ripple{top:0;left:0;right:0;bottom:0;position:absolute;border-radius:50%;pointer-events:none}.mat-mdc-checkbox .mat-mdc-checkbox-ripple:not(:empty),.mdc-checkbox__ripple:not(:empty){transform:translateZ(0)}.mat-mdc-checkbox-ripple .mat-ripple-element{opacity:.1}.mat-mdc-checkbox-touch-target{position:absolute;top:50%;left:50%;height:var(--mat-checkbox-touch-target-size, 48px);width:var(--mat-checkbox-touch-target-size, 48px);transform:translate(-50%, -50%);display:var(--mat-checkbox-touch-target-display, block)}.mat-mdc-checkbox .mat-mdc-checkbox-ripple::before{border-radius:50%}.mdc-checkbox__native-control:focus~.mat-focus-indicator::before{content:""}\n'],
+  encapsulation: 2,
+  changeDetection: 0
+}));
+var MatCheckbox = _MatCheckbox;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatCheckbox, [{
+    type: Component,
+    args: [{
+      selector: "mat-checkbox",
+      host: {
+        "class": "mat-mdc-checkbox",
+        "[attr.tabindex]": "null",
+        "[attr.aria-label]": "null",
+        "[attr.aria-labelledby]": "null",
+        "[class._mat-animation-noopable]": "_animationsDisabled",
+        "[class.mdc-checkbox--disabled]": "disabled",
+        "[id]": "id",
+        // Add classes that users can use to more easily target disabled or checked checkboxes.
+        "[class.mat-mdc-checkbox-disabled]": "disabled",
+        "[class.mat-mdc-checkbox-checked]": "checked",
+        "[class.mat-mdc-checkbox-disabled-interactive]": "disabledInteractive",
+        "[class]": 'color ? "mat-" + color : "mat-accent"'
+      },
+      providers: [{
+        provide: NG_VALUE_ACCESSOR,
+        useExisting: forwardRef(() => MatCheckbox),
+        multi: true
+      }, {
+        provide: NG_VALIDATORS,
+        useExisting: MatCheckbox,
+        multi: true
+      }],
+      exportAs: "matCheckbox",
+      encapsulation: ViewEncapsulation.None,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      imports: [MatRipple, _MatInternalFormField],
+      template: `<div mat-internal-form-field [labelPosition]="labelPosition" (click)="_preventBubblingFromLabel($event)">
+  <div #checkbox class="mdc-checkbox">
+    <!-- Render this element first so the input is on top. -->
+    <div class="mat-mdc-checkbox-touch-target" (click)="_onTouchTargetClick()"></div>
+    <input #input
+           type="checkbox"
+           class="mdc-checkbox__native-control"
+           [class.mdc-checkbox--selected]="checked"
+           [attr.aria-label]="ariaLabel || null"
+           [attr.aria-labelledby]="ariaLabelledby"
+           [attr.aria-describedby]="ariaDescribedby"
+           [attr.aria-checked]="indeterminate ? 'mixed' : null"
+           [attr.aria-controls]="ariaControls"
+           [attr.aria-disabled]="disabled && disabledInteractive ? true : null"
+           [attr.aria-expanded]="ariaExpanded"
+           [attr.aria-owns]="ariaOwns"
+           [attr.name]="name"
+           [attr.value]="value"
+           [checked]="checked"
+           [indeterminate]="indeterminate"
+           [disabled]="disabled && !disabledInteractive"
+           [id]="inputId"
+           [required]="required"
+           [tabIndex]="disabled && !disabledInteractive ? -1 : tabIndex"
+           (blur)="_onBlur()"
+           (click)="_onInputClick()"
+           (change)="_onInteractionEvent($event)"/>
+    <div class="mdc-checkbox__ripple"></div>
+    <div class="mdc-checkbox__background">
+      <svg class="mdc-checkbox__checkmark"
+           focusable="false"
+           viewBox="0 0 24 24"
+           aria-hidden="true">
+        <path class="mdc-checkbox__checkmark-path"
+              fill="none"
+              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+      </svg>
+      <div class="mdc-checkbox__mixedmark"></div>
+    </div>
+    <div class="mat-mdc-checkbox-ripple mat-focus-indicator" mat-ripple
+      [matRippleTrigger]="checkbox"
+      [matRippleDisabled]="disableRipple || disabled"
+      [matRippleCentered]="true"></div>
+  </div>
+  <!--
+    Avoid putting a click handler on the <label/> to fix duplicate navigation stop on Talk Back
+    (#14385). Putting a click handler on the <label/> caused this bug because the browser produced
+    an unnecessary accessibility tree node.
+  -->
+  <label class="mdc-label" #label [for]="inputId">
+    <ng-content></ng-content>
+  </label>
+</div>
+`,
+      styles: ['.mdc-checkbox{display:inline-block;position:relative;flex:0 0 18px;box-sizing:content-box;width:18px;height:18px;line-height:0;white-space:nowrap;cursor:pointer;vertical-align:bottom;padding:calc((var(--mat-checkbox-state-layer-size, 40px) - 18px)/2);margin:calc((var(--mat-checkbox-state-layer-size, 40px) - var(--mat-checkbox-state-layer-size, 40px))/2)}.mdc-checkbox:hover>.mdc-checkbox__ripple{opacity:var(--mat-checkbox-unselected-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));background-color:var(--mat-checkbox-unselected-hover-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox:hover>.mat-mdc-checkbox-ripple>.mat-ripple-element{background-color:var(--mat-checkbox-unselected-hover-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox .mdc-checkbox__native-control:focus+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-unselected-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity));background-color:var(--mat-checkbox-unselected-focus-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox .mdc-checkbox__native-control:focus~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-unselected-focus-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox:active>.mdc-checkbox__native-control+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-unselected-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));background-color:var(--mat-checkbox-unselected-pressed-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox:active>.mdc-checkbox__native-control~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-unselected-pressed-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox:hover .mdc-checkbox__native-control:checked+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-selected-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity));background-color:var(--mat-checkbox-selected-hover-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox:hover .mdc-checkbox__native-control:checked~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-selected-hover-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox .mdc-checkbox__native-control:focus:checked+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-selected-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity));background-color:var(--mat-checkbox-selected-focus-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox .mdc-checkbox__native-control:focus:checked~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-selected-focus-state-layer-color, var(--mat-sys-primary))}.mdc-checkbox:active>.mdc-checkbox__native-control:checked+.mdc-checkbox__ripple{opacity:var(--mat-checkbox-selected-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));background-color:var(--mat-checkbox-selected-pressed-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox:active>.mdc-checkbox__native-control:checked~.mat-mdc-checkbox-ripple .mat-ripple-element{background-color:var(--mat-checkbox-selected-pressed-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox .mdc-checkbox__native-control~.mat-mdc-checkbox-ripple .mat-ripple-element,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox .mdc-checkbox__native-control+.mdc-checkbox__ripple{background-color:var(--mat-checkbox-unselected-hover-state-layer-color, var(--mat-sys-on-surface))}.mdc-checkbox .mdc-checkbox__native-control{position:absolute;margin:0;padding:0;opacity:0;cursor:inherit;z-index:1;width:var(--mat-checkbox-state-layer-size, 40px);height:var(--mat-checkbox-state-layer-size, 40px);top:calc((var(--mat-checkbox-state-layer-size, 40px) - var(--mat-checkbox-state-layer-size, 40px))/2);right:calc((var(--mat-checkbox-state-layer-size, 40px) - var(--mat-checkbox-state-layer-size, 40px))/2);left:calc((var(--mat-checkbox-state-layer-size, 40px) - var(--mat-checkbox-state-layer-size, 40px))/2)}.mdc-checkbox--disabled{cursor:default;pointer-events:none}@media(forced-colors: active){.mdc-checkbox--disabled{opacity:.5}}.mdc-checkbox__background{display:inline-flex;position:absolute;align-items:center;justify-content:center;box-sizing:border-box;width:18px;height:18px;border:2px solid currentColor;border-radius:2px;background-color:rgba(0,0,0,0);pointer-events:none;will-change:background-color,border-color;transition:background-color 90ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms cubic-bezier(0.4, 0, 0.6, 1);-webkit-print-color-adjust:exact;color-adjust:exact;border-color:var(--mat-checkbox-unselected-icon-color, var(--mat-sys-on-surface-variant));top:calc((var(--mat-checkbox-state-layer-size, 40px) - 18px)/2);left:calc((var(--mat-checkbox-state-layer-size, 40px) - 18px)/2)}.mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background{border-color:var(--mat-checkbox-selected-icon-color, var(--mat-sys-primary));background-color:var(--mat-checkbox-selected-icon-color, var(--mat-sys-primary))}.mdc-checkbox--disabled .mdc-checkbox__background{border-color:var(--mat-checkbox-disabled-unselected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mdc-checkbox__native-control:disabled:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:disabled:indeterminate~.mdc-checkbox__background{background-color:var(--mat-checkbox-disabled-selected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:rgba(0,0,0,0)}.mdc-checkbox:hover>.mdc-checkbox__native-control:not(:checked)~.mdc-checkbox__background,.mdc-checkbox:hover>.mdc-checkbox__native-control:not(:indeterminate)~.mdc-checkbox__background{border-color:var(--mat-checkbox-unselected-hover-icon-color, var(--mat-sys-on-surface));background-color:rgba(0,0,0,0)}.mdc-checkbox:hover>.mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mdc-checkbox:hover>.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{border-color:var(--mat-checkbox-selected-hover-icon-color, var(--mat-sys-primary));background-color:var(--mat-checkbox-selected-hover-icon-color, var(--mat-sys-primary))}.mdc-checkbox__native-control:focus:focus:not(:checked)~.mdc-checkbox__background,.mdc-checkbox__native-control:focus:focus:not(:indeterminate)~.mdc-checkbox__background{border-color:var(--mat-checkbox-unselected-focus-icon-color, var(--mat-sys-on-surface))}.mdc-checkbox__native-control:focus:focus:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:focus:focus:indeterminate~.mdc-checkbox__background{border-color:var(--mat-checkbox-selected-focus-icon-color, var(--mat-sys-primary));background-color:var(--mat-checkbox-selected-focus-icon-color, var(--mat-sys-primary))}.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox:hover>.mdc-checkbox__native-control~.mdc-checkbox__background,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox .mdc-checkbox__native-control:focus~.mdc-checkbox__background,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__background{border-color:var(--mat-checkbox-disabled-unselected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{background-color:var(--mat-checkbox-disabled-selected-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:rgba(0,0,0,0)}.mdc-checkbox__checkmark{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;opacity:0;transition:opacity 180ms cubic-bezier(0.4, 0, 0.6, 1);color:var(--mat-checkbox-selected-checkmark-color, var(--mat-sys-on-primary))}@media(forced-colors: active){.mdc-checkbox__checkmark{color:CanvasText}}.mdc-checkbox--disabled .mdc-checkbox__checkmark,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__checkmark{color:var(--mat-checkbox-disabled-selected-checkmark-color, var(--mat-sys-surface))}@media(forced-colors: active){.mdc-checkbox--disabled .mdc-checkbox__checkmark,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__checkmark{color:CanvasText}}.mdc-checkbox__checkmark-path{transition:stroke-dashoffset 180ms cubic-bezier(0.4, 0, 0.6, 1);stroke:currentColor;stroke-width:3.12px;stroke-dashoffset:29.7833385;stroke-dasharray:29.7833385}.mdc-checkbox__mixedmark{width:100%;height:0;transform:scaleX(0) rotate(0deg);border-width:1px;border-style:solid;opacity:0;transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1);border-color:var(--mat-checkbox-selected-checkmark-color, var(--mat-sys-on-primary))}@media(forced-colors: active){.mdc-checkbox__mixedmark{margin:0 1px}}.mdc-checkbox--disabled .mdc-checkbox__mixedmark,.mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__mixedmark{border-color:var(--mat-checkbox-disabled-selected-checkmark-color, var(--mat-sys-surface))}.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__background,.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__background,.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__background,.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__background{animation-duration:180ms;animation-timing-function:linear}.mdc-checkbox--anim-unchecked-checked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-unchecked-checked-checkmark-path 180ms linear;transition:none}.mdc-checkbox--anim-unchecked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-unchecked-indeterminate-mixedmark 90ms linear;transition:none}.mdc-checkbox--anim-checked-unchecked .mdc-checkbox__checkmark-path{animation:mdc-checkbox-checked-unchecked-checkmark-path 90ms linear;transition:none}.mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__checkmark{animation:mdc-checkbox-checked-indeterminate-checkmark 90ms linear;transition:none}.mdc-checkbox--anim-checked-indeterminate .mdc-checkbox__mixedmark{animation:mdc-checkbox-checked-indeterminate-mixedmark 90ms linear;transition:none}.mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__checkmark{animation:mdc-checkbox-indeterminate-checked-checkmark 500ms linear;transition:none}.mdc-checkbox--anim-indeterminate-checked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-checked-mixedmark 500ms linear;transition:none}.mdc-checkbox--anim-indeterminate-unchecked .mdc-checkbox__mixedmark{animation:mdc-checkbox-indeterminate-unchecked-mixedmark 300ms linear;transition:none}.mdc-checkbox__native-control:checked~.mdc-checkbox__background,.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background{transition:border-color 90ms cubic-bezier(0, 0, 0.2, 1),background-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path{stroke-dashoffset:0}.mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__checkmark{transition:opacity 180ms cubic-bezier(0, 0, 0.2, 1),transform 180ms cubic-bezier(0, 0, 0.2, 1);opacity:1}.mdc-checkbox__native-control:checked~.mdc-checkbox__background>.mdc-checkbox__mixedmark{transform:scaleX(1) rotate(-45deg)}.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__checkmark{transform:rotate(45deg);opacity:0;transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mdc-checkbox__native-control:indeterminate~.mdc-checkbox__background>.mdc-checkbox__mixedmark{transform:scaleX(1) rotate(0deg);opacity:1}@keyframes mdc-checkbox-unchecked-checked-checkmark-path{0%,50%{stroke-dashoffset:29.7833385}50%{animation-timing-function:cubic-bezier(0, 0, 0.2, 1)}100%{stroke-dashoffset:0}}@keyframes mdc-checkbox-unchecked-indeterminate-mixedmark{0%,68.2%{transform:scaleX(0)}68.2%{animation-timing-function:cubic-bezier(0, 0, 0, 1)}100%{transform:scaleX(1)}}@keyframes mdc-checkbox-checked-unchecked-checkmark-path{from{animation-timing-function:cubic-bezier(0.4, 0, 1, 1);opacity:1;stroke-dashoffset:0}to{opacity:0;stroke-dashoffset:-29.7833385}}@keyframes mdc-checkbox-checked-indeterminate-checkmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(45deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-checked-checkmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(45deg);opacity:0}to{transform:rotate(360deg);opacity:1}}@keyframes mdc-checkbox-checked-indeterminate-mixedmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 1);transform:rotate(-45deg);opacity:0}to{transform:rotate(0deg);opacity:1}}@keyframes mdc-checkbox-indeterminate-checked-mixedmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);transform:rotate(0deg);opacity:1}to{transform:rotate(315deg);opacity:0}}@keyframes mdc-checkbox-indeterminate-unchecked-mixedmark{0%{animation-timing-function:linear;transform:scaleX(1);opacity:1}32.8%,100%{transform:scaleX(0);opacity:0}}.mat-mdc-checkbox{display:inline-block;position:relative;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mat-mdc-checkbox-touch-target,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__native-control,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__ripple,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mat-mdc-checkbox-ripple::before,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__background,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__checkmark>.mdc-checkbox__checkmark-path,.mat-mdc-checkbox._mat-animation-noopable>.mat-internal-form-field>.mdc-checkbox>.mdc-checkbox__background>.mdc-checkbox__mixedmark{transition:none !important;animation:none !important}.mat-mdc-checkbox label{cursor:pointer}.mat-mdc-checkbox .mat-internal-form-field{color:var(--mat-checkbox-label-text-color, var(--mat-sys-on-surface));font-family:var(--mat-checkbox-label-text-font, var(--mat-sys-body-medium-font));line-height:var(--mat-checkbox-label-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mat-checkbox-label-text-size, var(--mat-sys-body-medium-size));letter-spacing:var(--mat-checkbox-label-text-tracking, var(--mat-sys-body-medium-tracking));font-weight:var(--mat-checkbox-label-text-weight, var(--mat-sys-body-medium-weight))}.mat-mdc-checkbox.mat-mdc-checkbox-disabled.mat-mdc-checkbox-disabled-interactive{pointer-events:auto}.mat-mdc-checkbox.mat-mdc-checkbox-disabled.mat-mdc-checkbox-disabled-interactive input{cursor:default}.mat-mdc-checkbox.mat-mdc-checkbox-disabled label{cursor:default;color:var(--mat-checkbox-disabled-label-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-checkbox label:empty{display:none}.mat-mdc-checkbox .mdc-checkbox__ripple{opacity:0}.mat-mdc-checkbox .mat-mdc-checkbox-ripple,.mdc-checkbox__ripple{top:0;left:0;right:0;bottom:0;position:absolute;border-radius:50%;pointer-events:none}.mat-mdc-checkbox .mat-mdc-checkbox-ripple:not(:empty),.mdc-checkbox__ripple:not(:empty){transform:translateZ(0)}.mat-mdc-checkbox-ripple .mat-ripple-element{opacity:.1}.mat-mdc-checkbox-touch-target{position:absolute;top:50%;left:50%;height:var(--mat-checkbox-touch-target-size, 48px);width:var(--mat-checkbox-touch-target-size, 48px);transform:translate(-50%, -50%);display:var(--mat-checkbox-touch-target-display, block)}.mat-mdc-checkbox .mat-mdc-checkbox-ripple::before{border-radius:50%}.mdc-checkbox__native-control:focus~.mat-focus-indicator::before{content:""}\n']
+    }]
+  }], () => [], {
+    ariaLabel: [{
+      type: Input,
+      args: ["aria-label"]
+    }],
+    ariaLabelledby: [{
+      type: Input,
+      args: ["aria-labelledby"]
+    }],
+    ariaDescribedby: [{
+      type: Input,
+      args: ["aria-describedby"]
+    }],
+    ariaExpanded: [{
+      type: Input,
+      args: [{
+        alias: "aria-expanded",
+        transform: booleanAttribute
+      }]
+    }],
+    ariaControls: [{
+      type: Input,
+      args: ["aria-controls"]
+    }],
+    ariaOwns: [{
+      type: Input,
+      args: ["aria-owns"]
+    }],
+    id: [{
+      type: Input
+    }],
+    required: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    labelPosition: [{
+      type: Input
+    }],
+    name: [{
+      type: Input
+    }],
+    change: [{
+      type: Output
+    }],
+    indeterminateChange: [{
+      type: Output
+    }],
+    value: [{
+      type: Input
+    }],
+    disableRipple: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    _inputElement: [{
+      type: ViewChild,
+      args: ["input"]
+    }],
+    _labelElement: [{
+      type: ViewChild,
+      args: ["label"]
+    }],
+    tabIndex: [{
+      type: Input,
+      args: [{
+        transform: /* @__PURE__ */ __name((value) => value == null ? void 0 : numberAttribute(value), "transform")
+      }]
+    }],
+    color: [{
+      type: Input
+    }],
+    disabledInteractive: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    checked: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    disabled: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    indeterminate: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }]
+  });
+})();
+var _MatCheckboxModule = class _MatCheckboxModule {
+};
+__name(_MatCheckboxModule, "MatCheckboxModule");
+__publicField(_MatCheckboxModule, "\u0275fac", /* @__PURE__ */ __name(function MatCheckboxModule_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _MatCheckboxModule)();
+}, "MatCheckboxModule_Factory"));
+__publicField(_MatCheckboxModule, "\u0275mod", /* @__PURE__ */ \u0275\u0275defineNgModule({
+  type: _MatCheckboxModule,
+  imports: [MatCheckbox, MatCommonModule],
+  exports: [MatCheckbox, MatCommonModule]
+}));
+__publicField(_MatCheckboxModule, "\u0275inj", /* @__PURE__ */ \u0275\u0275defineInjector({
+  imports: [MatCheckbox, MatCommonModule, MatCommonModule]
+}));
+var MatCheckboxModule = _MatCheckboxModule;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatCheckboxModule, [{
+    type: NgModule,
+    args: [{
+      imports: [MatCheckbox, MatCommonModule],
+      exports: [MatCheckbox, MatCommonModule]
+    }]
+  }], null, null);
+})();
+
+// src/app/components/list-detail/list-detail.component.ts
+var _c04 = /* @__PURE__ */ __name(() => ["/items/new"], "_c0");
+var _c13 = /* @__PURE__ */ __name((a0) => ({ listId: a0 }), "_c1");
+var _c22 = /* @__PURE__ */ __name((a0) => ["/lists", a0, "edit"], "_c2");
+function ListDetailComponent_div_0_p_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "p", 16);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r1.list == null ? null : ctx_r1.list.comment);
+  }
+}
+__name(ListDetailComponent_div_0_p_8_Template, "ListDetailComponent_div_0_p_8_Template");
+function ListDetailComponent_div_0_div_27_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 32);
+    \u0275\u0275element(1, "img", 33);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275property("src", ctx_r1.list.img, \u0275\u0275sanitizeUrl)("alt", ctx_r1.list.name);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_1_Template, "ListDetailComponent_div_0_div_27_div_1_Template");
+function ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 50);
+    \u0275\u0275element(1, "img", 51);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const item_r5 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275property("src", item_r5.item.img, \u0275\u0275sanitizeUrl)("alt", item_r5.item.name);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_3_Template, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_3_Template");
+function ListDetailComponent_div_0_div_27_div_55_mat_card_1_p_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "p", 52);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const item_r5 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(item_r5.item.comment);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_55_mat_card_1_p_7_Template, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_p_7_Template");
+function ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_28_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 53)(1, "mat-icon");
+    \u0275\u0275text(2, "palette");
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(3, "div", 54);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const item_r5 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance(3);
+    \u0275\u0275styleProp("background-color", item_r5.color);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_28_Template, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_28_Template");
+function ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "mat-card", 36)(1, "div", 37)(2, "mat-checkbox", 38);
+    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_mat_checkbox_change_2_listener() {
+      const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r5));
+    }, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_mat_checkbox_change_2_listener"));
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_3_Template, 2, 2, "div", 39);
+    \u0275\u0275elementStart(4, "div", 40)(5, "h3", 41);
+    \u0275\u0275text(6);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_55_mat_card_1_p_7_Template, 2, 1, "p", 42);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "button", 43)(9, "mat-icon");
+    \u0275\u0275text(10, "more_vert");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(11, "mat-menu", null, 1)(13, "button", 44);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_button_click_13_listener() {
+      const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.editItem(item_r5));
+    }, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_button_click_13_listener"));
+    \u0275\u0275elementStart(14, "mat-icon");
+    \u0275\u0275text(15, "edit");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(16, " Edit ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "button", 14);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_button_click_17_listener() {
+      const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.deleteItem(item_r5));
+    }, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_button_click_17_listener"));
+    \u0275\u0275elementStart(18, "mat-icon");
+    \u0275\u0275text(19, "delete");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(20, " Delete ");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(21, "mat-card-content")(22, "div", 45)(23, "div", 46)(24, "mat-icon");
+    \u0275\u0275text(25, "confirmation_number");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(26, "span");
+    \u0275\u0275text(27);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(28, ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_28_Template, 4, 2, "div", 47);
+    \u0275\u0275elementStart(29, "div", 48)(30, "mat-chip-option", 49)(31, "mat-icon");
+    \u0275\u0275text(32);
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(33);
+    \u0275\u0275elementEnd()()()()();
+  }
+  if (rf & 2) {
+    const item_r5 = ctx.$implicit;
+    const itemMenu_r6 = \u0275\u0275reference(12);
+    \u0275\u0275classProp("completed", item_r5.status === "bought");
+    \u0275\u0275advance(2);
+    \u0275\u0275property("checked", item_r5.status === "bought");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", item_r5.item.img);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(item_r5.item.name);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", item_r5.item.comment);
+    \u0275\u0275advance();
+    \u0275\u0275property("matMenuTriggerFor", itemMenu_r6);
+    \u0275\u0275advance(19);
+    \u0275\u0275textInterpolate1("Quantity: ", item_r5.count);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", item_r5.color);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("disabled", true);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(item_r5.status === "bought" ? "done" : "shopping_cart");
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", item_r5.status === "bought" ? "Completed" : "To Buy", " ");
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template");
+function ListDetailComponent_div_0_div_27_div_55_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 34);
+    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template, 34, 12, "mat-card", 35);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r1.filteredItems);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_55_Template, "ListDetailComponent_div_0_div_27_div_55_Template");
+function ListDetailComponent_div_0_div_27_div_56_button_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "button", 58)(1, "mat-icon");
+    \u0275\u0275text(2, "add");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(3, " Add First Item ");
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(2, _c04))("queryParams", \u0275\u0275pureFunction1(3, _c13, ctx_r1.list.id));
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_56_button_7_Template, "ListDetailComponent_div_0_div_27_div_56_button_7_Template");
+function ListDetailComponent_div_0_div_27_div_56_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 55)(1, "mat-icon", 56);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "h3");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "p");
+    \u0275\u0275text(6);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_56_button_7_Template, 4, 5, "button", 57);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r1.getEmptyStateIcon());
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r1.getEmptyStateTitle());
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r1.getEmptyStateMessage());
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.currentFilter === "all");
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_56_Template, "ListDetailComponent_div_0_div_27_div_56_Template");
+function ListDetailComponent_div_0_div_27_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 17);
+    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_1_Template, 2, 2, "div", 18);
+    \u0275\u0275elementStart(2, "div", 19)(3, "mat-card", 20)(4, "mat-card-content")(5, "div", 21)(6, "mat-icon", 22);
+    \u0275\u0275text(7, "assignment");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "div")(9, "h3");
+    \u0275\u0275text(10);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(11, "p");
+    \u0275\u0275text(12, "Total Items");
+    \u0275\u0275elementEnd()()()()();
+    \u0275\u0275elementStart(13, "mat-card", 20)(14, "mat-card-content")(15, "div", 21)(16, "mat-icon", 23);
+    \u0275\u0275text(17, "shopping_cart");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "div")(19, "h3");
+    \u0275\u0275text(20);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(21, "p");
+    \u0275\u0275text(22, "To Buy");
+    \u0275\u0275elementEnd()()()()();
+    \u0275\u0275elementStart(23, "mat-card", 20)(24, "mat-card-content")(25, "div", 21)(26, "mat-icon", 24);
+    \u0275\u0275text(27, "done");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(28, "div")(29, "h3");
+    \u0275\u0275text(30);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(31, "p");
+    \u0275\u0275text(32, "Completed");
+    \u0275\u0275elementEnd()()()()();
+    \u0275\u0275elementStart(33, "mat-card", 20)(34, "mat-card-content")(35, "div", 21)(36, "mat-icon", 25);
+    \u0275\u0275text(37, "percent");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(38, "div")(39, "h3");
+    \u0275\u0275text(40);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(41, "p");
+    \u0275\u0275text(42, "Progress");
+    \u0275\u0275elementEnd()()()()()();
+    \u0275\u0275elementStart(43, "div", 26)(44, "div", 27)(45, "h2");
+    \u0275\u0275text(46, "Items");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(47, "div", 28)(48, "mat-chip-set")(49, "mat-chip-option", 29);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_49_listener() {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.currentFilter = "all");
+    }, "ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_49_listener"));
+    \u0275\u0275text(50, "All");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(51, "mat-chip-option", 29);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_51_listener() {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.currentFilter = "to_buy");
+    }, "ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_51_listener"));
+    \u0275\u0275text(52, "To Buy");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(53, "mat-chip-option", 29);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_53_listener() {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.currentFilter = "bought");
+    }, "ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_53_listener"));
+    \u0275\u0275text(54, "Completed");
+    \u0275\u0275elementEnd()()()();
+    \u0275\u0275template(55, ListDetailComponent_div_0_div_27_div_55_Template, 2, 1, "div", 30)(56, ListDetailComponent_div_0_div_27_div_56_Template, 8, 4, "div", 31);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.list.img);
+    \u0275\u0275advance(9);
+    \u0275\u0275textInterpolate(ctx_r1.list.items.length);
+    \u0275\u0275advance(10);
+    \u0275\u0275textInterpolate(ctx_r1.itemsToBuy);
+    \u0275\u0275advance(10);
+    \u0275\u0275textInterpolate(ctx_r1.itemsBought);
+    \u0275\u0275advance(10);
+    \u0275\u0275textInterpolate1("", ctx_r1.completionRate, "%");
+    \u0275\u0275advance(9);
+    \u0275\u0275property("selected", ctx_r1.currentFilter === "all");
+    \u0275\u0275advance(2);
+    \u0275\u0275property("selected", ctx_r1.currentFilter === "to_buy");
+    \u0275\u0275advance(2);
+    \u0275\u0275property("selected", ctx_r1.currentFilter === "bought");
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", ctx_r1.filteredItems.length > 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.filteredItems.length === 0);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_Template, "ListDetailComponent_div_0_div_27_Template");
+function ListDetailComponent_div_0_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 4)(1, "mat-toolbar", 5)(2, "button", 6);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_Template_button_click_2_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.goBack());
+    }, "ListDetailComponent_div_0_Template_button_click_2_listener"));
+    \u0275\u0275elementStart(3, "mat-icon");
+    \u0275\u0275text(4, "arrow_back");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(5, "div", 7)(6, "h1", 8);
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(8, ListDetailComponent_div_0_p_8_Template, 2, 1, "p", 9);
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(9, "span", 10);
+    \u0275\u0275elementStart(10, "button", 11)(11, "mat-icon");
+    \u0275\u0275text(12, "add");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(13, " Add Item ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "button", 12)(15, "mat-icon");
+    \u0275\u0275text(16, "more_vert");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(17, "mat-menu", null, 0)(19, "button", 13)(20, "mat-icon");
+    \u0275\u0275text(21, "edit");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(22, " Edit List ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(23, "button", 14);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_Template_button_click_23_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.deleteList());
+    }, "ListDetailComponent_div_0_Template_button_click_23_listener"));
+    \u0275\u0275elementStart(24, "mat-icon");
+    \u0275\u0275text(25, "delete");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(26, " Delete List ");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275template(27, ListDetailComponent_div_0_div_27_Template, 57, 10, "div", 15);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const listMenu_r7 = \u0275\u0275reference(18);
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(7);
+    \u0275\u0275textInterpolate(ctx_r1.list == null ? null : ctx_r1.list.name);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.list == null ? null : ctx_r1.list.comment);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(7, _c04))("queryParams", \u0275\u0275pureFunction1(8, _c13, ctx_r1.list == null ? null : ctx_r1.list.id));
+    \u0275\u0275advance(4);
+    \u0275\u0275property("matMenuTriggerFor", listMenu_r7);
+    \u0275\u0275advance(5);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(10, _c22, ctx_r1.list == null ? null : ctx_r1.list.id));
+    \u0275\u0275advance(8);
+    \u0275\u0275property("ngIf", ctx_r1.list);
+  }
+}
+__name(ListDetailComponent_div_0_Template, "ListDetailComponent_div_0_Template");
+function ListDetailComponent_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 59);
+    \u0275\u0275element(1, "mat-spinner", 60);
+    \u0275\u0275elementStart(2, "p");
+    \u0275\u0275text(3, "Loading list details...");
+    \u0275\u0275elementEnd()();
+  }
+}
+__name(ListDetailComponent_div_1_Template, "ListDetailComponent_div_1_Template");
+var _ListDetailComponent = class _ListDetailComponent {
+  constructor(route, router, apiService, snackBar) {
+    this.route = route;
+    this.router = router;
+    this.apiService = apiService;
+    this.snackBar = snackBar;
+    this.list = null;
+    this.loading = true;
+    this.currentFilter = "all";
+    this.destroy$ = new Subject();
+  }
+  ngOnInit() {
+    this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
+      if (params["id"]) {
+        this.loadList(params["id"]);
+      }
+    });
+  }
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+  loadList(id) {
+    this.loading = true;
+    this.apiService.getListById(id).subscribe({
+      next: /* @__PURE__ */ __name((list) => {
+        this.list = list;
+        this.loading = false;
+      }, "next"),
+      error: /* @__PURE__ */ __name((error) => {
+        console.error("Error loading list:", error);
+        this.snackBar.open("Error loading list", "Close", { duration: 3e3 });
+        this.loading = false;
+      }, "error")
+    });
+  }
+  get itemsToBuy() {
+    return this.list?.items.filter((item) => item.status === "to_buy").length || 0;
+  }
+  get itemsBought() {
+    return this.list?.items.filter((item) => item.status === "bought").length || 0;
+  }
+  get completionRate() {
+    if (!this.list || this.list.items.length === 0)
+      return 0;
+    return Math.round(this.itemsBought / this.list.items.length * 100);
+  }
+  get filteredItems() {
+    if (!this.list)
+      return [];
+    switch (this.currentFilter) {
+      case "to_buy":
+        return this.list.items.filter((item) => item.status === "to_buy");
+      case "bought":
+        return this.list.items.filter((item) => item.status === "bought");
+      default:
+        return this.list.items;
+    }
+  }
+  onFilterChange(event) {
+  }
+  toggleItemStatus(item) {
+    const newStatus = item.status === "bought" ? "to_buy" : "bought";
+    this.apiService.updateItem(item.id, { status: newStatus }).subscribe({
+      next: /* @__PURE__ */ __name((updatedItem) => {
+        if (this.list && updatedItem) {
+          const index = this.list.items.findIndex((i) => i.id === item.id);
+          if (index !== -1) {
+            this.list.items[index] = updatedItem;
+          }
+        }
+        this.snackBar.open(`Item marked as ${newStatus === "bought" ? "completed" : "to buy"}`, "Close", { duration: 2e3 });
+      }, "next"),
+      error: /* @__PURE__ */ __name((error) => {
+        console.error("Error updating item:", error);
+        this.snackBar.open("Error updating item", "Close", { duration: 3e3 });
+      }, "error")
+    });
+  }
+  editItem(item) {
+    this.router.navigate(["/items", item.id, "edit"]);
+  }
+  deleteItem(item) {
+    if (confirm(`Are you sure you want to delete "${item.item.name}"?`)) {
+      this.apiService.deleteItem(item.id).subscribe({
+        next: /* @__PURE__ */ __name(() => {
+          if (this.list) {
+            this.list.items = this.list.items.filter((i) => i.id !== item.id);
+          }
+          this.snackBar.open("Item deleted successfully", "Close", { duration: 2e3 });
+        }, "next"),
+        error: /* @__PURE__ */ __name((error) => {
+          console.error("Error deleting item:", error);
+          this.snackBar.open("Error deleting item", "Close", { duration: 3e3 });
+        }, "error")
+      });
+    }
+  }
+  deleteList() {
+    if (!this.list)
+      return;
+    if (confirm(`Are you sure you want to delete "${this.list.name}"?`)) {
+      this.apiService.deleteList(this.list.id).subscribe({
+        next: /* @__PURE__ */ __name(() => {
+          this.snackBar.open("List deleted successfully", "Close", { duration: 2e3 });
+          this.router.navigate(["/dashboard"]);
+        }, "next"),
+        error: /* @__PURE__ */ __name((error) => {
+          console.error("Error deleting list:", error);
+          this.snackBar.open("Error deleting list", "Close", { duration: 3e3 });
+        }, "error")
+      });
+    }
+  }
+  getEmptyStateIcon() {
+    switch (this.currentFilter) {
+      case "to_buy":
+        return "shopping_cart";
+      case "bought":
+        return "done";
+      default:
+        return "assignment";
+    }
+  }
+  getEmptyStateTitle() {
+    switch (this.currentFilter) {
+      case "to_buy":
+        return "No items to buy";
+      case "bought":
+        return "No completed items";
+      default:
+        return "No items yet";
+    }
+  }
+  getEmptyStateMessage() {
+    switch (this.currentFilter) {
+      case "to_buy":
+        return "All items have been completed!";
+      case "bought":
+        return "Complete some items to see them here.";
+      default:
+        return "Add your first item to get started.";
+    }
+  }
+  goBack() {
+    this.router.navigate(["/dashboard"]);
+  }
+};
+__name(_ListDetailComponent, "ListDetailComponent");
+_ListDetailComponent.\u0275fac = /* @__PURE__ */ __name(function ListDetailComponent_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _ListDetailComponent)(\u0275\u0275directiveInject(ActivatedRoute), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(MatSnackBar));
+}, "ListDetailComponent_Factory");
+_ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ListDetailComponent, selectors: [["app-list-detail"]], decls: 2, vars: 2, consts: [["listMenu", "matMenu"], ["itemMenu", "matMenu"], ["class", "list-detail-container", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], [1, "list-detail-container"], [1, "list-toolbar"], ["mat-icon-button", "", 3, "click"], [1, "list-header-info"], [1, "list-title"], ["class", "list-subtitle", 4, "ngIf"], [1, "spacer"], ["mat-button", "", 3, "routerLink", "queryParams"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "routerLink"], ["mat-menu-item", "", 1, "delete-button", 3, "click"], ["class", "list-content", 4, "ngIf"], [1, "list-subtitle"], [1, "list-content"], ["class", "list-hero", 4, "ngIf"], [1, "list-stats"], [1, "stat-card"], [1, "stat-content"], [1, "stat-icon"], [1, "stat-icon", "to-buy"], [1, "stat-icon", "bought"], [1, "stat-icon", "progress"], [1, "items-section"], [1, "section-header"], [1, "filter-chips"], [3, "click", "selected"], ["class", "items-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "list-hero"], [1, "list-image", 3, "src", "alt"], [1, "items-grid"], ["class", "item-card", 3, "completed", 4, "ngFor", "ngForOf"], [1, "item-card"], [1, "item-header"], [1, "item-checkbox", 3, "change", "checked"], ["class", "item-image", 4, "ngIf"], [1, "item-info"], [1, "item-name"], ["class", "item-comment", 4, "ngIf"], ["mat-icon-button", "", 1, "item-menu-button", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "item-details"], [1, "item-count"], ["class", "item-color", 4, "ngIf"], [1, "item-status"], [3, "disabled"], [1, "item-image"], [3, "src", "alt"], [1, "item-comment"], [1, "item-color"], [1, "color-indicator"], [1, "empty-state"], [1, "empty-icon"], ["mat-raised-button", "", "color", "primary", 3, "routerLink", "queryParams", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", 3, "routerLink", "queryParams"], [1, "loading-container"], ["diameter", "50"]], template: /* @__PURE__ */ __name(function ListDetailComponent_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275template(0, ListDetailComponent_div_0_Template, 28, 12, "div", 2)(1, ListDetailComponent_div_1_Template, 4, 0, "div", 3);
+  }
+  if (rf & 2) {
+    \u0275\u0275property("ngIf", !ctx.loading);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx.loading);
+  }
+}, "ListDetailComponent_Template"), dependencies: [
+  CommonModule,
+  NgForOf,
+  NgIf,
+  MatCardModule,
+  MatCard,
+  MatCardContent,
+  MatButtonModule,
+  MatButton,
+  MatIconButton,
+  MatIconModule,
+  MatIcon,
+  MatChipsModule,
+  MatChipOption,
+  MatChipSet,
+  MatMenuModule,
+  MatMenu,
+  MatMenuItem,
+  MatMenuTrigger,
+  MatSnackBarModule,
+  MatProgressSpinnerModule,
+  MatProgressSpinner,
+  MatCheckboxModule,
+  MatCheckbox,
+  MatToolbarModule,
+  MatToolbar,
+  RouterModule,
+  RouterLink
+], styles: ["\n\n.list-detail-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar[_ngcontent-%COMP%] {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.list-content[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n}\n.stat-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon[_ngcontent-%COMP%] {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy[_ngcontent-%COMP%] {\n  color: #f57c00;\n}\n.stat-icon.bought[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.stat-icon.progress[_ngcontent-%COMP%] {\n  color: #9c27b0;\n}\n.stat-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section[_ngcontent-%COMP%] {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n}\n.filter-chips[_ngcontent-%COMP%]   mat-chip-set[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 16px;\n}\n.item-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-card.completed[_ngcontent-%COMP%] {\n  opacity: 0.7;\n}\n.item-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border-bottom: 1px solid #eee;\n}\n.item-checkbox[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.item-name[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-menu-button[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-details[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n  align-items: center;\n}\n.item-count[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 14px;\n}\n.item-color[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.color-indicator[_ngcontent-%COMP%] {\n  width: 16px;\n  height: 16px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-status[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.empty-state[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon[_ngcontent-%COMP%] {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .section-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    gap: 12px;\n  }\n  .item-header[_ngcontent-%COMP%] {\n    flex-wrap: wrap;\n    gap: 8px;\n  }\n  .item-details[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .item-status[_ngcontent-%COMP%] {\n    margin-left: 0;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */"] });
+var ListDetailComponent = _ListDetailComponent;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ListDetailComponent, [{
+    type: Component,
+    args: [{ selector: "app-list-detail", standalone: true, imports: [
+      CommonModule,
+      MatCardModule,
+      MatButtonModule,
+      MatIconModule,
+      MatChipsModule,
+      MatMenuModule,
+      MatSnackBarModule,
+      MatProgressSpinnerModule,
+      MatCheckboxModule,
+      MatToolbarModule,
+      RouterModule
+    ], template: `    <div class="list-detail-container" *ngIf="!loading">
+      <mat-toolbar class="list-toolbar">
+        <button mat-icon-button (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        
+        <div class="list-header-info">
+          <h1 class="list-title">{{ list?.name }}</h1>
+          <p class="list-subtitle" *ngIf="list?.comment">{{ list?.comment }}</p>
+        </div>
+        
+        <span class="spacer"></span>
+        
+        <button mat-button [routerLink]="['/items/new']" [queryParams]="{listId: list?.id}">
+          <mat-icon>add</mat-icon>
+          Add Item
+        </button>
+        
+        <button mat-icon-button [matMenuTriggerFor]="listMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        
+        <mat-menu #listMenu="matMenu">
+          <button mat-menu-item [routerLink]="['/lists', list?.id, 'edit']">
+            <mat-icon>edit</mat-icon>
+            Edit List
+          </button>
+          <button mat-menu-item (click)="deleteList()" class="delete-button">
+            <mat-icon>delete</mat-icon>
+            Delete List
+          </button>
+        </mat-menu>
+      </mat-toolbar>
+
+      <div class="list-content" *ngIf="list">
+        <div class="list-hero" *ngIf="list.img">
+          <img [src]="list.img" [alt]="list.name" class="list-image">
+        </div>
+
+        <div class="list-stats">
+          <mat-card class="stat-card">
+            <mat-card-content>
+              <div class="stat-content">
+                <mat-icon class="stat-icon">assignment</mat-icon>
+                <div>
+                  <h3>{{ list.items.length }}</h3>
+                  <p>Total Items</p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card class="stat-card">
+            <mat-card-content>
+              <div class="stat-content">
+                <mat-icon class="stat-icon to-buy">shopping_cart</mat-icon>
+                <div>
+                  <h3>{{ itemsToBuy }}</h3>
+                  <p>To Buy</p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card class="stat-card">
+            <mat-card-content>
+              <div class="stat-content">
+                <mat-icon class="stat-icon bought">done</mat-icon>
+                <div>
+                  <h3>{{ itemsBought }}</h3>
+                  <p>Completed</p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card class="stat-card">
+            <mat-card-content>
+              <div class="stat-content">
+                <mat-icon class="stat-icon progress">percent</mat-icon>
+                <div>
+                  <h3>{{ completionRate }}%</h3>
+                  <p>Progress</p>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="items-section">
+          <div class="section-header">
+            <h2>Items</h2>
+            <div class="filter-chips">
+              <mat-chip-set>
+                <mat-chip-option 
+                  [selected]="currentFilter === 'all'"
+                  (click)="currentFilter = 'all'">All</mat-chip-option>
+                <mat-chip-option 
+                  [selected]="currentFilter === 'to_buy'"
+                  (click)="currentFilter = 'to_buy'">To Buy</mat-chip-option>
+                <mat-chip-option 
+                  [selected]="currentFilter === 'bought'"
+                  (click)="currentFilter = 'bought'">Completed</mat-chip-option>
+              </mat-chip-set>
+            </div>
+          </div>
+
+          <div class="items-grid" *ngIf="filteredItems.length > 0">
+            <mat-card 
+              *ngFor="let item of filteredItems" 
+              class="item-card"
+              [class.completed]="item.status === 'bought'">
+              <div class="item-header">
+                <mat-checkbox 
+                  [checked]="item.status === 'bought'"
+                  (change)="toggleItemStatus(item)"
+                  class="item-checkbox">
+                </mat-checkbox>
+                
+                <div class="item-image" *ngIf="item.item.img">
+                  <img [src]="item.item.img" [alt]="item.item.name">
+                </div>
+                
+                <div class="item-info">
+                  <h3 class="item-name">{{ item.item.name }}</h3>
+                  <p class="item-comment" *ngIf="item.item.comment">{{ item.item.comment }}</p>
+                </div>
+                
+                <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                
+                <mat-menu #itemMenu="matMenu">
+                  <button mat-menu-item (click)="editItem(item)">
+                    <mat-icon>edit</mat-icon>
+                    Edit
+                  </button>
+                  <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
+                    <mat-icon>delete</mat-icon>
+                    Delete
+                  </button>
+                </mat-menu>
+              </div>
+              
+              <mat-card-content>
+                <div class="item-details">
+                  <div class="item-count">
+                    <mat-icon>confirmation_number</mat-icon>
+                    <span>Quantity: {{ item.count }}</span>
+                  </div>
+                  
+                  <div class="item-color" *ngIf="item.color">
+                    <mat-icon>palette</mat-icon>
+                    <div class="color-indicator" [style.background-color]="item.color"></div>
+                  </div>
+                  
+                  <div class="item-status">
+                    <mat-chip-option [disabled]="true">
+                      <mat-icon>{{ item.status === 'bought' ? 'done' : 'shopping_cart' }}</mat-icon>
+                      {{ item.status === 'bought' ? 'Completed' : 'To Buy' }}
+                    </mat-chip-option>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div class="empty-state" *ngIf="filteredItems.length === 0">
+            <mat-icon class="empty-icon">{{ getEmptyStateIcon() }}</mat-icon>
+            <h3>{{ getEmptyStateTitle() }}</h3>
+            <p>{{ getEmptyStateMessage() }}</p>
+            <button mat-raised-button color="primary" [routerLink]="['/items/new']" [queryParams]="{listId: list.id}" *ngIf="currentFilter === 'all'">
+              <mat-icon>add</mat-icon>
+              Add First Item
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="loading-container" *ngIf="loading">
+      <mat-spinner diameter="50"></mat-spinner>
+      <p>Loading list details...</p>
+    </div>
+`, styles: ["/* angular:styles/component:css;20552643721a7eca835571cf5d368274353bd1450706a10a6f2d38d5c116ad9e;C:/dev/kontys/listok/listok-bolt/src/app/components/list-detail/list-detail.component.ts */\n.list-detail-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.list-content {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 8px;\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy {\n  color: #f57c00;\n}\n.stat-icon.bought {\n  color: #4caf50;\n}\n.stat-icon.progress {\n  color: #9c27b0;\n}\n.stat-content h3 {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content p {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header h2 {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n}\n.filter-chips mat-chip-set {\n  display: flex;\n  gap: 8px;\n}\n.items-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 16px;\n}\n.item-card {\n  border-radius: 8px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-card.completed {\n  opacity: 0.7;\n}\n.item-header {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border-bottom: 1px solid #eee;\n}\n.item-checkbox {\n  flex-shrink: 0;\n}\n.item-image {\n  width: 48px;\n  height: 48px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info {\n  flex: 1;\n  min-width: 0;\n}\n.item-name {\n  font-size: 16px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-menu-button {\n  flex-shrink: 0;\n}\n.item-details {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n  align-items: center;\n}\n.item-count {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 14px;\n}\n.item-color {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.color-indicator {\n  width: 16px;\n  height: 16px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-status {\n  margin-left: auto;\n}\n.empty-state {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content {\n    padding: 16px;\n  }\n  .section-header {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid {\n    grid-template-columns: 1fr;\n    gap: 12px;\n  }\n  .item-header {\n    flex-wrap: wrap;\n    gap: 8px;\n  }\n  .item-details {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .item-status {\n    margin-left: 0;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */\n"] }]
+  }], () => [{ type: ActivatedRoute }, { type: Router }, { type: ApiService }, { type: MatSnackBar }], null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListDetailComponent, { className: "ListDetailComponent", filePath: "src/app/components/list-detail/list-detail.component.ts", lineNumber: 328 });
+})();
+export {
+  ListDetailComponent
+};
+//# sourceMappingURL=list-detail.component-7545Q6EB.js.map
