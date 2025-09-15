@@ -300,16 +300,16 @@ var routes = [
   },
   {
     path: "login",
-    loadComponent: /* @__PURE__ */ __name(() => import("./login.component-EJXCIUO7.js").then((m) => m.LoginComponent), "loadComponent")
+    loadComponent: /* @__PURE__ */ __name(() => import("./login.component-UBNT66PL.js").then((m) => m.LoginComponent), "loadComponent")
   },
   {
     path: "dashboard",
-    loadComponent: /* @__PURE__ */ __name(() => import("./dashboard.component-OQA2HRA4.js").then((m) => m.DashboardComponent), "loadComponent"),
+    loadComponent: /* @__PURE__ */ __name(() => import("./dashboard.component-VNKT2RAB.js").then((m) => m.DashboardComponent), "loadComponent"),
     canActivate: [authGuard]
   },
   {
     path: "lists/:id",
-    loadComponent: /* @__PURE__ */ __name(() => import("./list-detail.component-7545Q6EB.js").then((m) => m.ListDetailComponent), "loadComponent"),
+    loadComponent: /* @__PURE__ */ __name(() => import("./list-detail.component-U5DQYULB.js").then((m) => m.ListDetailComponent), "loadComponent"),
     canActivate: [authGuard]
   },
   {
