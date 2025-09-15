@@ -47,6 +47,15 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "configurations": {
+            "development": {
+              "baseHref": "/",
+              "buildTarget": "listok-frontend:build:development"
+            }
+          }
         }
       },
       "prefix": "app",
