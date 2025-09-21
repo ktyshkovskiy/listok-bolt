@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,9 +11,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Subject, takeUntil } from 'rxjs';
-import { ApiService } from '../../services/api.service';
-import { List, Item } from '../../models/list.model';
-import { RouterModule } from '@angular/router';
+import { Item, ItemStatus, List } from '../../models/list.model';
+import { ItemService } from "../../services/item.service";
+import { ListService } from "../../services/list.service";
 
 @Component({
   selector: 'app-list-detail',
@@ -296,29 +296,29 @@ import { RouterModule } from '@angular/router';
       .list-content {
         padding: 16px;
       }
-      
+
       .section-header {
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
       }
-      
+
       .items-grid {
         grid-template-columns: 1fr;
         gap: 12px;
       }
-      
+
       .item-header {
         flex-wrap: wrap;
         gap: 8px;
       }
-      
+
       .item-details {
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
       }
-      
+
       .item-status {
         margin-left: 0;
       }
@@ -329,14 +329,14 @@ export class ListDetailComponent implements OnInit, OnDestroy {
   list: List | null = null;
   loading = true;
   currentFilter: 'all' | 'to_buy' | 'bought' = 'all';
+
   private destroy$ = new Subject<void>();
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private apiService: ApiService,
-    private snackBar: MatSnackBar
-  ) {}
+  private route: ActivatedRoute = inject(ActivatedRoute);
+  private router: Router = inject(Router);
+  private apiItemService: ItemService = inject(ItemService);
+  private apiListService: ListService = inject(ListService);
+  private snackBar: MatSnackBar = inject(MatSnackBar);
 
   ngOnInit(): void {
     this.route.params.pipe(takeUntil(this.destroy$)).subscribe(params => {
@@ -353,14 +353,14 @@ export class ListDetailComponent implements OnInit, OnDestroy {
 
   loadList(id: string): void {
     this.loading = true;
-    this.apiService.getListById(id).subscribe({
+    this.apiListService.getListById(id).subscribe({
       next: (list) => {
         this.list = list;
         this.loading = false;
       },
       error: (error) => {
         console.error('Error loading list:', error);
-        this.snackBar.open('Error loading list', 'Close', { duration: 3000 });
+        this.snackBar.open('Error loading list', 'Close', {duration: 3000});
         this.loading = false;
       }
     });
@@ -381,7 +381,7 @@ export class ListDetailComponent implements OnInit, OnDestroy {
 
   get filteredItems(): Item[] {
     if (!this.list) return [];
-    
+
     switch (this.currentFilter) {
       case 'to_buy':
         return this.list.items.filter(item => item.status === 'to_buy');
@@ -392,14 +392,8 @@ export class ListDetailComponent implements OnInit, OnDestroy {
     }
   }
 
-  onFilterChange(event: any): void {
-    // Filter change is now handled by click events in template
-  }
-
   toggleItemStatus(item: Item): void {
-    const newStatus = item.status === 'bought' ? 'to_buy' : 'bought';
-    
-    this.apiService.updateItem(item.id, { status: newStatus }).subscribe({
+    this.apiItemService.updateItem(item.id, {status: item.status}).subscribe({
       next: (updatedItem) => {
         if (this.list && updatedItem) {
           const index = this.list.items.findIndex(i => i.id === item.id);
@@ -408,14 +402,14 @@ export class ListDetailComponent implements OnInit, OnDestroy {
           }
         }
         this.snackBar.open(
-          `Item marked as ${newStatus === 'bought' ? 'completed' : 'to buy'}`, 
-          'Close', 
-          { duration: 2000 }
+          `Item marked as ${item.status === ItemStatus.Bought ? 'bought' : 'to buy'}`,
+          'Close',
+          {duration: 2000}
         );
       },
       error: (error) => {
         console.error('Error updating item:', error);
-        this.snackBar.open('Error updating item', 'Close', { duration: 3000 });
+        this.snackBar.open('Error updating item', 'Close', {duration: 3000});
       }
     });
   }
@@ -426,16 +420,16 @@ export class ListDetailComponent implements OnInit, OnDestroy {
 
   deleteItem(item: Item): void {
     if (confirm(`Are you sure you want to delete "${item.item.name}"?`)) {
-      this.apiService.deleteItem(item.id).subscribe({
+      this.apiItemService.deleteItem(item.id).subscribe({
         next: () => {
           if (this.list) {
             this.list.items = this.list.items.filter(i => i.id !== item.id);
           }
-          this.snackBar.open('Item deleted successfully', 'Close', { duration: 2000 });
+          this.snackBar.open('Item deleted successfully', 'Close', {duration: 2000});
         },
         error: (error) => {
           console.error('Error deleting item:', error);
-          this.snackBar.open('Error deleting item', 'Close', { duration: 3000 });
+          this.snackBar.open('Error deleting item', 'Close', {duration: 3000});
         }
       });
     }
@@ -443,16 +437,16 @@ export class ListDetailComponent implements OnInit, OnDestroy {
 
   deleteList(): void {
     if (!this.list) return;
-    
+
     if (confirm(`Are you sure you want to delete "${this.list.name}"?`)) {
-      this.apiService.deleteList(this.list.id).subscribe({
+      this.apiListService.deleteList(this.list.id).subscribe({
         next: () => {
-          this.snackBar.open('List deleted successfully', 'Close', { duration: 2000 });
+          this.snackBar.open('List deleted successfully', 'Close', {duration: 2000});
           this.router.navigate(['/dashboard']);
         },
         error: (error) => {
           console.error('Error deleting list:', error);
-          this.snackBar.open('Error deleting list', 'Close', { duration: 3000 });
+          this.snackBar.open('Error deleting list', 'Close', {duration: 3000});
         }
       });
     }

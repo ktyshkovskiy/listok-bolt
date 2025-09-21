@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "7.10.0",
+    "generators": {
+      "angular": {
+        "generatorName": "typescript-angular",
+        "output": "src/app/generated/api",
+        "inputSpec": "openapi/listok-api.yaml",
+        "additionalProperties": {
+          "ngVersion": "20.0.0",
+          "serviceSuffix": "ApiService",
+          "withInterfaces": true,
+          "stringEnums": true,
+          "providedInRoot": true
+        }
+      }
+    }
+  }
+}

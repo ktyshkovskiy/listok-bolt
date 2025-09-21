@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,12 +12,11 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterModule, Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
-import { AuthService } from '../../services/auth.service';
-import { List, Item } from '../../models/list.model';
+import { List } from '../../models/list.model';
 import { User } from '../../models/auth.model';
-import { Observable, BehaviorSubject, combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
+import { ListService } from "../../services/list.service";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -548,11 +547,9 @@ export class DashboardComponent implements OnInit {
   loading = true;
   currentUser: User | null = null;
 
-  constructor(
-    private apiService: ApiService,
-    private authService: AuthService,
-    private router: Router
-  ) {}
+  private apiService: ListService = inject(ListService);
+  private authService: AuthService = inject(AuthService);
+  private router: Router = inject(Router);
 
   ngOnInit(): void {
     this.authService.authState$.subscribe(state => {

@@ -6,35 +6,74 @@
   "newProjectRoot": "projects",
   "projects": {
     "listok-frontend": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "lok",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/listok-frontend",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }],
+            "styles": ["src/styles.css"]
+          },
           "configurations": {
             "development": {
-              "extractLicenses": false,
-              "namedChunks": true,
               "optimization": false,
-              "sourceMap": true
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/app/generated/api/api/item.service.ts",
+                  "with": "src/app/mock/item.service.ts"
+                },
+                {
+                  "replace": "src/app/generated/api/api/list.service.ts",
+                  "with": "src/app/mock/list.service.ts"
+                },
+                {
+                  "replace": "src/app/services/auth.service.ts",
+                  "with": "src/app/mock/auth.service.ts"
+                }
+              ]
             },
             "production": {
-              "aot": true,
-              "extractLicenses": true,
-              "namedChunks": false,
-              "optimization": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
               "outputHashing": "all",
-              "sourceMap": false
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.production.ts"
+                }
+              ]
             }
           },
-          "options": {
-            "assets": ["src/favicon.ico"],
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "outputPath": "dist/listok-frontend",
-            "polyfills": ["zone.js"],
-            "scripts": [],
-            "styles": ["src/global_styles.css"],
-            "tsConfig": "tsconfig.app.json"
-          }
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular/build:dev-server",
@@ -57,12 +96,7 @@
             }
           }
         }
-      },
-      "prefix": "app",
-      "projectType": "application",
-      "root": "",
-      "schematics": {},
-      "sourceRoot": "src"
+      }
     }
   },
   "version": 1

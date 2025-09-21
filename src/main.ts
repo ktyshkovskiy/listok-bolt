@@ -1,26 +1,35 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import { provideRouter, RouterOutlet } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { routes } from './app/app.routes';
+import { Configuration } from './app/generated/api';
+import { environment } from './environments/environment';
+
+// Configure OpenAPI client
+const apiConfiguration = new Configuration({
+  basePath: environment.apiUrl,
+  credentials: {
+    OAuth2: () => localStorage.getItem('authToken') || undefined
+  },
+});
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   template: `
-    <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
   `
 })
-export class App {}
+export class App {
+}
 
 bootstrapApplication(App, {
   providers: [
     provideRouter(routes),
     provideHttpClient(),
-    provideAnimationsAsync()
+    {provide: Configuration, useValue: apiConfiguration}
   ]
 }).catch(err => console.error(err));

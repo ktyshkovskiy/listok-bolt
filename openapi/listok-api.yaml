@@ -1,0 +1,741 @@
+openapi: 3.1.0
+info:
+  title: Listok API
+  description: API for managing Lists and Items
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080/listok/api
+
+tags:
+  - name: list
+    description: Endpoints related to lists.
+  - name: item
+    description: Endpoints related to items from lists.
+  - name: product
+    description: Endpoints related to products.
+
+paths:
+  /lists:
+    get:
+      tags:
+        - list
+      operationId: getLists
+      summary: Get all Lists
+      description: Returns an array of Lists.
+      parameters:
+        - name: name
+          in: query
+          description: Name of the List to filter by (optional).
+          required: false
+          schema:
+            type: string
+            example: Groceries
+      responses:
+        200:
+          $ref: '#/components/responses/GetArrayOfListsResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - list
+      operationId: createList
+      summary: Create a new List
+      description: Records the details of a new List.
+      requestBody:
+        $ref: '#/components/requestBodies/ListRequestBody'
+      responses:
+        201:
+          $ref: '#/components/responses/CreateListResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+  /lists/{listId}:
+    get:
+      tags:
+        - list
+      operationId: getList
+      summary: Get a List by ID
+      description: Returns a single List.
+      parameters:
+        - $ref: '#/components/parameters/listId'
+      responses:
+        200:
+          $ref: '#/components/responses/GetListResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      tags:
+        - list
+      summary: Update a List by ID
+      operationId: updateList
+      description: Updates the existing List with the specified details.
+      parameters:
+        - $ref: '#/components/parameters/listId'
+      requestBody:
+        $ref: '#/components/requestBodies/ListRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/UpdateListResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      tags:
+        - list
+      summary: Delete a List by ID
+      operationId: deleteList
+      description: Deletes the List with the specified ID.
+      parameters:
+        - $ref: '#/components/parameters/listId'
+      responses:
+        200:
+          $ref: '#/components/responses/DeleteListResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+
+  /lists/{listId}/items:
+    get:
+      tags:
+        - item
+      operationId: getListsItems
+      summary: Get an Item by ID.
+      description: Returns the Item.
+      parameters:
+        - $ref: '#/components/parameters/listId'
+      responses:
+        200:
+          $ref: '#/components/responses/GetArrayOfItemsResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - item
+      operationId: addItemToList
+      summary: Adds an Item to a List
+      description: Records the details of a new Item in the specified List.
+      parameters:
+        - $ref: '#/components/parameters/listId'
+      requestBody:
+        $ref: '#/components/requestBodies/ItemRequestBody'
+      responses:
+        201:
+          $ref: '#/components/responses/CreateItemResponse'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+
+  /items:
+    get:
+      tags:
+        - item
+      operationId: getItems
+      summary: Lists items
+      description: Returns an array of Items
+      responses:
+        200:
+          $ref: '#/components/responses/GetArrayOfItemsResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+  /items/{itemId}:
+    get:
+      summary: Get an Item by ID
+      operationId: getItem
+      tags:
+        - item
+      parameters:
+        - $ref: '#/components/parameters/itemId'
+      responses:
+        200:
+          $ref: '#/components/responses/GetItemResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      tags:
+        - item
+      operationId: updateItem
+      summary: Update an Item by UUID
+      description: Returns the updated Item
+      parameters:
+        - $ref: '#/components/parameters/itemId'
+      requestBody: 
+        $ref: '#/components/requestBodies/ItemRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/UpdateItemResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      tags:
+        - item
+      operationId: deleteItem
+      summary: Delete an Item by ID
+      description: Returns the deleted Item.
+      parameters:
+        - $ref: '#/components/parameters/itemId'
+      responses:
+        200:
+          $ref: '#/components/responses/DeleteItemResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+
+  /products:
+    get:
+      tags:
+        - product
+      operationId: getProducts
+      summary: Lists Product
+      description: Returns an array of Product.
+      responses:
+        200:
+          $ref: '#/components/responses/GetArrayOfProductResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - product
+      operationId: createProduct
+      summary: Create a new Product.
+      description: Records the details of a new Product.
+      requestBody:
+        $ref: '#/components/requestBodies/ProductRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/CreateProductResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+  /products/{productId}:
+    get:
+      tags:
+        - product
+      operationId: getProduct
+      summary: Get an Product by ID
+      description: Returns a single Product.
+      parameters:
+        - $ref: '#/components/parameters/productId'
+      responses:
+        200:
+          $ref: '#/components/responses/GetProductResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      tags:
+        - product
+      operationId: updateProduct
+      summary: Update an Product by ID
+      description: Updates the existing Product with the specified details.
+      parameters:
+        - $ref: '#/components/parameters/productId'
+      requestBody:
+        $ref: '#/components/requestBodies/ProductRequestBody'
+      responses:
+        200:
+          $ref: '#/components/responses/UpdateProductResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      tags:
+        - product
+      operationId: deleteProduct
+      summary: Delete an Product by ID
+      description: Deletes the Product with the specified ID.
+      parameters:
+        - $ref: '#/components/parameters/productId'
+      responses:
+        200:
+          $ref: '#/components/responses/DeleteProductResponse'
+        304:
+          $ref: '#/components/responses/NotModified'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  securitySchemes:
+    OAuth2:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth2 authorization token.
+
+  schemas:
+    ProductFields:
+      title: Product fields.
+      description: Fields required to create or update an Product.
+      type: object
+      properties:
+        name:
+          title: Name
+          description: The name of the item.
+          type: string
+        img:
+          title: Image
+          description: The image associated with the item.
+          type: string
+        category:
+          title: Category
+          description: The category of the item.
+          type: string
+        comment:
+          title: Comment
+          description: Some comments about this item.
+          type: string
+      required:
+        - name
+    Product:
+      title: Product
+      description: An Product
+      allOf:
+        - $ref: '#/components/schemas/ProductFields'
+        - type: object
+          properties:
+            id:
+              title: ID
+              description: Unique identifier for the Product.
+              type: string
+              readOnly: true
+          required:
+            - id
+
+    ItemStatus:
+      title: Item status
+      description: Status of the Item.
+      default: to_buy
+      type: string
+      enum:
+        - to_buy
+        - bought
+
+    ItemFields:
+      title: Item fields.
+      description: Fields required to create or update an Item.
+      type: object
+      properties:
+        product:
+          $ref: '#/components/schemas/Product'
+        count:
+          title: Count
+          description: Quantity of the Item to be purchased.
+          type: integer
+          format: int32
+          default: 1
+          minimum: 1
+          example: 2
+        groupColor:
+          title: Color for a group of Items
+          description: Optional color associated with the Item.
+          example: '#3549ba'
+          type: string
+        status:
+          $ref: '#/components/schemas/ItemStatus'
+      required:
+        - product
+        - count
+        - status
+    Item:
+      title: Item
+      description: An item
+      allOf:
+        - $ref: '#/components/schemas/ItemFields'
+        - type: object
+          properties:
+            id:
+              title: ID
+              description: Unique identifier for the Item.
+              example: '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+              type: string
+              readOnly: true
+          required:
+            - id
+
+    ListFields:
+      title: List Fields
+      description: Fields required to create or update a List.
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the List.
+          example: Groceries
+        comment:
+          type: string
+          description: Optional comment about the List.
+          example: Weekly grocery shopping
+        img:
+          type: string
+          description: Optional image URL for the List.
+          example: https://example.com/images/groceries.png
+      required:
+        - name
+    List:
+      title: List
+      description: A List containing multiple Items.
+      allOf:
+        - $ref: '#/components/schemas/ListFields'
+        - type: object
+          properties:
+            id:
+              title: ID
+              description: Unique identifier for the List.
+              type: string
+              readOnly: true
+            items:
+              title: Items
+              description: The list of Items.
+              type: array
+              readOnly: true
+              items:
+                $ref: '#/components/schemas/Item'
+          required:
+            - id
+            - items
+
+    ProblemDetail:
+      title: Problem Detail
+      description: The schema for all error responses.
+      type: object
+      properties:
+        type:
+          title: Type
+          description: Full URL that originated the error response.
+          type: string
+          format: uri
+          example: 'http://localhost:9966/petclinic/api/owner'
+          readOnly: true
+        title:
+          title: Title
+          description: The short error title.
+          type: string
+          example: NoResourceFoundException
+          readOnly: true
+        status:
+          title: Status
+          description: HTTP status code
+          type: integer
+          format: int32
+          minimum: 400
+          maximum: 600
+          exclusiveMaximum: true
+          example: 500
+          readOnly: true
+        detail:
+          title: Detail
+          description: The long error message.
+          type: string
+          example: 'No static resource api/owner.'
+          readOnly: true
+        timestamp:
+          title: Timestamp
+          description: The time the error occurred.
+          type: string
+          format: date-time
+          example: '2024-11-23T13:59:21.3820407Z'
+          readOnly: true
+        schemaValidationErrors:
+          title: Schema validation errors
+          description: Validation errors against the OpenAPI schema.
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationMessage'
+      required:
+        - type
+        - title
+        - status
+        - detail
+        - timestamp
+        - schemaValidationErrors
+    ValidationMessage:
+      title: Validation message
+      description: Messages describing a validation error.
+      type: object
+      properties:
+        message:
+          title: Message
+          description: The validation message.
+          type: string
+          example: "[Path '/lastName'] Instance type (null) does not match any allowed primitive type (allowed: ['string'])"
+          readOnly: true
+      required:
+        - message
+      additionalProperties: true
+
+  parameters:
+    listId:
+      name: listId
+      in: path
+      description: The ID of the List.
+      required: true
+      schema:
+        type: string
+        format: uuid
+    itemId:
+      name: itemId
+      in: path
+      description: The ID of the Item
+      required: true
+      schema:
+        type: string
+        format: uuid
+    productId:
+      name: productId
+      in: path
+      description: The ID of the Product.
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+  responses:
+    CreateProductResponse:
+      description: The Product was successfully created.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Product'
+    GetProductResponse:
+      description: The Product was found and returned.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Product'
+    GetArrayOfProductResponse:
+      description: The array of Product was found and returned.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Product'
+    UpdateProductResponse:
+      description: The Product was successfully updated.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Product'
+    DeleteProductResponse:
+      description: The Product was successfully deleted.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Product'
+
+    GetItemResponse:
+      description: The Item was found and returned.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Item'
+    GetArrayOfItemsResponse:
+      description: The array of Items was found and returned.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Item'
+    CreateItemResponse:
+      description: The Item was successfully created.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Item'
+    UpdateItemResponse:
+      description: The Item was successfully updated.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Item'
+    DeleteItemResponse:
+      description: The Item was successfully deleted
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Item'
+
+    GetListResponse:
+      description: The List was found and returned.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/List'
+    GetArrayOfListsResponse:
+      description: The array of Lists was found and returned.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/List'
+    CreateListResponse:
+      description: The List was successfully created.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/List'
+    UpdateListResponse:
+      description: The List was successfully updated.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/List'
+    DeleteListResponse:
+      description: The List was successfully deleted.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/List'
+
+    NotModified:
+      description: Not modified
+    NotFound:
+      description: 'Resource not found'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetail'
+    BadRequest:
+      description: 'Invalid request'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetail'
+    Unauthorized:
+      description: 'Unauthorized access'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetail'
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetail'
+
+  requestBodies:
+    ListRequestBody:
+      description: The List that needs to be added or updated
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListFields'
+    ItemRequestBody:
+      description: The Item that needs to be added or updated
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ItemFields'
+    ProductRequestBody:
+      description: The Product that needs to be added or updated
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProductFields'
+
+security:
+  - OAuth2: []

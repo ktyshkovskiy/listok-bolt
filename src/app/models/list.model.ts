@@ -10,7 +10,12 @@ export interface Item {
   item: ItemDetails;
   count: number;
   color?: string;
-  status: 'to_buy' | 'bought';
+  status: ItemStatus;
+}
+
+export enum ItemStatus {
+  ToBuy = 'to_buy',
+  Bought = 'bought'
 }
 
 export interface List {
@@ -39,5 +44,5 @@ export interface CreateItemRequest {
   item: ItemDetails;
   count: number;
   color?: string;
-  status: 'to_buy' | 'bought';
+  status: ItemStatus;
 }
