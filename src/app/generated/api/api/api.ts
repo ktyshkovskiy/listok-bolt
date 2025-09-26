@@ -1,0 +1,10 @@
+export * from './item.service';
+import { ItemApiService } from './item.service';
+export * from './item.serviceInterface';
+export * from './list.service';
+import { ListApiService } from './list.service';
+export * from './list.serviceInterface';
+export * from './product.service';
+import { ProductApiService } from './product.service';
+export * from './product.serviceInterface';
+export const APIS = [ItemApiService, ListApiService, ProductApiService];
