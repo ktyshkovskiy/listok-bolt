@@ -44,16 +44,16 @@ var routes = [
   },
   {
     path: "login",
-    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-I36PVLOT.js").then((m) => m.LoginComponent), "loadComponent")
+    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-C5LDCHEH.js").then((m) => m.LoginComponent), "loadComponent")
   },
   {
     path: "dashboard",
-    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-HZL2H2M4.js").then((m) => m.DashboardComponent), "loadComponent"),
+    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-E3GRBQMK.js").then((m) => m.DashboardComponent), "loadComponent"),
     canActivate: [authGuard]
   },
   {
     path: "lists/:id",
-    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-SIDQQ5A7.js").then((m) => m.ListDetailComponent), "loadComponent"),
+    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-JDUM33UZ.js").then((m) => m.ListDetailComponent), "loadComponent"),
     canActivate: [authGuard]
   },
   {
