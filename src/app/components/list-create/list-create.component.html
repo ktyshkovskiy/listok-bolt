@@ -1,0 +1,111 @@
+<div class="create-list-container">
+    <mat-toolbar class="create-toolbar">
+        <button mat-icon-button (click)="goBack()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <span class="toolbar-title">Create New List</span>
+
+        <span class="spacer"></span>
+
+        <button
+                mat-raised-button
+                color="primary"
+                [disabled]="!listForm.valid || isSubmitting"
+                (click)="createList()">
+            <mat-icon *ngIf="!isSubmitting">save</mat-icon>
+            <mat-spinner *ngIf="isSubmitting" diameter="20"></mat-spinner>
+            {{ isSubmitting ? 'Creating...' : 'Create List' }}
+        </button>
+    </mat-toolbar>
+
+    <div class="create-content">
+        <mat-card class="create-card">
+            <mat-card-header>
+                <mat-card-title>List Details</mat-card-title>
+                <mat-card-subtitle>Fill in the information for your new list</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                <form [formGroup]="listForm" class="list-form">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>List Name</mat-label>
+                        <input
+                                matInput
+                                formControlName="name"
+                                placeholder="Enter list name"
+                                maxlength="100">
+                        <mat-icon matSuffix>list</mat-icon>
+                        <mat-error *ngIf="listForm.get('name')?.hasError('required')">
+                            List name is required
+                        </mat-error>
+                        <mat-error *ngIf="listForm.get('name')?.hasError('minlength')">
+                            List name must be at least 2 characters long
+                        </mat-error>
+                        <mat-hint align="end">{{ listForm.get('name')?.value?.length || 0 }}/100</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Description (Optional)</mat-label>
+                        <textarea
+                                matInput
+                                formControlName="comment"
+                                placeholder="Add a description for your list"
+                                rows="3"
+                                maxlength="500">
+                </textarea>
+                        <mat-icon matSuffix>description</mat-icon>
+                        <mat-hint align="end">{{ listForm.get('comment')?.value?.length || 0 }}/500</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Image URL (Optional)</mat-label>
+                        <input
+                                matInput
+                                formControlName="img"
+                                placeholder="https://example.com/image.jpg"
+                                type="url">
+                        <mat-icon matSuffix>image</mat-icon>
+                        <mat-error *ngIf="listForm.get('img')?.hasError('pattern')">
+                            Please enter a valid URL
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="image-preview" *ngIf="imagePreviewUrl">
+                        <h4>Image Preview:</h4>
+                        <img [src]="imagePreviewUrl" [alt]="listForm.get('name')?.value" class="preview-image">
+                    </div>
+
+                    <div class="suggested-images">
+                        <h4>Or choose from suggested images:</h4>
+                        <div class="image-grid">
+                            <div
+                                    *ngFor="let image of suggestedImages"
+                                    class="image-option"
+                                    [class.selected]="listForm.get('img')?.value === image.url"
+                                    (click)="selectImage(image.url)">
+                                <img [src]="image.url" [alt]="image.name">
+                                <span class="image-label">{{ image.name }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+
+        <div class="action-buttons">
+            <button mat-button (click)="goBack()" [disabled]="isSubmitting">
+                Cancel
+            </button>
+            <button
+                    mat-raised-button
+                    color="primary"
+                    [disabled]="!listForm.valid || isSubmitting"
+                    (click)="createList()">
+                <mat-icon *ngIf="!isSubmitting">add</mat-icon>
+                <mat-spinner *ngIf="isSubmitting" diameter="20"></mat-spinner>
+                {{ isSubmitting ? 'Creating List...' : 'Create List' }}
+            </button>
+        </div>
+    </div>
+</div>

@@ -70,7 +70,6 @@ export const LIST_OFFICE_SUPPLIES: List = {
   id: '2',
   name: 'Office Supplies',
   comment: 'Supplies needed for the home office',
-  // img: 'https://images.pexels.com/photos/159832/office-supplies-stationery-equipment-159832.jpeg',
   img: 'https://aa-business.co.uk/wp-content/uploads/2019/10/Stationery-Supplies-min-700x553.jpg',
   items: [ITEM_NOTEBOOKS, ITEM_PENS]
 };

@@ -87,7 +87,7 @@ import { AuthService } from "../../services/auth.service";
               <mat-icon matListItemIcon>list</mat-icon>
               <span matListItemTitle>All Lists</span>
             </a>
-            <a mat-list-item [routerLink]="['/lists/new']" routerLinkActive="active">
+            <a mat-list-item [routerLink]="['/lists/new']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
               <mat-icon matListItemIcon>add</mat-icon>
               <span matListItemTitle>Create List</span>
             </a>
