@@ -1,6 +1,6 @@
 import {
   AuthService
-} from "./chunk-QT5ZR3E4.js";
+} from "./chunk-ZXCDHV5B.js";
 import {
   MatButton,
   MatButtonModule,
@@ -14,22 +14,20 @@ import {
   MatIconModule,
   MatProgressSpinner,
   MatProgressSpinnerModule
-} from "./chunk-MITVACRJ.js";
+} from "./chunk-BFUKVJTR.js";
 import {
   AsyncPipe,
   CommonModule,
-  NgIf,
-  Router
-} from "./chunk-WO6GHJVH.js";
-import {
   Component,
+  NgIf,
+  Router,
   __async,
   __name,
+  inject,
   setClassMetadata,
   ɵsetClassDebugInfo,
   ɵɵadvance,
   ɵɵdefineComponent,
-  ɵɵdirectiveInject,
   ɵɵelement,
   ɵɵelementEnd,
   ɵɵelementStart,
@@ -44,7 +42,7 @@ import {
   ɵɵtemplate,
   ɵɵtext,
   ɵɵtextInterpolate
-} from "./chunk-2D7222YK.js";
+} from "./chunk-RFIAPGPR.js";
 
 // src/app/components/login/login.component.ts
 function LoginComponent_div_8_div_13_Template(rf, ctx) {
@@ -128,9 +126,9 @@ function LoginComponent_div_8_Template(rf, ctx) {
 }
 __name(LoginComponent_div_8_Template, "LoginComponent_div_8_Template");
 var _LoginComponent = class _LoginComponent {
-  constructor(authService, router) {
-    this.authService = authService;
-    this.router = router;
+  constructor() {
+    this.authService = inject(AuthService);
+    this.router = inject(Router);
     this.authState$ = this.authService.authState$;
   }
   ngOnInit() {
@@ -158,7 +156,7 @@ var _LoginComponent = class _LoginComponent {
 };
 __name(_LoginComponent, "LoginComponent");
 _LoginComponent.\u0275fac = /* @__PURE__ */ __name(function LoginComponent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _LoginComponent)(\u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router));
+  return new (__ngFactoryType__ || _LoginComponent)();
 }, "LoginComponent_Factory");
 _LoginComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoginComponent, selectors: [["app-login"]], decls: 10, vars: 3, consts: [[1, "login-container"], [1, "login-card"], ["class", "login-buttons", 4, "ngIf"], [1, "login-buttons"], ["mat-raised-button", "", "color", "primary", 1, "social-button", "google-button", 3, "click", "disabled"], ["mat-raised-button", "", "color", "accent", 1, "social-button", "github-button", 3, "click", "disabled"], ["mat-raised-button", "", 1, "social-button", "apple-button", 3, "click", "disabled"], ["class", "loading-spinner", 4, "ngIf"], ["class", "error-message", 4, "ngIf"], [1, "loading-spinner"], ["diameter", "30"], [1, "error-message"], ["color", "warn"]], template: /* @__PURE__ */ __name(function LoginComponent_Template(rf, ctx) {
   if (rf & 1) {
@@ -240,8 +238,8 @@ var LoginComponent = _LoginComponent;
         </mat-card-content>
       </mat-card>
     </div>
-  `, styles: ["/* angular:styles/component:css;1fffc5c9c87b1f122dd77fe4ff79eaebcd6479f700949448ea1f49ca093a15a5;/home/runner/work/listok-bolt/listok-bolt/src/app/components/login/login.component.ts */\n.login-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  padding: 20px;\n}\n.login-card {\n  max-width: 400px;\n  width: 100%;\n  padding: 24px;\n  border-radius: 16px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);\n}\nmat-card-header {\n  text-align: center;\n  margin-bottom: 24px;\n}\nmat-card-title {\n  font-size: 28px;\n  font-weight: 600;\n  margin-bottom: 8px;\n}\nmat-card-subtitle {\n  font-size: 16px;\n  opacity: 0.7;\n}\n.login-buttons {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.social-button {\n  height: 48px;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 8px;\n  text-transform: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 12px;\n}\n.google-button {\n  background-color: #4285f4;\n  color: white;\n}\n.github-button {\n  background-color: #333;\n  color: white;\n}\n.apple-button {\n  background-color: #000;\n  color: white;\n}\n.loading-spinner {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 20px;\n}\n.error-message {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 12px;\n  background-color: #ffebee;\n  border-radius: 8px;\n  color: #c62828;\n}\n@media (max-width: 480px) {\n  .login-card {\n    margin: 0;\n    padding: 20px;\n  }\n  .social-button {\n    height: 44px;\n    font-size: 14px;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */\n"] }]
-  }], () => [{ type: AuthService }, { type: Router }], null);
+  `, styles: ["/* angular:styles/component:scss;1fffc5c9c87b1f122dd77fe4ff79eaebcd6479f700949448ea1f49ca093a15a5;C:/dev/kontys/listok/listok-bolt/src/app/components/login/login.component.ts */\n.login-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  background:\n    linear-gradient(\n      135deg,\n      #667eea 0%,\n      #764ba2 100%);\n  padding: 20px;\n}\n.login-card {\n  max-width: 400px;\n  width: 100%;\n  padding: 24px;\n  border-radius: 16px;\n  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);\n}\nmat-card-header {\n  text-align: center;\n  margin-bottom: 24px;\n}\nmat-card-title {\n  font-size: 28px;\n  font-weight: 600;\n  margin-bottom: 8px;\n}\nmat-card-subtitle {\n  font-size: 16px;\n  opacity: 0.7;\n}\n.login-buttons {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.social-button {\n  height: 48px;\n  font-size: 16px;\n  font-weight: 500;\n  border-radius: 8px;\n  text-transform: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 12px;\n}\n.google-button {\n  background-color: #4285f4;\n  color: white;\n}\n.github-button {\n  background-color: #333;\n  color: white;\n}\n.apple-button {\n  background-color: #000;\n  color: white;\n}\n.loading-spinner {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  padding: 20px;\n}\n.error-message {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 12px;\n  background-color: #ffebee;\n  border-radius: 8px;\n  color: #c62828;\n}\n@media (max-width: 480px) {\n  .login-card {\n    margin: 0;\n    padding: 20px;\n  }\n  .social-button {\n    height: 44px;\n    font-size: 14px;\n  }\n}\n/*# sourceMappingURL=login.component.css.map */\n"] }]
+  }], null, null);
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent", filePath: "src/app/components/login/login.component.ts", lineNumber: 173 });
@@ -249,4 +247,4 @@ var LoginComponent = _LoginComponent;
 export {
   LoginComponent
 };
-//# sourceMappingURL=login.component-UBNT66PL.js.map
+//# sourceMappingURL=chunk-I36PVLOT.js.map

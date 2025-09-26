@@ -1,8 +1,8 @@
 import {
-  ApiService,
   BasePortalOutlet,
   CdkPortalOutlet,
   ComponentPortal,
+  ListService,
   MatChipOption,
   MatChipSet,
   MatChipsModule,
@@ -20,7 +20,10 @@ import {
   TemplatePortal,
   createGlobalPositionStrategy,
   createOverlayRef
-} from "./chunk-OFOPXV5V.js";
+} from "./chunk-KJ37EG5Q.js";
+import {
+  ItemApiService
+} from "./chunk-CENFS5OK.js";
 import {
   BreakpointObserver,
   Breakpoints,
@@ -42,19 +45,12 @@ import {
   _IdGenerator,
   _StructuralStylesLoader,
   _animationsDisabled
-} from "./chunk-MITVACRJ.js";
+} from "./chunk-BFUKVJTR.js";
 import {
   ActivatedRoute,
-  CommonModule,
-  NgForOf,
-  NgIf,
-  Router,
-  RouterLink,
-  RouterModule
-} from "./chunk-WO6GHJVH.js";
-import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  CommonModule,
   Component,
   DOCUMENT,
   Directive,
@@ -65,9 +61,14 @@ import {
   InjectionToken,
   Injector,
   Input,
+  NgForOf,
+  NgIf,
   NgModule,
   NgZone,
   Output,
+  Router,
+  RouterLink,
+  RouterModule,
   Subject,
   TemplateRef,
   ViewChild,
@@ -79,6 +80,7 @@ import {
   booleanAttribute,
   forwardRef,
   inject,
+  map,
   numberAttribute,
   of,
   setClassMetadata,
@@ -99,7 +101,6 @@ import {
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
-  ɵɵdirectiveInject,
   ɵɵdomProperty,
   ɵɵelement,
   ɵɵelementEnd,
@@ -126,7 +127,7 @@ import {
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-2D7222YK.js";
+} from "./chunk-RFIAPGPR.js";
 
 // node_modules/@angular/material/fesm2022/snack-bar.mjs
 function SimpleSnackBar_Conditional_2_Template(rf, ctx) {
@@ -1753,6 +1754,71 @@ var MatCheckboxModule = _MatCheckboxModule;
   }], null, null);
 })();
 
+// src/app/models/list.model.ts
+var ItemStatus;
+(function(ItemStatus2) {
+  ItemStatus2["ToBuy"] = "to_buy";
+  ItemStatus2["Bought"] = "bought";
+})(ItemStatus || (ItemStatus = {}));
+
+// src/app/services/item.service.ts
+var _ItemService = class _ItemService {
+  constructor() {
+    this.itemService = inject(ItemApiService);
+  }
+  createItemInList(listId, item) {
+    const apiItem = this.mapItemToItemFields(item);
+    return this.itemService.addItemToList(listId, apiItem).pipe(map((value) => this.mapApiItemToItem(value)));
+  }
+  getItemById(id) {
+    return this.itemService.getItem(id).pipe(map((value) => this.mapApiItemToItem(value)));
+  }
+  updateItem(id, item) {
+    const apiItem = this.mapItemToItemFields(item);
+    return this.itemService.updateItem(id, apiItem).pipe(map((value) => this.mapApiItemToItem(value)));
+  }
+  deleteItem(id) {
+    return this.itemService.deleteItem(id).pipe(map((value) => this.mapApiItemToItem(value)));
+  }
+  mapApiItemToItem(apiItem) {
+    return {
+      id: apiItem.id,
+      item: apiItem.product,
+      count: apiItem.count,
+      color: apiItem.groupColor,
+      status: this.mapItemStatusFromApi(apiItem.status)
+    };
+  }
+  mapItemToItemFields(item) {
+    return {
+      product: item.item,
+      count: item.count,
+      groupColor: item.color,
+      status: this.mapItemStatusToApi(item.status)
+    };
+  }
+  mapItemStatusToApi(status) {
+    return status;
+  }
+  mapItemStatusFromApi(status) {
+    return status;
+  }
+};
+__name(_ItemService, "ItemService");
+_ItemService.\u0275fac = /* @__PURE__ */ __name(function ItemService_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _ItemService)();
+}, "ItemService_Factory");
+_ItemService.\u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _ItemService, factory: _ItemService.\u0275fac, providedIn: "root" });
+var ItemService = _ItemService;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ItemService, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+
 // src/app/components/list-detail/list-detail.component.ts
 var _c04 = /* @__PURE__ */ __name(() => ["/items/new"], "_c0");
 var _c13 = /* @__PURE__ */ __name((a0) => ({ listId: a0 }), "_c1");
@@ -2129,15 +2195,16 @@ function ListDetailComponent_div_1_Template(rf, ctx) {
 }
 __name(ListDetailComponent_div_1_Template, "ListDetailComponent_div_1_Template");
 var _ListDetailComponent = class _ListDetailComponent {
-  constructor(route, router, apiService, snackBar) {
-    this.route = route;
-    this.router = router;
-    this.apiService = apiService;
-    this.snackBar = snackBar;
+  constructor() {
     this.list = null;
     this.loading = true;
     this.currentFilter = "all";
     this.destroy$ = new Subject();
+    this.route = inject(ActivatedRoute);
+    this.router = inject(Router);
+    this.apiItemService = inject(ItemService);
+    this.apiListService = inject(ListService);
+    this.snackBar = inject(MatSnackBar);
   }
   ngOnInit() {
     this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
@@ -2152,7 +2219,7 @@ var _ListDetailComponent = class _ListDetailComponent {
   }
   loadList(id) {
     this.loading = true;
-    this.apiService.getListById(id).subscribe({
+    this.apiListService.getListById(id).subscribe({
       next: /* @__PURE__ */ __name((list) => {
         this.list = list;
         this.loading = false;
@@ -2187,11 +2254,8 @@ var _ListDetailComponent = class _ListDetailComponent {
         return this.list.items;
     }
   }
-  onFilterChange(event) {
-  }
   toggleItemStatus(item) {
-    const newStatus = item.status === "bought" ? "to_buy" : "bought";
-    this.apiService.updateItem(item.id, { status: newStatus }).subscribe({
+    this.apiItemService.updateItem(item.id, { status: item.status }).subscribe({
       next: /* @__PURE__ */ __name((updatedItem) => {
         if (this.list && updatedItem) {
           const index = this.list.items.findIndex((i) => i.id === item.id);
@@ -2199,7 +2263,7 @@ var _ListDetailComponent = class _ListDetailComponent {
             this.list.items[index] = updatedItem;
           }
         }
-        this.snackBar.open(`Item marked as ${newStatus === "bought" ? "completed" : "to buy"}`, "Close", { duration: 2e3 });
+        this.snackBar.open(`Item marked as ${item.status === ItemStatus.Bought ? "bought" : "to buy"}`, "Close", { duration: 2e3 });
       }, "next"),
       error: /* @__PURE__ */ __name((error) => {
         console.error("Error updating item:", error);
@@ -2212,7 +2276,7 @@ var _ListDetailComponent = class _ListDetailComponent {
   }
   deleteItem(item) {
     if (confirm(`Are you sure you want to delete "${item.item.name}"?`)) {
-      this.apiService.deleteItem(item.id).subscribe({
+      this.apiItemService.deleteItem(item.id).subscribe({
         next: /* @__PURE__ */ __name(() => {
           if (this.list) {
             this.list.items = this.list.items.filter((i) => i.id !== item.id);
@@ -2230,7 +2294,7 @@ var _ListDetailComponent = class _ListDetailComponent {
     if (!this.list)
       return;
     if (confirm(`Are you sure you want to delete "${this.list.name}"?`)) {
-      this.apiService.deleteList(this.list.id).subscribe({
+      this.apiListService.deleteList(this.list.id).subscribe({
         next: /* @__PURE__ */ __name(() => {
           this.snackBar.open("List deleted successfully", "Close", { duration: 2e3 });
           this.router.navigate(["/dashboard"]);
@@ -2278,7 +2342,7 @@ var _ListDetailComponent = class _ListDetailComponent {
 };
 __name(_ListDetailComponent, "ListDetailComponent");
 _ListDetailComponent.\u0275fac = /* @__PURE__ */ __name(function ListDetailComponent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _ListDetailComponent)(\u0275\u0275directiveInject(ActivatedRoute), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(MatSnackBar));
+  return new (__ngFactoryType__ || _ListDetailComponent)();
 }, "ListDetailComponent_Factory");
 _ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ListDetailComponent, selectors: [["app-list-detail"]], decls: 2, vars: 2, consts: [["listMenu", "matMenu"], ["itemMenu", "matMenu"], ["class", "list-detail-container", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], [1, "list-detail-container"], [1, "list-toolbar"], ["mat-icon-button", "", 3, "click"], [1, "list-header-info"], [1, "list-title"], ["class", "list-subtitle", 4, "ngIf"], [1, "spacer"], ["mat-button", "", 3, "routerLink", "queryParams"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "routerLink"], ["mat-menu-item", "", 1, "delete-button", 3, "click"], ["class", "list-content", 4, "ngIf"], [1, "list-subtitle"], [1, "list-content"], ["class", "list-hero", 4, "ngIf"], [1, "list-stats"], [1, "stat-card"], [1, "stat-content"], [1, "stat-icon"], [1, "stat-icon", "to-buy"], [1, "stat-icon", "bought"], [1, "stat-icon", "progress"], [1, "items-section"], [1, "section-header"], [1, "filter-chips"], [3, "click", "selected"], ["class", "items-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "list-hero"], [1, "list-image", 3, "src", "alt"], [1, "items-grid"], ["class", "item-card", 3, "completed", 4, "ngFor", "ngForOf"], [1, "item-card"], [1, "item-header"], [1, "item-checkbox", 3, "change", "checked"], ["class", "item-image", 4, "ngIf"], [1, "item-info"], [1, "item-name"], ["class", "item-comment", 4, "ngIf"], ["mat-icon-button", "", 1, "item-menu-button", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "item-details"], [1, "item-count"], ["class", "item-color", 4, "ngIf"], [1, "item-status"], [3, "disabled"], [1, "item-image"], [3, "src", "alt"], [1, "item-comment"], [1, "item-color"], [1, "color-indicator"], [1, "empty-state"], [1, "empty-icon"], ["mat-raised-button", "", "color", "primary", 3, "routerLink", "queryParams", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", 3, "routerLink", "queryParams"], [1, "loading-container"], ["diameter", "50"]], template: /* @__PURE__ */ __name(function ListDetailComponent_Template(rf, ctx) {
   if (rf & 1) {
@@ -2518,8 +2582,8 @@ var ListDetailComponent = _ListDetailComponent;
       <mat-spinner diameter="50"></mat-spinner>
       <p>Loading list details...</p>
     </div>
-`, styles: ["/* angular:styles/component:css;20552643721a7eca835571cf5d368274353bd1450706a10a6f2d38d5c116ad9e;/home/runner/work/listok-bolt/listok-bolt/src/app/components/list-detail/list-detail.component.ts */\n.list-detail-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.list-content {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 8px;\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy {\n  color: #f57c00;\n}\n.stat-icon.bought {\n  color: #4caf50;\n}\n.stat-icon.progress {\n  color: #9c27b0;\n}\n.stat-content h3 {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content p {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header h2 {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n}\n.filter-chips mat-chip-set {\n  display: flex;\n  gap: 8px;\n}\n.items-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 16px;\n}\n.item-card {\n  border-radius: 8px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-card.completed {\n  opacity: 0.7;\n}\n.item-header {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border-bottom: 1px solid #eee;\n}\n.item-checkbox {\n  flex-shrink: 0;\n}\n.item-image {\n  width: 48px;\n  height: 48px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info {\n  flex: 1;\n  min-width: 0;\n}\n.item-name {\n  font-size: 16px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-menu-button {\n  flex-shrink: 0;\n}\n.item-details {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n  align-items: center;\n}\n.item-count {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 14px;\n}\n.item-color {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.color-indicator {\n  width: 16px;\n  height: 16px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-status {\n  margin-left: auto;\n}\n.empty-state {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content {\n    padding: 16px;\n  }\n  .section-header {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid {\n    grid-template-columns: 1fr;\n    gap: 12px;\n  }\n  .item-header {\n    flex-wrap: wrap;\n    gap: 8px;\n  }\n  .item-details {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .item-status {\n    margin-left: 0;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */\n"] }]
-  }], () => [{ type: ActivatedRoute }, { type: Router }, { type: ApiService }, { type: MatSnackBar }], null);
+`, styles: ["/* angular:styles/component:scss;163e528802698f8c597b065eef50cb3173d4feedf158335b304f77ce80b39686;C:/dev/kontys/listok/listok-bolt/src/app/components/list-detail/list-detail.component.ts */\n.list-detail-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.list-content {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 8px;\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy {\n  color: #f57c00;\n}\n.stat-icon.bought {\n  color: #4caf50;\n}\n.stat-icon.progress {\n  color: #9c27b0;\n}\n.stat-content h3 {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content p {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header h2 {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n}\n.filter-chips mat-chip-set {\n  display: flex;\n  gap: 8px;\n}\n.items-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 16px;\n}\n.item-card {\n  border-radius: 8px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-card.completed {\n  opacity: 0.7;\n}\n.item-header {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border-bottom: 1px solid #eee;\n}\n.item-checkbox {\n  flex-shrink: 0;\n}\n.item-image {\n  width: 48px;\n  height: 48px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info {\n  flex: 1;\n  min-width: 0;\n}\n.item-name {\n  font-size: 16px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-menu-button {\n  flex-shrink: 0;\n}\n.item-details {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n  align-items: center;\n}\n.item-count {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 14px;\n}\n.item-color {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.color-indicator {\n  width: 16px;\n  height: 16px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-status {\n  margin-left: auto;\n}\n.empty-state {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content {\n    padding: 16px;\n  }\n  .section-header {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid {\n    grid-template-columns: 1fr;\n    gap: 12px;\n  }\n  .item-header {\n    flex-wrap: wrap;\n    gap: 8px;\n  }\n  .item-details {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .item-status {\n    margin-left: 0;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */\n"] }]
+  }], null, null);
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListDetailComponent, { className: "ListDetailComponent", filePath: "src/app/components/list-detail/list-detail.component.ts", lineNumber: 328 });
@@ -2527,4 +2591,4 @@ var ListDetailComponent = _ListDetailComponent;
 export {
   ListDetailComponent
 };
-//# sourceMappingURL=list-detail.component-U5DQYULB.js.map
+//# sourceMappingURL=chunk-SIDQQ5A7.js.map

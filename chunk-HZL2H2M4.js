@@ -1,10 +1,10 @@
 import {
   AuthService
-} from "./chunk-QT5ZR3E4.js";
+} from "./chunk-ZXCDHV5B.js";
 import {
-  ApiService,
   CdkScrollable,
   CdkScrollableModule,
+  ListService,
   MatChipOption,
   MatChipSet,
   MatChipsModule,
@@ -17,7 +17,8 @@ import {
   NG_VALUE_ACCESSOR,
   ScrollDispatcher,
   ViewportRuler
-} from "./chunk-OFOPXV5V.js";
+} from "./chunk-KJ37EG5Q.js";
+import "./chunk-CENFS5OK.js";
 import {
   A,
   A11yModule,
@@ -57,21 +58,12 @@ import {
   coerceBooleanProperty,
   coerceNumberProperty,
   hasModifierKey
-} from "./chunk-MITVACRJ.js";
-import {
-  CommonModule,
-  NgForOf,
-  NgIf,
-  NgTemplateOutlet,
-  Router,
-  RouterLink,
-  RouterLinkActive,
-  RouterModule
-} from "./chunk-WO6GHJVH.js";
+} from "./chunk-BFUKVJTR.js";
 import {
   BehaviorSubject,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  CommonModule,
   Component,
   ContentChild,
   ContentChildren,
@@ -83,11 +75,18 @@ import {
   InjectionToken,
   Injector,
   Input,
+  NgForOf,
+  NgIf,
   NgModule,
+  NgTemplateOutlet,
   NgZone,
   Output,
   QueryList,
   Renderer2,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterModule,
   Subject,
   Subscription,
   ViewChild,
@@ -124,7 +123,6 @@ import {
   ɵɵdefineDirective,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
-  ɵɵdirectiveInject,
   ɵɵdomElementEnd,
   ɵɵdomElementStart,
   ɵɵelement,
@@ -153,7 +151,7 @@ import {
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-2D7222YK.js";
+} from "./chunk-RFIAPGPR.js";
 
 // node_modules/@angular/material/fesm2022/sidenav.mjs
 var _c0 = ["*"];
@@ -5162,13 +5160,13 @@ function DashboardComponent_div_80_Template(rf, ctx) {
 }
 __name(DashboardComponent_div_80_Template, "DashboardComponent_div_80_Template");
 var _DashboardComponent = class _DashboardComponent {
-  constructor(apiService, authService, router) {
-    this.apiService = apiService;
-    this.authService = authService;
-    this.router = router;
+  constructor() {
     this.lists$ = new BehaviorSubject([]);
     this.loading = true;
     this.currentUser = null;
+    this.apiService = inject(ListService);
+    this.authService = inject(AuthService);
+    this.router = inject(Router);
   }
   ngOnInit() {
     this.authService.authState$.subscribe((state) => {
@@ -5234,7 +5232,7 @@ var _DashboardComponent = class _DashboardComponent {
 };
 __name(_DashboardComponent, "DashboardComponent");
 _DashboardComponent.\u0275fac = /* @__PURE__ */ __name(function DashboardComponent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _DashboardComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService), \u0275\u0275directiveInject(Router));
+  return new (__ngFactoryType__ || _DashboardComponent)();
 }, "DashboardComponent_Factory");
 _DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], decls: 81, vars: 22, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], ["color", "primary", 1, "app-toolbar"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], [1, "app-title"], [1, "spacer"], ["mat-button", "", 1, "new-list-button", 3, "routerLink"], ["mat-icon-button", "", 1, "user-button", 3, "matMenuTriggerFor"], [1, "user-avatar", 3, "src", "alt"], [1, "user-info"], [1, "user-avatar-large", 3, "src", "alt"], [1, "user-name"], [1, "user-email"], ["mat-menu-item", "", 3, "click"], [1, "sidenav-container"], ["mode", "side", "opened", "", 1, "sidenav"], ["mat-list-item", "", "routerLinkActive", "active", 3, "routerLink"], ["matListItemIcon", ""], ["matListItemTitle", ""], ["matSubheader", ""], ["matListItemMeta", "", 1, "stat-badge"], [1, "main-content"], [1, "content-container"], [1, "welcome-section"], [1, "page-title"], [1, "page-subtitle"], ["class", "stats-grid", 4, "ngIf"], ["class", "recent-lists-section", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], [1, "stats-grid"], [1, "stat-card"], [1, "stat-content"], [1, "stat-icon", "primary"], [1, "stat-number"], [1, "stat-label"], [1, "stat-icon", "accent"], [1, "stat-icon", "success"], [1, "stat-icon", "info"], [1, "recent-lists-section"], [1, "section-title"], [1, "lists-grid"], ["class", "list-card", 3, "click", 4, "ngFor", "ngForOf"], ["class", "no-lists", 4, "ngIf"], [1, "list-card", 3, "click"], [1, "list-image"], [1, "list-overlay"], [1, "list-title"], ["class", "list-comment", 4, "ngIf"], [1, "list-stats"], ["aria-label", "List statistics"], [3, "disabled"], [3, "disabled", 4, "ngIf"], ["mat-button", "", "color", "primary", 3, "click"], ["mat-button", "", 3, "click"], [1, "list-comment"], [1, "no-lists"], [1, "empty-icon"], ["mat-raised-button", "", "color", "primary", 3, "routerLink"], [1, "loading-container"], ["diameter", "50"]], template: /* @__PURE__ */ __name(function DashboardComponent_Template(rf, ctx) {
   if (rf & 1) {
@@ -5627,13 +5625,13 @@ var DashboardComponent = _DashboardComponent;
         </mat-sidenav-content>
       </mat-sidenav-container>
     </div>
-  `, styles: ["/* angular:styles/component:css;16afb440de003ea66be71a09edd551b0abcff89785882ce630ed270ac863221a;/home/runner/work/listok-bolt/listok-bolt/src/app/components/dashboard/dashboard.component.ts */\n.dashboard-container {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n}\n.app-toolbar {\n  position: sticky;\n  top: 0;\n  z-index: 2;\n}\n.app-title {\n  font-size: 20px;\n  font-weight: 600;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.new-list-button {\n  margin-right: 16px;\n}\n.user-button {\n  padding: 4px;\n}\n.user-avatar {\n  width: 32px;\n  height: 32px;\n  border-radius: 50%;\n  object-fit: cover;\n}\n.user-avatar-large {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  object-fit: cover;\n}\n.user-info {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n}\n.user-name {\n  font-weight: 600;\n  margin: 0;\n}\n.user-email {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.sidenav-container {\n  flex: 1;\n}\n.sidenav {\n  width: 280px;\n  padding: 0;\n}\n.sidenav mat-nav-list {\n  padding-top: 0;\n}\n.sidenav a.active {\n  background-color: rgba(0, 0, 0, 0.04);\n}\n.stat-badge {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 8px;\n  border-radius: 12px;\n  font-size: 12px;\n  font-weight: 600;\n}\n.main-content {\n  background-color: #fafafa;\n}\n.content-container {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.welcome-section {\n  margin-bottom: 32px;\n}\n.page-title {\n  font-size: 32px;\n  font-weight: 600;\n  margin: 0 0 8px 0;\n  color: #1976d2;\n}\n.page-subtitle {\n  font-size: 16px;\n  opacity: 0.7;\n  margin: 0;\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 12px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.stat-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.stat-icon {\n  font-size: 40px;\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.stat-icon.primary {\n  background-color: #e3f2fd;\n  color: #1976d2;\n}\n.stat-icon.accent {\n  background-color: #fff3e0;\n  color: #f57c00;\n}\n.stat-icon.success {\n  background-color: #e8f5e8;\n  color: #4caf50;\n}\n.stat-icon.info {\n  background-color: #f3e5f5;\n  color: #9c27b0;\n}\n.stat-number {\n  font-size: 28px;\n  font-weight: 700;\n  margin: 0;\n  color: #333;\n}\n.stat-label {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.section-title {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0 0 16px 0;\n  color: #333;\n}\n.lists-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n  gap: 20px;\n}\n.list-card {\n  border-radius: 12px;\n  overflow: hidden;\n  transition: transform 0.2s, box-shadow 0.2s;\n  cursor: pointer;\n}\n.list-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);\n}\n.list-image {\n  height: 160px;\n  background-size: cover;\n  background-position: center;\n  position: relative;\n}\n.list-overlay {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));\n  color: white;\n  padding: 16px;\n}\n.list-title {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-comment {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0 0 12px 0;\n  line-height: 1.4;\n}\n.list-stats {\n  margin-bottom: 8px;\n}\n.list-stats mat-chip-set {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 4px;\n}\n.list-stats mat-chip {\n  font-size: 12px;\n}\n.no-lists {\n  text-align: center;\n  padding: 40px;\n  background-color: white;\n  border-radius: 12px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.no-lists h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.no-lists p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 40px;\n  gap: 16px;\n}\n@media (max-width: 768px) {\n  .sidenav {\n    width: 240px;\n  }\n  .content-container {\n    padding: 16px;\n  }\n  .page-title {\n    font-size: 24px;\n  }\n  .stats-grid {\n    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n    gap: 12px;\n  }\n  .lists-grid {\n    grid-template-columns: 1fr;\n    gap: 16px;\n  }\n}\n/*# sourceMappingURL=dashboard.component.css.map */\n"] }]
-  }], () => [{ type: ApiService }, { type: AuthService }, { type: Router }], null);
+  `, styles: ["/* angular:styles/component:scss;16afb440de003ea66be71a09edd551b0abcff89785882ce630ed270ac863221a;C:/dev/kontys/listok/listok-bolt/src/app/components/dashboard/dashboard.component.ts */\n.dashboard-container {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n}\n.app-toolbar {\n  position: sticky;\n  top: 0;\n  z-index: 2;\n}\n.app-title {\n  font-size: 20px;\n  font-weight: 600;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.new-list-button {\n  margin-right: 16px;\n}\n.user-button {\n  padding: 4px;\n}\n.user-avatar {\n  width: 32px;\n  height: 32px;\n  border-radius: 50%;\n  object-fit: cover;\n}\n.user-avatar-large {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  object-fit: cover;\n}\n.user-info {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n}\n.user-name {\n  font-weight: 600;\n  margin: 0;\n}\n.user-email {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.sidenav-container {\n  flex: 1;\n}\n.sidenav {\n  width: 280px;\n  padding: 0;\n}\n.sidenav mat-nav-list {\n  padding-top: 0;\n}\n.sidenav a.active {\n  background-color: rgba(0, 0, 0, 0.04);\n}\n.stat-badge {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 8px;\n  border-radius: 12px;\n  font-size: 12px;\n  font-weight: 600;\n}\n.main-content {\n  background-color: #fafafa;\n}\n.content-container {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.welcome-section {\n  margin-bottom: 32px;\n}\n.page-title {\n  font-size: 32px;\n  font-weight: 600;\n  margin: 0 0 8px 0;\n  color: #1976d2;\n}\n.page-subtitle {\n  font-size: 16px;\n  opacity: 0.7;\n  margin: 0;\n}\n.stats-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 12px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.stat-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n}\n.stat-icon {\n  font-size: 40px;\n  width: 40px;\n  height: 40px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.stat-icon.primary {\n  background-color: #e3f2fd;\n  color: #1976d2;\n}\n.stat-icon.accent {\n  background-color: #fff3e0;\n  color: #f57c00;\n}\n.stat-icon.success {\n  background-color: #e8f5e8;\n  color: #4caf50;\n}\n.stat-icon.info {\n  background-color: #f3e5f5;\n  color: #9c27b0;\n}\n.stat-number {\n  font-size: 28px;\n  font-weight: 700;\n  margin: 0;\n  color: #333;\n}\n.stat-label {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.section-title {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0 0 16px 0;\n  color: #333;\n}\n.lists-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n  gap: 20px;\n}\n.list-card {\n  border-radius: 12px;\n  overflow: hidden;\n  transition: transform 0.2s, box-shadow 0.2s;\n  cursor: pointer;\n}\n.list-card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);\n}\n.list-image {\n  height: 160px;\n  background-size: cover;\n  background-position: center;\n  position: relative;\n}\n.list-overlay {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));\n  color: white;\n  padding: 16px;\n}\n.list-title {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-comment {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0 0 12px 0;\n  line-height: 1.4;\n}\n.list-stats {\n  margin-bottom: 8px;\n}\n.list-stats mat-chip-set {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 4px;\n}\n.list-stats mat-chip {\n  font-size: 12px;\n}\n.no-lists {\n  text-align: center;\n  padding: 40px;\n  background-color: white;\n  border-radius: 12px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.no-lists h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.no-lists p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 40px;\n  gap: 16px;\n}\n@media (max-width: 768px) {\n  .sidenav {\n    width: 240px;\n  }\n  .content-container {\n    padding: 16px;\n  }\n  .page-title {\n    font-size: 24px;\n  }\n  .stats-grid {\n    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n    gap: 12px;\n  }\n  .lists-grid {\n    grid-template-columns: 1fr;\n    gap: 16px;\n  }\n}\n/*# sourceMappingURL=dashboard.component.css.map */\n"] }]
+  }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent", filePath: "src/app/components/dashboard/dashboard.component.ts", lineNumber: 546 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent", filePath: "src/app/components/dashboard/dashboard.component.ts", lineNumber: 545 });
 })();
 export {
   DashboardComponent
 };
-//# sourceMappingURL=dashboard.component-VNKT2RAB.js.map
+//# sourceMappingURL=chunk-HZL2H2M4.js.map

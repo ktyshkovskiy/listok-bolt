@@ -1,4 +1,7 @@
 import {
+  ListApiService
+} from "./chunk-CENFS5OK.js";
+import {
   BACKSPACE,
   BidiModule,
   DELETE,
@@ -38,15 +41,7 @@ import {
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   supportsScrollBehavior
-} from "./chunk-MITVACRJ.js";
-import {
-  HttpClient,
-  HttpHeaders,
-  Location,
-  NgTemplateOutlet,
-  environment,
-  getDOM
-} from "./chunk-WO6GHJVH.js";
+} from "./chunk-BFUKVJTR.js";
 import {
   ANIMATION_MODULE_TYPE,
   ApplicationRef,
@@ -70,8 +65,10 @@ import {
   Injector,
   Input,
   IterableDiffers,
+  Location,
   NgModule,
   NgModuleRef$1,
+  NgTemplateOutlet,
   NgZone,
   Observable,
   Optional,
@@ -102,13 +99,13 @@ import {
   computed,
   contentChild,
   createComponent,
-  delay,
   distinctUntilChanged,
   effect,
   filter,
   forkJoin,
   forwardRef,
   from,
+  getDOM,
   inject,
   isObservable,
   isPromise,
@@ -157,7 +154,6 @@ import {
   ɵɵelementStart,
   ɵɵgetCurrentView,
   ɵɵgetInheritedFactory,
-  ɵɵinject,
   ɵɵinvalidFactory,
   ɵɵlistener,
   ɵɵloadQuery,
@@ -178,7 +174,7 @@ import {
   ɵɵtextInterpolate,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
-} from "./chunk-2D7222YK.js";
+} from "./chunk-RFIAPGPR.js";
 
 // node_modules/@angular/material/fesm2022/toolbar.mjs
 var _c0 = ["*", [["mat-toolbar-row"]]];
@@ -18793,333 +18789,71 @@ var matMenuAnimations = {
 var fadeInItems = matMenuAnimations.fadeInItems;
 var transformMenu = matMenuAnimations.transformMenu;
 
-// node_modules/uuid/dist/esm-browser/stringify.js
-var byteToHex = [];
-for (i = 0; i < 256; ++i) {
-  byteToHex.push((i + 256).toString(16).slice(1));
-}
-var i;
-function unsafeStringify(arr, offset = 0) {
-  return (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + "-" + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + "-" + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + "-" + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + "-" + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase();
-}
-__name(unsafeStringify, "unsafeStringify");
-
-// node_modules/uuid/dist/esm-browser/rng.js
-var getRandomValues;
-var rnds8 = new Uint8Array(16);
-function rng() {
-  if (!getRandomValues) {
-    getRandomValues = typeof crypto !== "undefined" && crypto.getRandomValues && crypto.getRandomValues.bind(crypto);
-    if (!getRandomValues) {
-      throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");
-    }
-  }
-  return getRandomValues(rnds8);
-}
-__name(rng, "rng");
-
-// node_modules/uuid/dist/esm-browser/native.js
-var randomUUID = typeof crypto !== "undefined" && crypto.randomUUID && crypto.randomUUID.bind(crypto);
-var native_default = {
-  randomUUID
-};
-
-// node_modules/uuid/dist/esm-browser/v4.js
-function v4(options, buf, offset) {
-  if (native_default.randomUUID && !buf && !options) {
-    return native_default.randomUUID();
-  }
-  options = options || {};
-  var rnds = options.random || (options.rng || rng)();
-  rnds[6] = rnds[6] & 15 | 64;
-  rnds[8] = rnds[8] & 63 | 128;
-  if (buf) {
-    offset = offset || 0;
-    for (var i = 0; i < 16; ++i) {
-      buf[offset + i] = rnds[i];
-    }
-    return buf;
-  }
-  return unsafeStringify(rnds);
-}
-__name(v4, "v4");
-var v4_default = v4;
-
-// src/app/services/mock-data.service.ts
-var _MockDataService = class _MockDataService {
+// src/app/services/list.service.ts
+var _ListService = class _ListService {
   constructor() {
-    this.mockLists = [
-      {
-        id: "1",
-        name: "Grocery Shopping",
-        comment: "Weekly grocery list",
-        img: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg",
-        items: [
-          {
-            id: "1-1",
-            item: { id: "item-1", name: "Apples", img: "https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg" },
-            count: 6,
-            color: "#4CAF50",
-            status: "to_buy"
-          },
-          {
-            id: "1-2",
-            item: { id: "item-2", name: "Bread", img: "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg" },
-            count: 2,
-            color: "#FF9800",
-            status: "bought"
-          },
-          {
-            id: "1-3",
-            item: { id: "item-3", name: "Milk", img: "https://images.pexels.com/photos/416354/pexels-photo-416354.jpeg" },
-            count: 1,
-            color: "#2196F3",
-            status: "to_buy"
-          }
-        ]
-      },
-      {
-        id: "2",
-        name: "Office Supplies",
-        comment: "Supplies needed for the home office",
-        img: "https://images.pexels.com/photos/159832/office-supplies-stationery-equipment-159832.jpeg",
-        items: [
-          {
-            id: "2-1",
-            item: { id: "item-4", name: "Notebooks", img: "https://images.pexels.com/photos/159844/cellular-education-classroom-159844.jpeg" },
-            count: 3,
-            color: "#9C27B0",
-            status: "to_buy"
-          },
-          {
-            id: "2-2",
-            item: { id: "item-5", name: "Pens", img: "https://images.pexels.com/photos/159832/office-supplies-stationery-equipment-159832.jpeg" },
-            count: 12,
-            color: "#E91E63",
-            status: "bought"
-          }
-        ]
-      },
-      {
-        id: "3",
-        name: "Home Renovation",
-        comment: "Materials for bathroom renovation",
-        img: "https://images.pexels.com/photos/1599791/pexels-photo-1599791.jpeg",
-        items: [
-          {
-            id: "3-1",
-            item: { id: "item-6", name: "Tiles", img: "https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg" },
-            count: 50,
-            color: "#607D8B",
-            status: "to_buy"
-          },
-          {
-            id: "3-2",
-            item: { id: "item-7", name: "Paint", img: "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg" },
-            count: 4,
-            color: "#795548",
-            status: "to_buy"
-          }
-        ]
-      }
-    ];
+    this.listService = inject(ListApiService);
   }
   getLists() {
-    return of([...this.mockLists]).pipe(delay(500));
+    return this.listService.getLists().pipe(map((apiLists) => apiLists.map((value) => this.mapApiListToList(value))));
   }
   getListById(id) {
-    const list = this.mockLists.find((l) => l.id === id);
-    return of(list ? __spreadValues({}, list) : null).pipe(delay(300));
+    return this.listService.getList(id).pipe(map((value) => this.mapApiListToList(value)));
   }
-  createList(listData) {
-    const newList = {
-      id: v4_default(),
-      name: listData.name || "",
-      comment: listData.comment,
-      img: listData.img,
-      items: listData.items || []
-    };
-    this.mockLists.push(newList);
-    return of(__spreadValues({}, newList)).pipe(delay(400));
+  createList(list) {
+    const apiList = this.mapListToListFields(list);
+    return this.listService.createList(apiList).pipe(map((value) => this.mapApiListToList(value)));
   }
-  updateList(id, listData) {
-    const index = this.mockLists.findIndex((l) => l.id === id);
-    if (index === -1) {
-      return of(null).pipe(delay(300));
-    }
-    this.mockLists[index] = __spreadProps(__spreadValues(__spreadValues({}, this.mockLists[index]), listData), { id });
-    return of(__spreadValues({}, this.mockLists[index])).pipe(delay(400));
+  updateList(id, list) {
+    const apiList = this.mapListToListFields(list);
+    return this.listService.updateList(id, apiList).pipe(map((value) => this.mapApiListToList(value)));
   }
   deleteList(id) {
-    const index = this.mockLists.findIndex((l) => l.id === id);
-    if (index === -1) {
-      return of(false).pipe(delay(300));
-    }
-    this.mockLists.splice(index, 1);
-    return of(true).pipe(delay(400));
+    return this.listService.deleteList(id);
   }
-  createItem(listId, itemData) {
-    const listIndex = this.mockLists.findIndex((l) => l.id === listId);
-    if (listIndex === -1) {
-      return of(null).pipe(delay(300));
-    }
-    const newItem = {
-      id: v4_default(),
-      item: itemData.item,
-      count: itemData.count || 1,
-      color: itemData.color,
-      status: itemData.status || "to_buy"
+  mapApiListToList(apiList) {
+    let items = this.mapApiItemsToItems(apiList.items);
+    return {
+      id: apiList.id,
+      name: apiList.name,
+      comment: apiList.comment,
+      img: apiList.img,
+      items
     };
-    this.mockLists[listIndex].items.push(newItem);
-    return of(__spreadValues({}, newItem)).pipe(delay(400));
   }
-  getItemById(itemId) {
-    for (const list of this.mockLists) {
-      const item = list.items.find((i) => i.id === itemId);
-      if (item) {
-        return of(__spreadValues({}, item)).pipe(delay(300));
-      }
-    }
-    return of(null).pipe(delay(300));
+  mapApiItemsToItems(items) {
+    return items.map((value) => this.mapApiItemToItem(value));
   }
-  updateItem(itemId, itemData) {
-    for (const list of this.mockLists) {
-      const itemIndex = list.items.findIndex((i) => i.id === itemId);
-      if (itemIndex !== -1) {
-        list.items[itemIndex] = __spreadProps(__spreadValues(__spreadValues({}, list.items[itemIndex]), itemData), { id: itemId });
-        return of(__spreadValues({}, list.items[itemIndex])).pipe(delay(400));
-      }
-    }
-    return of(null).pipe(delay(300));
+  mapApiItemToItem(item) {
+    return {
+      id: item.id,
+      item: item.product,
+      color: item.groupColor,
+      count: item.count,
+      status: item.status
+    };
   }
-  deleteItem(itemId) {
-    for (const list of this.mockLists) {
-      const itemIndex = list.items.findIndex((i) => i.id === itemId);
-      if (itemIndex !== -1) {
-        list.items.splice(itemIndex, 1);
-        return of(true).pipe(delay(400));
-      }
-    }
-    return of(false).pipe(delay(300));
+  mapListToListFields(list) {
+    return {
+      name: list.name,
+      comment: list.comment,
+      img: list.img
+    };
   }
 };
-__name(_MockDataService, "MockDataService");
-_MockDataService.\u0275fac = /* @__PURE__ */ __name(function MockDataService_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _MockDataService)();
-}, "MockDataService_Factory");
-_MockDataService.\u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _MockDataService, factory: _MockDataService.\u0275fac, providedIn: "root" });
-var MockDataService = _MockDataService;
+__name(_ListService, "ListService");
+_ListService.\u0275fac = /* @__PURE__ */ __name(function ListService_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _ListService)();
+}, "ListService_Factory");
+_ListService.\u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _ListService, factory: _ListService.\u0275fac, providedIn: "root" });
+var ListService = _ListService;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MockDataService, [{
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ListService, [{
     type: Injectable,
     args: [{
       providedIn: "root"
     }]
   }], null, null);
-})();
-
-// src/app/services/api.service.ts
-var _ApiService = class _ApiService {
-  constructor(http, mockDataService) {
-    this.http = http;
-    this.mockDataService = mockDataService;
-    this.baseUrl = environment.apiUrl;
-    this.headers = new HttpHeaders({
-      "Content-Type": "application/json"
-    });
-  }
-  getAuthHeaders() {
-    const token = localStorage.getItem("authToken");
-    return token ? this.headers.set("Authorization", `Bearer ${token}`) : this.headers;
-  }
-  // Lists endpoints
-  getLists() {
-    if (environment.useMockData) {
-      return this.mockDataService.getLists();
-    }
-    return this.http.get(`${this.baseUrl}/lists`, {
-      headers: this.getAuthHeaders()
-    });
-  }
-  getListById(id) {
-    if (environment.useMockData) {
-      return this.mockDataService.getListById(id);
-    }
-    return this.http.get(`${this.baseUrl}/lists/${id}`, {
-      headers: this.getAuthHeaders()
-    });
-  }
-  createList(list) {
-    if (environment.useMockData) {
-      return this.mockDataService.createList(list);
-    }
-    return this.http.post(`${this.baseUrl}/lists`, list, {
-      headers: this.getAuthHeaders()
-    });
-  }
-  updateList(id, list) {
-    if (environment.useMockData) {
-      return this.mockDataService.updateList(id, list);
-    }
-    return this.http.put(`${this.baseUrl}/lists/${id}`, list, {
-      headers: this.getAuthHeaders()
-    });
-  }
-  deleteList(id) {
-    if (environment.useMockData) {
-      return this.mockDataService.deleteList(id);
-    }
-    return this.http.delete(`${this.baseUrl}/lists/${id}`, {
-      headers: this.getAuthHeaders()
-    });
-  }
-  // Items endpoints
-  createItem(listId, item) {
-    if (environment.useMockData) {
-      return this.mockDataService.createItem(listId, item);
-    }
-    return this.http.post(`${this.baseUrl}/items`, item, {
-      headers: this.getAuthHeaders()
-    });
-  }
-  getItemById(id) {
-    if (environment.useMockData) {
-      return this.mockDataService.getItemById(id);
-    }
-    return this.http.get(`${this.baseUrl}/items/${id}`, {
-      headers: this.getAuthHeaders()
-    });
-  }
-  updateItem(id, item) {
-    if (environment.useMockData) {
-      return this.mockDataService.updateItem(id, item);
-    }
-    return this.http.put(`${this.baseUrl}/items/${id}`, item, {
-      headers: this.getAuthHeaders()
-    });
-  }
-  deleteItem(id) {
-    if (environment.useMockData) {
-      return this.mockDataService.deleteItem(id);
-    }
-    return this.http.delete(`${this.baseUrl}/items/${id}`, {
-      headers: this.getAuthHeaders()
-    });
-  }
-};
-__name(_ApiService, "ApiService");
-_ApiService.\u0275fac = /* @__PURE__ */ __name(function ApiService_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _ApiService)(\u0275\u0275inject(HttpClient), \u0275\u0275inject(MockDataService));
-}, "ApiService_Factory");
-_ApiService.\u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _ApiService, factory: _ApiService.\u0275fac, providedIn: "root" });
-var ApiService = _ApiService;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ApiService, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], () => [{ type: HttpClient }, { type: MockDataService }], null);
 })();
 
 export {
@@ -19147,7 +18881,7 @@ export {
   MatMenu,
   MatMenuTrigger,
   MatMenuModule,
-  ApiService
+  ListService
 };
 /*! Bundled license information:
 
@@ -19158,4 +18892,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-OFOPXV5V.js.map
+//# sourceMappingURL=chunk-KJ37EG5Q.js.map
