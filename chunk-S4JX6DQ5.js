@@ -1,24 +1,26 @@
 import {
   AuthService
-} from "./chunk-ZXCDHV5B.js";
+} from "./chunk-DTVRW2I7.js";
 import {
-  CdkScrollable,
-  CdkScrollableModule,
-  ListService,
   MatChipOption,
   MatChipSet,
   MatChipsModule,
   MatMenu,
   MatMenuItem,
   MatMenuModule,
-  MatMenuTrigger,
+  MatMenuTrigger
+} from "./chunk-TLUYX63U.js";
+import {
+  CdkScrollable,
+  CdkScrollableModule,
+  ListService,
   MatToolbar,
   MatToolbarModule,
   NG_VALUE_ACCESSOR,
   ScrollDispatcher,
   ViewportRuler
-} from "./chunk-KJ37EG5Q.js";
-import "./chunk-CENFS5OK.js";
+} from "./chunk-LVUFJQD7.js";
+import "./chunk-PDP2YWQ3.js";
 import {
   A,
   A11yModule,
@@ -58,7 +60,7 @@ import {
   coerceBooleanProperty,
   coerceNumberProperty,
   hasModifierKey
-} from "./chunk-BFUKVJTR.js";
+} from "./chunk-SAHT5VQE.js";
 import {
   BehaviorSubject,
   ChangeDetectionStrategy,
@@ -151,7 +153,7 @@ import {
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-RFIAPGPR.js";
+} from "./chunk-376M5ZWK.js";
 
 // node_modules/@angular/material/fesm2022/sidenav.mjs
 var _c0 = ["*"];
@@ -4941,42 +4943,43 @@ var MatBadgeModule = _MatBadgeModule;
 var _c04 = /* @__PURE__ */ __name(() => ["/lists/new"], "_c0");
 var _c14 = /* @__PURE__ */ __name(() => ["/dashboard"], "_c1");
 var _c24 = /* @__PURE__ */ __name(() => ["/lists"], "_c2");
+var _c34 = /* @__PURE__ */ __name(() => ({ exact: true }), "_c3");
 function DashboardComponent_div_78_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 30)(1, "mat-card", 31)(2, "mat-card-content")(3, "div", 32)(4, "mat-icon", 33);
+    \u0275\u0275elementStart(0, "div", 31)(1, "mat-card", 32)(2, "mat-card-content")(3, "div", 33)(4, "mat-icon", 34);
     \u0275\u0275text(5, "assignment");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div")(7, "h3", 34);
+    \u0275\u0275elementStart(6, "div")(7, "h3", 35);
     \u0275\u0275text(8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "p", 35);
+    \u0275\u0275elementStart(9, "p", 36);
     \u0275\u0275text(10, "Total Lists");
     \u0275\u0275elementEnd()()()()();
-    \u0275\u0275elementStart(11, "mat-card", 31)(12, "mat-card-content")(13, "div", 32)(14, "mat-icon", 36);
+    \u0275\u0275elementStart(11, "mat-card", 32)(12, "mat-card-content")(13, "div", 33)(14, "mat-icon", 37);
     \u0275\u0275text(15, "shopping_cart");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "div")(17, "h3", 34);
+    \u0275\u0275elementStart(16, "div")(17, "h3", 35);
     \u0275\u0275text(18);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(19, "p", 35);
+    \u0275\u0275elementStart(19, "p", 36);
     \u0275\u0275text(20, "Items to Buy");
     \u0275\u0275elementEnd()()()()();
-    \u0275\u0275elementStart(21, "mat-card", 31)(22, "mat-card-content")(23, "div", 32)(24, "mat-icon", 37);
+    \u0275\u0275elementStart(21, "mat-card", 32)(22, "mat-card-content")(23, "div", 33)(24, "mat-icon", 38);
     \u0275\u0275text(25, "done_all");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(26, "div")(27, "h3", 34);
+    \u0275\u0275elementStart(26, "div")(27, "h3", 35);
     \u0275\u0275text(28);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(29, "p", 35);
+    \u0275\u0275elementStart(29, "p", 36);
     \u0275\u0275text(30, "Items Bought");
     \u0275\u0275elementEnd()()()()();
-    \u0275\u0275elementStart(31, "mat-card", 31)(32, "mat-card-content")(33, "div", 32)(34, "mat-icon", 38);
+    \u0275\u0275elementStart(31, "mat-card", 32)(32, "mat-card-content")(33, "div", 33)(34, "mat-icon", 39);
     \u0275\u0275text(35, "percent");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(36, "div")(37, "h3", 34);
+    \u0275\u0275elementStart(36, "div")(37, "h3", 35);
     \u0275\u0275text(38);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(39, "p", 35);
+    \u0275\u0275elementStart(39, "p", 36);
     \u0275\u0275text(40, "Completion Rate");
     \u0275\u0275elementEnd()()()()()();
   }
@@ -4995,7 +4998,7 @@ function DashboardComponent_div_78_Template(rf, ctx) {
 __name(DashboardComponent_div_78_Template, "DashboardComponent_div_78_Template");
 function DashboardComponent_div_79_mat_card_4_p_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 55);
+    \u0275\u0275elementStart(0, "p", 56);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -5008,7 +5011,7 @@ function DashboardComponent_div_79_mat_card_4_p_6_Template(rf, ctx) {
 __name(DashboardComponent_div_79_mat_card_4_p_6_Template, "DashboardComponent_div_79_mat_card_4_p_6_Template");
 function DashboardComponent_div_79_mat_card_4_mat_chip_option_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "mat-chip-option", 51)(1, "mat-icon");
+    \u0275\u0275elementStart(0, "mat-chip-option", 52)(1, "mat-icon");
     \u0275\u0275text(2, "shopping_cart");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -5025,7 +5028,7 @@ function DashboardComponent_div_79_mat_card_4_mat_chip_option_13_Template(rf, ct
 __name(DashboardComponent_div_79_mat_card_4_mat_chip_option_13_Template, "DashboardComponent_div_79_mat_card_4_mat_chip_option_13_Template");
 function DashboardComponent_div_79_mat_card_4_mat_chip_option_14_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "mat-chip-option", 51)(1, "mat-icon");
+    \u0275\u0275elementStart(0, "mat-chip-option", 52)(1, "mat-icon");
     \u0275\u0275text(2, "done");
     \u0275\u0275elementEnd();
     \u0275\u0275text(3);
@@ -5043,25 +5046,25 @@ __name(DashboardComponent_div_79_mat_card_4_mat_chip_option_14_Template, "Dashbo
 function DashboardComponent_div_79_mat_card_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "mat-card", 44);
+    \u0275\u0275elementStart(0, "mat-card", 45);
     \u0275\u0275listener("click", /* @__PURE__ */ __name(function DashboardComponent_div_79_mat_card_4_Template_mat_card_click_0_listener() {
       const list_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r2 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r2.openList(list_r5.id));
     }, "DashboardComponent_div_79_mat_card_4_Template_mat_card_click_0_listener"));
-    \u0275\u0275elementStart(1, "div", 45)(2, "div", 46)(3, "h3", 47);
+    \u0275\u0275elementStart(1, "div", 46)(2, "div", 47)(3, "h3", 48);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()()();
     \u0275\u0275elementStart(5, "mat-card-content");
-    \u0275\u0275template(6, DashboardComponent_div_79_mat_card_4_p_6_Template, 2, 1, "p", 48);
-    \u0275\u0275elementStart(7, "div", 49)(8, "mat-chip-set", 50)(9, "mat-chip-option", 51)(10, "mat-icon");
+    \u0275\u0275template(6, DashboardComponent_div_79_mat_card_4_p_6_Template, 2, 1, "p", 49);
+    \u0275\u0275elementStart(7, "div", 50)(8, "mat-chip-set", 51)(9, "mat-chip-option", 52)(10, "mat-icon");
     \u0275\u0275text(11, "assignment");
     \u0275\u0275elementEnd();
     \u0275\u0275text(12);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(13, DashboardComponent_div_79_mat_card_4_mat_chip_option_13_Template, 4, 2, "mat-chip-option", 52)(14, DashboardComponent_div_79_mat_card_4_mat_chip_option_14_Template, 4, 2, "mat-chip-option", 52);
+    \u0275\u0275template(13, DashboardComponent_div_79_mat_card_4_mat_chip_option_13_Template, 4, 2, "mat-chip-option", 53)(14, DashboardComponent_div_79_mat_card_4_mat_chip_option_14_Template, 4, 2, "mat-chip-option", 53);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(15, "mat-card-actions")(16, "button", 53);
+    \u0275\u0275elementStart(15, "mat-card-actions")(16, "button", 54);
     \u0275\u0275listener("click", /* @__PURE__ */ __name(function DashboardComponent_div_79_mat_card_4_Template_button_click_16_listener($event) {
       const list_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r2 = \u0275\u0275nextContext(2);
@@ -5073,7 +5076,7 @@ function DashboardComponent_div_79_mat_card_4_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(19, " View ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "button", 54);
+    \u0275\u0275elementStart(20, "button", 55);
     \u0275\u0275listener("click", /* @__PURE__ */ __name(function DashboardComponent_div_79_mat_card_4_Template_button_click_20_listener($event) {
       const list_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r2 = \u0275\u0275nextContext(2);
@@ -5108,7 +5111,7 @@ function DashboardComponent_div_79_mat_card_4_Template(rf, ctx) {
 __name(DashboardComponent_div_79_mat_card_4_Template, "DashboardComponent_div_79_mat_card_4_Template");
 function DashboardComponent_div_79_div_5_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 56)(1, "mat-icon", 57);
+    \u0275\u0275elementStart(0, "div", 57)(1, "mat-icon", 58);
     \u0275\u0275text(2, "assignment");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
@@ -5117,7 +5120,7 @@ function DashboardComponent_div_79_div_5_Template(rf, ctx) {
     \u0275\u0275elementStart(5, "p");
     \u0275\u0275text(6, "Create your first list to get started");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "button", 58)(8, "mat-icon");
+    \u0275\u0275elementStart(7, "button", 59)(8, "mat-icon");
     \u0275\u0275text(9, "add");
     \u0275\u0275elementEnd();
     \u0275\u0275text(10, " Create Your First List ");
@@ -5131,13 +5134,13 @@ function DashboardComponent_div_79_div_5_Template(rf, ctx) {
 __name(DashboardComponent_div_79_div_5_Template, "DashboardComponent_div_79_div_5_Template");
 function DashboardComponent_div_79_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 39)(1, "h2", 40);
+    \u0275\u0275elementStart(0, "div", 40)(1, "h2", 41);
     \u0275\u0275text(2, "Recent Lists");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 41);
-    \u0275\u0275template(4, DashboardComponent_div_79_mat_card_4_Template, 24, 8, "mat-card", 42);
+    \u0275\u0275elementStart(3, "div", 42);
+    \u0275\u0275template(4, DashboardComponent_div_79_mat_card_4_Template, 24, 8, "mat-card", 43);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(5, DashboardComponent_div_79_div_5_Template, 11, 2, "div", 43);
+    \u0275\u0275template(5, DashboardComponent_div_79_div_5_Template, 11, 2, "div", 44);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -5151,8 +5154,8 @@ function DashboardComponent_div_79_Template(rf, ctx) {
 __name(DashboardComponent_div_79_Template, "DashboardComponent_div_79_Template");
 function DashboardComponent_div_80_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 59);
-    \u0275\u0275element(1, "mat-spinner", 60);
+    \u0275\u0275elementStart(0, "div", 60);
+    \u0275\u0275element(1, "mat-spinner", 61);
     \u0275\u0275elementStart(2, "p");
     \u0275\u0275text(3, "Loading your dashboard...");
     \u0275\u0275elementEnd()();
@@ -5234,7 +5237,7 @@ __name(_DashboardComponent, "DashboardComponent");
 _DashboardComponent.\u0275fac = /* @__PURE__ */ __name(function DashboardComponent_Factory(__ngFactoryType__) {
   return new (__ngFactoryType__ || _DashboardComponent)();
 }, "DashboardComponent_Factory");
-_DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], decls: 81, vars: 22, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], ["color", "primary", 1, "app-toolbar"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], [1, "app-title"], [1, "spacer"], ["mat-button", "", 1, "new-list-button", 3, "routerLink"], ["mat-icon-button", "", 1, "user-button", 3, "matMenuTriggerFor"], [1, "user-avatar", 3, "src", "alt"], [1, "user-info"], [1, "user-avatar-large", 3, "src", "alt"], [1, "user-name"], [1, "user-email"], ["mat-menu-item", "", 3, "click"], [1, "sidenav-container"], ["mode", "side", "opened", "", 1, "sidenav"], ["mat-list-item", "", "routerLinkActive", "active", 3, "routerLink"], ["matListItemIcon", ""], ["matListItemTitle", ""], ["matSubheader", ""], ["matListItemMeta", "", 1, "stat-badge"], [1, "main-content"], [1, "content-container"], [1, "welcome-section"], [1, "page-title"], [1, "page-subtitle"], ["class", "stats-grid", 4, "ngIf"], ["class", "recent-lists-section", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], [1, "stats-grid"], [1, "stat-card"], [1, "stat-content"], [1, "stat-icon", "primary"], [1, "stat-number"], [1, "stat-label"], [1, "stat-icon", "accent"], [1, "stat-icon", "success"], [1, "stat-icon", "info"], [1, "recent-lists-section"], [1, "section-title"], [1, "lists-grid"], ["class", "list-card", 3, "click", 4, "ngFor", "ngForOf"], ["class", "no-lists", 4, "ngIf"], [1, "list-card", 3, "click"], [1, "list-image"], [1, "list-overlay"], [1, "list-title"], ["class", "list-comment", 4, "ngIf"], [1, "list-stats"], ["aria-label", "List statistics"], [3, "disabled"], [3, "disabled", 4, "ngIf"], ["mat-button", "", "color", "primary", 3, "click"], ["mat-button", "", 3, "click"], [1, "list-comment"], [1, "no-lists"], [1, "empty-icon"], ["mat-raised-button", "", "color", "primary", 3, "routerLink"], [1, "loading-container"], ["diameter", "50"]], template: /* @__PURE__ */ __name(function DashboardComponent_Template(rf, ctx) {
+_DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], decls: 81, vars: 24, consts: [["userMenu", "matMenu"], ["sidenav", ""], [1, "dashboard-container"], ["color", "primary", 1, "app-toolbar"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], [1, "app-title"], [1, "spacer"], ["mat-button", "", 1, "new-list-button", 3, "routerLink"], ["mat-icon-button", "", 1, "user-button", 3, "matMenuTriggerFor"], [1, "user-avatar", 3, "src", "alt"], [1, "user-info"], [1, "user-avatar-large", 3, "src", "alt"], [1, "user-name"], [1, "user-email"], ["mat-menu-item", "", 3, "click"], [1, "sidenav-container"], ["mode", "side", "opened", "", 1, "sidenav"], ["mat-list-item", "", "routerLinkActive", "active", 3, "routerLink"], ["matListItemIcon", ""], ["matListItemTitle", ""], ["mat-list-item", "", "routerLinkActive", "active", 3, "routerLink", "routerLinkActiveOptions"], ["matSubheader", ""], ["matListItemMeta", "", 1, "stat-badge"], [1, "main-content"], [1, "content-container"], [1, "welcome-section"], [1, "page-title"], [1, "page-subtitle"], ["class", "stats-grid", 4, "ngIf"], ["class", "recent-lists-section", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], [1, "stats-grid"], [1, "stat-card"], [1, "stat-content"], [1, "stat-icon", "primary"], [1, "stat-number"], [1, "stat-label"], [1, "stat-icon", "accent"], [1, "stat-icon", "success"], [1, "stat-icon", "info"], [1, "recent-lists-section"], [1, "section-title"], [1, "lists-grid"], ["class", "list-card", 3, "click", 4, "ngFor", "ngForOf"], ["class", "no-lists", 4, "ngIf"], [1, "list-card", 3, "click"], [1, "list-image"], [1, "list-overlay"], [1, "list-title"], ["class", "list-comment", 4, "ngIf"], [1, "list-stats"], ["aria-label", "List statistics"], [3, "disabled"], [3, "disabled", 4, "ngIf"], ["mat-button", "", "color", "primary", 3, "click"], ["mat-button", "", 3, "click"], [1, "list-comment"], [1, "no-lists"], [1, "empty-icon"], ["mat-raised-button", "", "color", "primary", 3, "routerLink"], [1, "loading-container"], ["diameter", "50"]], template: /* @__PURE__ */ __name(function DashboardComponent_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "div", 2)(1, "mat-toolbar", 3)(2, "button", 4);
@@ -5289,14 +5292,14 @@ _DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ ty
     \u0275\u0275elementStart(40, "span", 19);
     \u0275\u0275text(41, "All Lists");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(42, "a", 17)(43, "mat-icon", 18);
+    \u0275\u0275elementStart(42, "a", 20)(43, "mat-icon", 18);
     \u0275\u0275text(44, "add");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(45, "span", 19);
     \u0275\u0275text(46, "Create List");
     \u0275\u0275elementEnd()();
     \u0275\u0275element(47, "mat-divider");
-    \u0275\u0275elementStart(48, "h3", 20);
+    \u0275\u0275elementStart(48, "h3", 21);
     \u0275\u0275text(49, "Quick Stats");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(50, "mat-list-item")(51, "mat-icon", 18);
@@ -5305,7 +5308,7 @@ _DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ ty
     \u0275\u0275elementStart(53, "span", 19);
     \u0275\u0275text(54, "Total Lists");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(55, "span", 21);
+    \u0275\u0275elementStart(55, "span", 22);
     \u0275\u0275text(56);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(57, "mat-list-item")(58, "mat-icon", 18);
@@ -5314,7 +5317,7 @@ _DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ ty
     \u0275\u0275elementStart(60, "span", 19);
     \u0275\u0275text(61, "Items to Buy");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(62, "span", 21);
+    \u0275\u0275elementStart(62, "span", 22);
     \u0275\u0275text(63);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(64, "mat-list-item")(65, "mat-icon", 18);
@@ -5323,22 +5326,22 @@ _DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ ty
     \u0275\u0275elementStart(67, "span", 19);
     \u0275\u0275text(68, "Items Bought");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(69, "span", 21);
+    \u0275\u0275elementStart(69, "span", 22);
     \u0275\u0275text(70);
     \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(71, "mat-sidenav-content", 22)(72, "div", 23)(73, "div", 24)(74, "h1", 25);
+    \u0275\u0275elementStart(71, "mat-sidenav-content", 23)(72, "div", 24)(73, "div", 25)(74, "h1", 26);
     \u0275\u0275text(75);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(76, "p", 26);
+    \u0275\u0275elementStart(76, "p", 27);
     \u0275\u0275text(77, "Here's an overview of your lists");
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(78, DashboardComponent_div_78_Template, 41, 4, "div", 27)(79, DashboardComponent_div_79_Template, 6, 2, "div", 28)(80, DashboardComponent_div_80_Template, 4, 0, "div", 29);
+    \u0275\u0275template(78, DashboardComponent_div_78_Template, 41, 4, "div", 28)(79, DashboardComponent_div_79_Template, 6, 2, "div", 29)(80, DashboardComponent_div_80_Template, 4, 0, "div", 30);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
     const userMenu_r6 = \u0275\u0275reference(15);
     \u0275\u0275advance(8);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(18, _c04));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(19, _c04));
     \u0275\u0275advance(4);
     \u0275\u0275property("matMenuTriggerFor", userMenu_r6);
     \u0275\u0275advance();
@@ -5350,11 +5353,11 @@ _DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ ty
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx.currentUser == null ? null : ctx.currentUser.email);
     \u0275\u0275advance(10);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(19, _c14));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(20, _c14));
     \u0275\u0275advance(5);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(20, _c24));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(21, _c24));
     \u0275\u0275advance(5);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(21, _c04));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(22, _c04))("routerLinkActiveOptions", \u0275\u0275pureFunction0(23, _c34));
     \u0275\u0275advance(14);
     \u0275\u0275textInterpolate(ctx.totalLists);
     \u0275\u0275advance(7);
@@ -5481,7 +5484,7 @@ var DashboardComponent = _DashboardComponent;
               <mat-icon matListItemIcon>list</mat-icon>
               <span matListItemTitle>All Lists</span>
             </a>
-            <a mat-list-item [routerLink]="['/lists/new']" routerLinkActive="active">
+            <a mat-list-item [routerLink]="['/lists/new']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
               <mat-icon matListItemIcon>add</mat-icon>
               <span matListItemTitle>Create List</span>
             </a>
@@ -5634,4 +5637,4 @@ var DashboardComponent = _DashboardComponent;
 export {
   DashboardComponent
 };
-//# sourceMappingURL=chunk-E3GRBQMK.js.map
+//# sourceMappingURL=chunk-S4JX6DQ5.js.map

@@ -19,7 +19,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-RFIAPGPR.js";
+} from "./chunk-376M5ZWK.js";
 
 // src/app/generated/api/configuration.ts
 var _Configuration = class _Configuration {
@@ -778,4 +778,4 @@ export {
   ListApiService,
   Configuration
 };
-//# sourceMappingURL=chunk-CENFS5OK.js.map
+//# sourceMappingURL=chunk-PDP2YWQ3.js.map

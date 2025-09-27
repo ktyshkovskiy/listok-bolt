@@ -99,7 +99,7 @@ import {
   ɵɵtemplate,
   ɵɵtemplateRefExtractor,
   ɵɵviewQuery
-} from "./chunk-RFIAPGPR.js";
+} from "./chunk-376M5ZWK.js";
 
 // node_modules/@angular/cdk/fesm2022/fake-event-detection.mjs
 function isFakeMousedownFromScreenReader(event) {
@@ -3761,6 +3761,51 @@ var PlatformModule = _PlatformModule;
     args: [{}]
   }], null, null);
 })();
+var supportedInputTypes;
+var candidateInputTypes = [
+  // `color` must come first. Chrome 56 shows a warning if we change the type to `color` after
+  // first changing it to something else:
+  // The specified value "" does not conform to the required format.
+  // The format is "#rrggbb" where rr, gg, bb are two-digit hexadecimal numbers.
+  "color",
+  "button",
+  "checkbox",
+  "date",
+  "datetime-local",
+  "email",
+  "file",
+  "hidden",
+  "image",
+  "month",
+  "number",
+  "password",
+  "radio",
+  "range",
+  "reset",
+  "search",
+  "submit",
+  "tel",
+  "text",
+  "time",
+  "url",
+  "week"
+];
+function getSupportedInputTypes() {
+  if (supportedInputTypes) {
+    return supportedInputTypes;
+  }
+  if (typeof document !== "object" || !document) {
+    supportedInputTypes = new Set(candidateInputTypes);
+    return supportedInputTypes;
+  }
+  let featureTestInput = document.createElement("input");
+  supportedInputTypes = new Set(candidateInputTypes.filter((value) => {
+    featureTestInput.setAttribute("type", value);
+    return featureTestInput.type === value;
+  }));
+  return supportedInputTypes;
+}
+__name(getSupportedInputTypes, "getSupportedInputTypes");
 
 // node_modules/@angular/cdk/fesm2022/layout.mjs
 var _LayoutModule = class _LayoutModule {
@@ -6527,6 +6572,7 @@ export {
   supportsScrollBehavior,
   getRtlScrollAxisType,
   _isTestEnvironment,
+  getSupportedInputTypes,
   Breakpoints,
   _animationsDisabled,
   coerceCssPixelValue,
@@ -6545,4 +6591,4 @@ export {
   MatProgressSpinner,
   MatProgressSpinnerModule
 };
-//# sourceMappingURL=chunk-BFUKVJTR.js.map
+//# sourceMappingURL=chunk-SAHT5VQE.js.map

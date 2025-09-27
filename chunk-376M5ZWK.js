@@ -42722,6 +42722,7 @@ export {
   BehaviorSubject,
   asapScheduler,
   animationFrameScheduler,
+  EMPTY,
   from,
   of,
   throwError,
@@ -42938,4 +42939,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-RFIAPGPR.js.map
+//# sourceMappingURL=chunk-376M5ZWK.js.map
