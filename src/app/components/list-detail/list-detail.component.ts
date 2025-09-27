@@ -174,8 +174,21 @@ import { ListService } from "../../services/list.service";
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
 
-    .item-card.completed {
-      opacity: 0.7;
+    .item-card.bought {
+      opacity: 0.6;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      background-color: #f5f5f5;
+      pointer-events: auto;
+    }
+
+    .item-card.bought:hover {
+      transform: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    .bought-text {
+      text-decoration: line-through;
+      color: #999;
     }
 
     .item-header {
@@ -317,10 +330,6 @@ import { ListService } from "../../services/list.service";
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
-      }
-
-      .item-status {
-        margin-left: 0;
       }
     }
   `]

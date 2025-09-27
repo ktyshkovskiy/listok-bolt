@@ -109,7 +109,7 @@
             <mat-card 
               *ngFor="let item of filteredItems" 
               class="item-card"
-              [class.completed]="item.status === 'bought'">
+              [class.bought]="item.status === 'bought'">
               <div class="item-header">
                 <mat-checkbox 
                   [checked]="item.status === 'bought'"
@@ -122,8 +122,8 @@
                 </div>
                 
                 <div class="item-info">
-                  <h3 class="item-name">{{ item.item.name }}</h3>
-                  <p class="item-comment" *ngIf="item.item.comment">{{ item.item.comment }}</p>
+                  <h3 class="item-name" [class.bought-text]="item.status === 'bought'">{{ item.item.name }}</h3>
+                  <p class="item-comment" *ngIf="item.item.comment" [class.bought-text]="item.status === 'bought'">{{ item.item.comment }}</p>
                 </div>
                 
                 <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
@@ -146,19 +146,12 @@
                 <div class="item-details">
                   <div class="item-count">
                     <mat-icon>confirmation_number</mat-icon>
-                    <span>Quantity: {{ item.count }}</span>
+                    <span [class.bought-text]="item.status === 'bought'">Quantity: {{ item.count }}</span>
                   </div>
                   
                   <div class="item-color" *ngIf="item.color">
                     <mat-icon>palette</mat-icon>
                     <div class="color-indicator" [style.background-color]="item.color"></div>
-                  </div>
-                  
-                  <div class="item-status">
-                    <mat-chip-option [disabled]="true">
-                      <mat-icon>{{ item.status === 'bought' ? 'done' : 'shopping_cart' }}</mat-icon>
-                      {{ item.status === 'bought' ? 'Completed' : 'To Buy' }}
-                    </mat-chip-option>
                   </div>
                 </div>
               </mat-card-content>
