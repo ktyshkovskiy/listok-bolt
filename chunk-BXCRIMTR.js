@@ -1,7 +1,7 @@
 import {
   MatSnackBar,
   MatSnackBarModule
-} from "./chunk-5SXVBXSG.js";
+} from "./chunk-FP7YL5LB.js";
 import {
   DefaultValueAccessor,
   ErrorStateMatcher,
@@ -28,8 +28,8 @@ import {
   Validators,
   _ErrorStateTracker,
   ɵNgNoValidate
-} from "./chunk-LVUFJQD7.js";
-import "./chunk-PDP2YWQ3.js";
+} from "./chunk-JGGOUNRC.js";
+import "./chunk-XZQ4J4WD.js";
 import {
   MatButton,
   MatButtonModule,
@@ -1251,7 +1251,7 @@ var _ListCreateComponent = class _ListCreateComponent {
       },
       {
         name: "Office Supplies",
-        url: "https://images.pexels.com/photos/159832/office-supplies-stationery-equipment-159832.jpeg"
+        url: "https://aa-business.co.uk/wp-content/uploads/2019/10/Stationery-Supplies-min-700x553.jpg"
       },
       {
         name: "Home & Garden",
@@ -1499,125 +1499,124 @@ var ListCreateComponent = _ListCreateComponent;
       MatToolbarModule,
       MatSnackBarModule,
       MatProgressSpinnerModule
-    ], template: `
-    <div class="create-list-container">
-      <mat-toolbar class="create-toolbar">
+    ], template: `<div class="create-list-container">
+    <mat-toolbar class="create-toolbar">
         <button mat-icon-button (click)="goBack()">
-          <mat-icon>arrow_back</mat-icon>
+            <mat-icon>arrow_back</mat-icon>
         </button>
-        
+
         <span class="toolbar-title">Create New List</span>
-        
+
         <span class="spacer"></span>
-        
-        <button 
-          mat-raised-button 
-          color="primary" 
-          [disabled]="!listForm.valid || isSubmitting"
-          (click)="createList()">
-          <mat-icon *ngIf="!isSubmitting">save</mat-icon>
-          <mat-spinner *ngIf="isSubmitting" diameter="20"></mat-spinner>
-          {{ isSubmitting ? 'Creating...' : 'Create List' }}
+
+        <button
+                mat-raised-button
+                color="primary"
+                [disabled]="!listForm.valid || isSubmitting"
+                (click)="createList()">
+            <mat-icon *ngIf="!isSubmitting">save</mat-icon>
+            <mat-spinner *ngIf="isSubmitting" diameter="20"></mat-spinner>
+            {{ isSubmitting ? 'Creating...' : 'Create List' }}
         </button>
-      </mat-toolbar>
+    </mat-toolbar>
 
-      <div class="create-content">
+    <div class="create-content">
         <mat-card class="create-card">
-          <mat-card-header>
-            <mat-card-title>List Details</mat-card-title>
-            <mat-card-subtitle>Fill in the information for your new list</mat-card-subtitle>
-          </mat-card-header>
-          
-          <mat-card-content>
-            <form [formGroup]="listForm" class="list-form">
-              <mat-form-field appearance="outline" class="full-width">
-                <mat-label>List Name</mat-label>
-                <input 
-                  matInput 
-                  formControlName="name" 
-                  placeholder="Enter list name"
-                  maxlength="100">
-                <mat-icon matSuffix>list</mat-icon>
-                <mat-error *ngIf="listForm.get('name')?.hasError('required')">
-                  List name is required
-                </mat-error>
-                <mat-error *ngIf="listForm.get('name')?.hasError('minlength')">
-                  List name must be at least 2 characters long
-                </mat-error>
-                <mat-hint align="end">{{ listForm.get('name')?.value?.length || 0 }}/100</mat-hint>
-              </mat-form-field>
+            <mat-card-header>
+                <mat-card-title>List Details</mat-card-title>
+                <mat-card-subtitle>Fill in the information for your new list</mat-card-subtitle>
+            </mat-card-header>
 
-              <mat-form-field appearance="outline" class="full-width">
-                <mat-label>Description (Optional)</mat-label>
-                <textarea 
-                  matInput 
-                  formControlName="comment" 
-                  placeholder="Add a description for your list"
-                  rows="3"
-                  maxlength="500">
+            <mat-card-content>
+                <form [formGroup]="listForm" class="list-form">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>List Name</mat-label>
+                        <input
+                                matInput
+                                formControlName="name"
+                                placeholder="Enter list name"
+                                maxlength="100">
+                        <mat-icon matSuffix>list</mat-icon>
+                        <mat-error *ngIf="listForm.get('name')?.hasError('required')">
+                            List name is required
+                        </mat-error>
+                        <mat-error *ngIf="listForm.get('name')?.hasError('minlength')">
+                            List name must be at least 2 characters long
+                        </mat-error>
+                        <mat-hint align="end">{{ listForm.get('name')?.value?.length || 0 }}/100</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Description (Optional)</mat-label>
+                        <textarea
+                                matInput
+                                formControlName="comment"
+                                placeholder="Add a description for your list"
+                                rows="3"
+                                maxlength="500">
                 </textarea>
-                <mat-icon matSuffix>description</mat-icon>
-                <mat-hint align="end">{{ listForm.get('comment')?.value?.length || 0 }}/500</mat-hint>
-              </mat-form-field>
+                        <mat-icon matSuffix>description</mat-icon>
+                        <mat-hint align="end">{{ listForm.get('comment')?.value?.length || 0 }}/500</mat-hint>
+                    </mat-form-field>
 
-              <mat-form-field appearance="outline" class="full-width">
-                <mat-label>Image URL (Optional)</mat-label>
-                <input 
-                  matInput 
-                  formControlName="img" 
-                  placeholder="https://example.com/image.jpg"
-                  type="url">
-                <mat-icon matSuffix>image</mat-icon>
-                <mat-error *ngIf="listForm.get('img')?.hasError('pattern')">
-                  Please enter a valid URL
-                </mat-error>
-              </mat-form-field>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Image URL (Optional)</mat-label>
+                        <input
+                                matInput
+                                formControlName="img"
+                                placeholder="https://example.com/image.jpg"
+                                type="url">
+                        <mat-icon matSuffix>image</mat-icon>
+                        <mat-error *ngIf="listForm.get('img')?.hasError('pattern')">
+                            Please enter a valid URL
+                        </mat-error>
+                    </mat-form-field>
 
-              <div class="image-preview" *ngIf="imagePreviewUrl">
-                <h4>Image Preview:</h4>
-                <img [src]="imagePreviewUrl" [alt]="listForm.get('name')?.value" class="preview-image">
-              </div>
+                    <div class="image-preview" *ngIf="imagePreviewUrl">
+                        <h4>Image Preview:</h4>
+                        <img [src]="imagePreviewUrl" [alt]="listForm.get('name')?.value" class="preview-image">
+                    </div>
 
-              <div class="suggested-images">
-                <h4>Or choose from suggested images:</h4>
-                <div class="image-grid">
-                  <div 
-                    *ngFor="let image of suggestedImages" 
-                    class="image-option"
-                    [class.selected]="listForm.get('img')?.value === image.url"
-                    (click)="selectImage(image.url)">
-                    <img [src]="image.url" [alt]="image.name">
-                    <span class="image-label">{{ image.name }}</span>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </mat-card-content>
+                    <div class="suggested-images">
+                        <h4>Or choose from suggested images:</h4>
+                        <div class="image-grid">
+                            <div
+                                    *ngFor="let image of suggestedImages"
+                                    class="image-option"
+                                    [class.selected]="listForm.get('img')?.value === image.url"
+                                    (click)="selectImage(image.url)">
+                                <img [src]="image.url" [alt]="image.name">
+                                <span class="image-label">{{ image.name }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
         </mat-card>
 
         <div class="action-buttons">
-          <button mat-button (click)="goBack()" [disabled]="isSubmitting">
-            Cancel
-          </button>
-          <button 
-            mat-raised-button 
-            color="primary" 
-            [disabled]="!listForm.valid || isSubmitting"
-            (click)="createList()">
-            <mat-icon *ngIf="!isSubmitting">add</mat-icon>
-            <mat-spinner *ngIf="isSubmitting" diameter="20"></mat-spinner>
-            {{ isSubmitting ? 'Creating List...' : 'Create List' }}
-          </button>
+            <button mat-button (click)="goBack()" [disabled]="isSubmitting">
+                Cancel
+            </button>
+            <button
+                    mat-raised-button
+                    color="primary"
+                    [disabled]="!listForm.valid || isSubmitting"
+                    (click)="createList()">
+                <mat-icon *ngIf="!isSubmitting">add</mat-icon>
+                <mat-spinner *ngIf="isSubmitting" diameter="20"></mat-spinner>
+                {{ isSubmitting ? 'Creating List...' : 'Create List' }}
+            </button>
         </div>
-      </div>
     </div>
-  `, styles: ["/* angular:styles/component:scss;7fee7ee1803bc7aa88157b5556c690de80f7397149b11654c3a079811bc85d6b;/home/runner/work/listok-bolt/listok-bolt/src/app/components/list-create/list-create.component.ts */\n.create-list-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.create-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.toolbar-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin-left: 16px;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.create-content {\n  padding: 24px;\n  max-width: 800px;\n  margin: 0 auto;\n}\n.create-card {\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  margin-bottom: 24px;\n}\n.list-form {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n  margin-top: 16px;\n}\n.full-width {\n  width: 100%;\n}\n.image-preview {\n  margin-top: 16px;\n}\n.image-preview h4 {\n  margin: 0 0 12px 0;\n  font-size: 16px;\n  font-weight: 600;\n}\n.preview-image {\n  width: 100%;\n  max-width: 400px;\n  height: 200px;\n  object-fit: cover;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.suggested-images {\n  margin-top: 24px;\n}\n.suggested-images h4 {\n  margin: 0 0 16px 0;\n  font-size: 16px;\n  font-weight: 600;\n}\n.image-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  gap: 12px;\n}\n.image-option {\n  cursor: pointer;\n  border-radius: 8px;\n  overflow: hidden;\n  transition: transform 0.2s, box-shadow 0.2s;\n  border: 2px solid transparent;\n}\n.image-option:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n}\n.image-option.selected {\n  border-color: #1976d2;\n  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);\n}\n.image-option img {\n  width: 100%;\n  height: 100px;\n  object-fit: cover;\n}\n.image-label {\n  display: block;\n  padding: 8px;\n  font-size: 12px;\n  text-align: center;\n  background-color: white;\n  border-top: 1px solid #eee;\n}\n.action-buttons {\n  display: flex;\n  justify-content: flex-end;\n  gap: 16px;\n  padding: 16px 0;\n}\n@media (max-width: 768px) {\n  .create-content {\n    padding: 16px;\n  }\n  .toolbar-title {\n    font-size: 18px;\n  }\n  .image-grid {\n    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));\n    gap: 8px;\n  }\n  .action-buttons {\n    flex-direction: column-reverse;\n  }\n  .action-buttons button {\n    width: 100%;\n  }\n}\n/*# sourceMappingURL=list-create.component.css.map */\n"] }]
+</div>
+`, styles: ["/* src/app/components/list-create/list-create.component.scss */\n.create-list-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.create-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.toolbar-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin-left: 16px;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.create-content {\n  padding: 24px;\n  max-width: 800px;\n  margin: 0 auto;\n}\n.create-card {\n  border-radius: 12px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  margin-bottom: 24px;\n}\n.list-form {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n  margin-top: 16px;\n}\n.full-width {\n  width: 100%;\n}\n.image-preview {\n  margin-top: 16px;\n}\n.image-preview h4 {\n  margin: 0 0 12px 0;\n  font-size: 16px;\n  font-weight: 600;\n}\n.preview-image {\n  width: 100%;\n  max-width: 400px;\n  height: 200px;\n  object-fit: cover;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.suggested-images {\n  margin-top: 24px;\n}\n.suggested-images h4 {\n  margin: 0 0 16px 0;\n  font-size: 16px;\n  font-weight: 600;\n}\n.image-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  gap: 12px;\n}\n.image-option {\n  cursor: pointer;\n  border-radius: 8px;\n  overflow: hidden;\n  transition: transform 0.2s, box-shadow 0.2s;\n  border: 2px solid transparent;\n}\n.image-option:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n}\n.image-option.selected {\n  border-color: #1976d2;\n  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);\n}\n.image-option img {\n  width: 100%;\n  height: 100px;\n  object-fit: cover;\n}\n.image-label {\n  display: block;\n  padding: 8px;\n  font-size: 12px;\n  text-align: center;\n  background-color: white;\n  border-top: 1px solid #eee;\n}\n.action-buttons {\n  display: flex;\n  justify-content: flex-end;\n  gap: 16px;\n  padding: 16px 0;\n}\n@media (max-width: 768px) {\n  .create-content {\n    padding: 16px;\n  }\n  .toolbar-title {\n    font-size: 18px;\n  }\n  .image-grid {\n    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));\n    gap: 8px;\n  }\n  .action-buttons {\n    flex-direction: column-reverse;\n  }\n  .action-buttons button {\n    width: 100%;\n  }\n}\n/*# sourceMappingURL=list-create.component.css.map */\n"] }]
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListCreateComponent, { className: "ListCreateComponent", filePath: "src/app/components/list-create/list-create.component.ts", lineNumber: 287 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListCreateComponent, { className: "ListCreateComponent", filePath: "src/app/components/list-create/list-create.component.ts", lineNumber: 33 });
 })();
 export {
   ListCreateComponent
 };
-//# sourceMappingURL=chunk-LEHO5D6Q.js.map
+//# sourceMappingURL=chunk-BXCRIMTR.js.map
