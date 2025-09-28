@@ -67,7 +67,8 @@ export class ItemApiService implements ItemApiServiceInterface {
     for (const list of ALL_LISTS) {
       const itemIndex = list.items.findIndex(i => i.id === id);
       if (itemIndex !== -1) {
-        const updatedItem = {...list.items[itemIndex], ...itemData, id: id};
+        let data = Object.fromEntries(Object.entries(itemData).filter(([_, v]) => v !== undefined));
+        const updatedItem = { ...list.items[itemIndex], ...data, id };
 
         let indexInData = ALL_ITEMS.findIndex(i => i.id === id);
         if (indexInData !== -1) {

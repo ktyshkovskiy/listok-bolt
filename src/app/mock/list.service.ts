@@ -49,7 +49,8 @@ export class ListApiService implements ListApiServiceInterface {
       }));
     }
 
-    const updatedList = {...ALL_LISTS[index], ...list, id: listId};
+    let data = Object.fromEntries(Object.entries(list).filter(([_, v]) => v !== undefined));
+    const updatedList = {...ALL_LISTS[index], ...data, id: listId};
     ALL_LISTS[index] = updatedList;
     return of({...updatedList}).pipe(delay(400));
   }

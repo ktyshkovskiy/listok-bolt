@@ -407,7 +407,8 @@ export class ListDetailComponent implements OnInit, OnDestroy {
   }
 
   toggleItemStatus(item: Item): void {
-    this.apiItemService.updateItem(item.id, {status: item.status}).subscribe({
+    const newStatus = item.status === ItemStatus.Bought ? ItemStatus.ToBuy : ItemStatus.Bought;
+    this.apiItemService.updateItem(item.id, {status: newStatus}).subscribe({
       next: (updatedItem) => {
         if (this.list && updatedItem) {
           const index = this.list.items.findIndex(i => i.id === item.id);
