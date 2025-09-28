@@ -151,11 +151,22 @@ import { ListService } from "../../services/list.service";
       font-size: 24px;
       font-weight: 600;
       margin: 0;
+      flex: 1;
     }
 
-    .filter-chips mat-chip-set {
-      display: flex;
-      gap: 8px;
+    .item-count-badge {
+      background-color: #1976d2;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .item-count-badge.completed {
+      background-color: #4caf50;
     }
 
     .items-grid {
@@ -337,7 +348,6 @@ import { ListService } from "../../services/list.service";
 export class ListDetailComponent implements OnInit, OnDestroy {
   list: List | null = null;
   loading = true;
-  currentFilter: 'all' | 'to_buy' | 'bought' = 'all';
 
   private destroy$ = new Subject<void>();
 
@@ -388,17 +398,12 @@ export class ListDetailComponent implements OnInit, OnDestroy {
     return Math.round((this.itemsBought / this.list.items.length) * 100);
   }
 
-  get filteredItems(): Item[] {
-    if (!this.list) return [];
+  get itemsToBuyList(): Item[] {
+    return this.list?.items.filter(item => item.status === 'to_buy') || [];
+  }
 
-    switch (this.currentFilter) {
-      case 'to_buy':
-        return this.list.items.filter(item => item.status === 'to_buy');
-      case 'bought':
-        return this.list.items.filter(item => item.status === 'bought');
-      default:
-        return this.list.items;
-    }
+  get itemsBoughtList(): Item[] {
+    return this.list?.items.filter(item => item.status === 'bought') || [];
   }
 
   toggleItemStatus(item: Item): void {
@@ -458,39 +463,6 @@ export class ListDetailComponent implements OnInit, OnDestroy {
           this.snackBar.open('Error deleting list', 'Close', {duration: 3000});
         }
       });
-    }
-  }
-
-  getEmptyStateIcon(): string {
-    switch (this.currentFilter) {
-      case 'to_buy':
-        return 'shopping_cart';
-      case 'bought':
-        return 'done';
-      default:
-        return 'assignment';
-    }
-  }
-
-  getEmptyStateTitle(): string {
-    switch (this.currentFilter) {
-      case 'to_buy':
-        return 'No items to buy';
-      case 'bought':
-        return 'No completed items';
-      default:
-        return 'No items yet';
-    }
-  }
-
-  getEmptyStateMessage(): string {
-    switch (this.currentFilter) {
-      case 'to_buy':
-        return 'All items have been completed!';
-      case 'bought':
-        return 'Complete some items to see them here.';
-      default:
-        return 'Add your first item to get started.';
     }
   }
 
