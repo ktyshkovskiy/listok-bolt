@@ -1,6 +1,4 @@
 import {
-  MatChipOption,
-  MatChipSet,
   MatChipsModule,
   MatMenu,
   MatMenuItem,
@@ -950,8 +948,8 @@ function ListDetailComponent_div_0_p_8_Template(rf, ctx) {
 __name(ListDetailComponent_div_0_p_8_Template, "ListDetailComponent_div_0_p_8_Template");
 function ListDetailComponent_div_0_div_27_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 32);
-    \u0275\u0275element(1, "img", 33);
+    \u0275\u0275elementStart(0, "div", 27);
+    \u0275\u0275element(1, "img", 28);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -961,83 +959,83 @@ function ListDetailComponent_div_0_div_27_div_1_Template(rf, ctx) {
   }
 }
 __name(ListDetailComponent_div_0_div_27_div_1_Template, "ListDetailComponent_div_0_div_27_div_1_Template");
-function ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_3_Template(rf, ctx) {
+function ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 50);
-    \u0275\u0275element(1, "img", 51);
+    \u0275\u0275elementStart(0, "div", 48);
+    \u0275\u0275element(1, "img", 49);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r5 = \u0275\u0275nextContext().$implicit;
+    const item_r4 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275property("src", item_r5.item.img, \u0275\u0275sanitizeUrl)("alt", item_r5.item.name);
+    \u0275\u0275property("src", item_r4.item.img, \u0275\u0275sanitizeUrl)("alt", item_r4.item.name);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_3_Template, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_3_Template");
-function ListDetailComponent_div_0_div_27_div_55_mat_card_1_p_7_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_div_3_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_div_3_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_p_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 52);
+    \u0275\u0275elementStart(0, "p", 50);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r5 = \u0275\u0275nextContext().$implicit;
+    const item_r4 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(item_r5.item.comment);
+    \u0275\u0275textInterpolate(item_r4.item.comment);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_55_mat_card_1_p_7_Template, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_p_7_Template");
-function ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_28_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_p_7_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_p_7_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_div_28_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 53)(1, "mat-icon");
+    \u0275\u0275elementStart(0, "div", 51)(1, "mat-icon");
     \u0275\u0275text(2, "palette");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(3, "div", 54);
+    \u0275\u0275element(3, "div", 52);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r5 = \u0275\u0275nextContext().$implicit;
+    const item_r4 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance(3);
-    \u0275\u0275styleProp("background-color", item_r5.color);
+    \u0275\u0275styleProp("background-color", item_r4.color);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_28_Template, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_28_Template");
-function ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_div_28_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_div_28_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = \u0275\u0275getCurrentView();
+    const _r3 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "mat-card", 36)(1, "div", 37)(2, "mat-checkbox", 38);
-    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_mat_checkbox_change_2_listener() {
-      const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r5));
-    }, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_mat_checkbox_change_2_listener"));
+    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template_mat_checkbox_change_2_listener() {
+      const item_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(5);
+      return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r4));
+    }, "ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template_mat_checkbox_change_2_listener"));
     \u0275\u0275elementEnd();
-    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_3_Template, 2, 2, "div", 39);
+    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_div_3_Template, 2, 2, "div", 39);
     \u0275\u0275elementStart(4, "div", 40)(5, "h3", 41);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_55_mat_card_1_p_7_Template, 2, 1, "p", 42);
+    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_p_7_Template, 2, 1, "p", 42);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(8, "button", 43)(9, "mat-icon");
     \u0275\u0275text(10, "more_vert");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(11, "mat-menu", null, 1)(13, "button", 44);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_button_click_13_listener() {
-      const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.editItem(item_r5));
-    }, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_button_click_13_listener"));
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template_button_click_13_listener() {
+      const item_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(5);
+      return \u0275\u0275resetView(ctx_r1.editItem(item_r4));
+    }, "ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template_button_click_13_listener"));
     \u0275\u0275elementStart(14, "mat-icon");
     \u0275\u0275text(15, "edit");
     \u0275\u0275elementEnd();
     \u0275\u0275text(16, " Edit ");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(17, "button", 14);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_button_click_17_listener() {
-      const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.deleteItem(item_r5));
-    }, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template_button_click_17_listener"));
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template_button_click_17_listener() {
+      const item_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(5);
+      return \u0275\u0275resetView(ctx_r1.deleteItem(item_r4));
+    }, "ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template_button_click_17_listener"));
     \u0275\u0275elementStart(18, "mat-icon");
     \u0275\u0275text(19, "delete");
     \u0275\u0275elementEnd();
@@ -1049,97 +1047,238 @@ function ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template(rf, ctx) {
     \u0275\u0275elementStart(26, "span");
     \u0275\u0275text(27);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(28, ListDetailComponent_div_0_div_27_div_55_mat_card_1_div_28_Template, 4, 2, "div", 47);
-    \u0275\u0275elementStart(29, "div", 48)(30, "mat-chip-option", 49)(31, "mat-icon");
-    \u0275\u0275text(32);
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(33);
-    \u0275\u0275elementEnd()()()()();
+    \u0275\u0275template(28, ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_div_28_Template, 4, 2, "div", 47);
+    \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const item_r5 = ctx.$implicit;
-    const itemMenu_r6 = \u0275\u0275reference(12);
-    \u0275\u0275classProp("completed", item_r5.status === "bought");
+    const item_r4 = ctx.$implicit;
+    const itemMenu_r5 = \u0275\u0275reference(12);
     \u0275\u0275advance(2);
-    \u0275\u0275property("checked", item_r5.status === "bought");
+    \u0275\u0275property("checked", false);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r5.item.img);
+    \u0275\u0275property("ngIf", item_r4.item.img);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(item_r5.item.name);
+    \u0275\u0275textInterpolate(item_r4.item.name);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r5.item.comment);
+    \u0275\u0275property("ngIf", item_r4.item.comment);
     \u0275\u0275advance();
-    \u0275\u0275property("matMenuTriggerFor", itemMenu_r6);
+    \u0275\u0275property("matMenuTriggerFor", itemMenu_r5);
     \u0275\u0275advance(19);
-    \u0275\u0275textInterpolate1("Quantity: ", item_r5.count);
+    \u0275\u0275textInterpolate1("Quantity: ", item_r4.count);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r5.color);
-    \u0275\u0275advance(2);
-    \u0275\u0275property("disabled", true);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(item_r5.status === "bought" ? "done" : "shopping_cart");
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", item_r5.status === "bought" ? "Completed" : "To Buy", " ");
+    \u0275\u0275property("ngIf", item_r4.color);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template, "ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template");
-function ListDetailComponent_div_0_div_27_div_55_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_6_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 34);
-    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_55_mat_card_1_Template, 34, 12, "mat-card", 35);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext(3);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r1.filteredItems);
-  }
-}
-__name(ListDetailComponent_div_0_div_27_div_55_Template, "ListDetailComponent_div_0_div_27_div_55_Template");
-function ListDetailComponent_div_0_div_27_div_56_button_7_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "button", 58)(1, "mat-icon");
-    \u0275\u0275text(2, "add");
-    \u0275\u0275elementEnd();
-    \u0275\u0275text(3, " Add First Item ");
+    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_43_div_6_mat_card_1_Template, 29, 7, "mat-card", 35);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r1.itemsToBuyList);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_43_div_6_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 53)(1, "mat-icon", 54);
+    \u0275\u0275text(2, "assignment");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "h3");
+    \u0275\u0275text(4, "No items yet");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "p");
+    \u0275\u0275text(6, "Add your first item to get started.");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(7, "button", 55)(8, "mat-icon");
+    \u0275\u0275text(9, "add");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(10, " Add First Item ");
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(4);
+    \u0275\u0275advance(7);
     \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(2, _c03))("queryParams", \u0275\u0275pureFunction1(3, _c13, ctx_r1.list.id));
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_56_button_7_Template, "ListDetailComponent_div_0_div_27_div_56_button_7_Template");
-function ListDetailComponent_div_0_div_27_div_56_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_43_div_7_Template, "ListDetailComponent_div_0_div_27_div_43_div_7_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 55)(1, "mat-icon", 56);
-    \u0275\u0275text(2);
+    \u0275\u0275elementStart(0, "div", 53)(1, "mat-icon", 54);
+    \u0275\u0275text(2, "done_all");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
-    \u0275\u0275text(4);
+    \u0275\u0275text(4, "All items completed!");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(5, "p");
-    \u0275\u0275text(6);
+    \u0275\u0275text(6, "Great job! You've completed all items in this list.");
+    \u0275\u0275elementEnd()();
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_43_div_8_Template, "ListDetailComponent_div_0_div_27_div_43_div_8_Template");
+function ListDetailComponent_div_0_div_27_div_43_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 29)(1, "div", 30)(2, "h2");
+    \u0275\u0275text(3, "Items to Buy");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_56_button_7_Template, 4, 5, "button", 57);
+    \u0275\u0275elementStart(4, "span", 31);
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_43_div_6_Template, 2, 1, "div", 32)(7, ListDetailComponent_div_0_div_27_div_43_div_7_Template, 11, 5, "div", 33)(8, ListDetailComponent_div_0_div_27_div_43_div_8_Template, 7, 0, "div", 33);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(3);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.getEmptyStateIcon());
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.getEmptyStateTitle());
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r1.getEmptyStateMessage());
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate(ctx_r1.itemsToBuyList.length);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.currentFilter === "all");
+    \u0275\u0275property("ngIf", ctx_r1.itemsToBuyList.length > 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.itemsToBuyList.length === 0 && ctx_r1.itemsBoughtList.length === 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.itemsToBuyList.length === 0 && ctx_r1.itemsBoughtList.length > 0);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_56_Template, "ListDetailComponent_div_0_div_27_div_56_Template");
+__name(ListDetailComponent_div_0_div_27_div_43_Template, "ListDetailComponent_div_0_div_27_div_43_Template");
+function ListDetailComponent_div_0_div_27_div_44_mat_card_7_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 48);
+    \u0275\u0275element(1, "img", 49);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const item_r7 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275property("src", item_r7.item.img, \u0275\u0275sanitizeUrl)("alt", item_r7.item.name);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_44_mat_card_7_div_3_Template, "ListDetailComponent_div_0_div_27_div_44_mat_card_7_div_3_Template");
+function ListDetailComponent_div_0_div_27_div_44_mat_card_7_p_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "p", 62);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const item_r7 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(item_r7.item.comment);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_44_mat_card_7_p_7_Template, "ListDetailComponent_div_0_div_27_div_44_mat_card_7_p_7_Template");
+function ListDetailComponent_div_0_div_27_div_44_mat_card_7_div_28_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 51)(1, "mat-icon");
+    \u0275\u0275text(2, "palette");
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(3, "div", 52);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const item_r7 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance(3);
+    \u0275\u0275styleProp("background-color", item_r7.color);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_44_mat_card_7_div_28_Template, "ListDetailComponent_div_0_div_27_div_44_mat_card_7_div_28_Template");
+function ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "mat-card", 58)(1, "div", 37)(2, "mat-checkbox", 38);
+    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template_mat_checkbox_change_2_listener() {
+      const item_r7 = \u0275\u0275restoreView(_r6).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r7));
+    }, "ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template_mat_checkbox_change_2_listener"));
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_44_mat_card_7_div_3_Template, 2, 2, "div", 39);
+    \u0275\u0275elementStart(4, "div", 40)(5, "h3", 59);
+    \u0275\u0275text(6);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_44_mat_card_7_p_7_Template, 2, 1, "p", 60);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "button", 43)(9, "mat-icon");
+    \u0275\u0275text(10, "more_vert");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(11, "mat-menu", null, 1)(13, "button", 44);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template_button_click_13_listener() {
+      const item_r7 = \u0275\u0275restoreView(_r6).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.editItem(item_r7));
+    }, "ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template_button_click_13_listener"));
+    \u0275\u0275elementStart(14, "mat-icon");
+    \u0275\u0275text(15, "edit");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(16, " Edit ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "button", 14);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template_button_click_17_listener() {
+      const item_r7 = \u0275\u0275restoreView(_r6).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(4);
+      return \u0275\u0275resetView(ctx_r1.deleteItem(item_r7));
+    }, "ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template_button_click_17_listener"));
+    \u0275\u0275elementStart(18, "mat-icon");
+    \u0275\u0275text(19, "delete");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(20, " Delete ");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(21, "mat-card-content")(22, "div", 45)(23, "div", 46)(24, "mat-icon");
+    \u0275\u0275text(25, "confirmation_number");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(26, "span", 61);
+    \u0275\u0275text(27);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(28, ListDetailComponent_div_0_div_27_div_44_mat_card_7_div_28_Template, 4, 2, "div", 47);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const item_r7 = ctx.$implicit;
+    const itemMenu_r8 = \u0275\u0275reference(12);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("checked", true);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", item_r7.item.img);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(item_r7.item.name);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", item_r7.item.comment);
+    \u0275\u0275advance();
+    \u0275\u0275property("matMenuTriggerFor", itemMenu_r8);
+    \u0275\u0275advance(19);
+    \u0275\u0275textInterpolate1("Quantity: ", item_r7.count);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", item_r7.color);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template, "ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template");
+function ListDetailComponent_div_0_div_27_div_44_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 29)(1, "div", 30)(2, "h2");
+    \u0275\u0275text(3, "Completed Items");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "span", 56);
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(6, "div", 34);
+    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_44_mat_card_7_Template, 29, 7, "mat-card", 57);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate(ctx_r1.itemsBoughtList.length);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", ctx_r1.itemsBoughtList);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_44_Template, "ListDetailComponent_div_0_div_27_div_44_Template");
 function ListDetailComponent_div_0_div_27_Template(rf, ctx) {
   if (rf & 1) {
-    const _r3 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "div", 17);
     \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_1_Template, 2, 2, "div", 18);
     \u0275\u0275elementStart(2, "div", 19)(3, "mat-card", 20)(4, "mat-card-content")(5, "div", 21)(6, "mat-icon", 22);
@@ -1178,35 +1317,8 @@ function ListDetailComponent_div_0_div_27_Template(rf, ctx) {
     \u0275\u0275elementStart(41, "p");
     \u0275\u0275text(42, "Progress");
     \u0275\u0275elementEnd()()()()()();
-    \u0275\u0275elementStart(43, "div", 26)(44, "div", 27)(45, "h2");
-    \u0275\u0275text(46, "Items");
+    \u0275\u0275template(43, ListDetailComponent_div_0_div_27_div_43_Template, 9, 4, "div", 26)(44, ListDetailComponent_div_0_div_27_div_44_Template, 8, 2, "div", 26);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(47, "div", 28)(48, "mat-chip-set")(49, "mat-chip-option", 29);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_49_listener() {
-      \u0275\u0275restoreView(_r3);
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.currentFilter = "all");
-    }, "ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_49_listener"));
-    \u0275\u0275text(50, "All");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(51, "mat-chip-option", 29);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_51_listener() {
-      \u0275\u0275restoreView(_r3);
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.currentFilter = "to_buy");
-    }, "ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_51_listener"));
-    \u0275\u0275text(52, "To Buy");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(53, "mat-chip-option", 29);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_53_listener() {
-      \u0275\u0275restoreView(_r3);
-      const ctx_r1 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r1.currentFilter = "bought");
-    }, "ListDetailComponent_div_0_div_27_Template_mat_chip_option_click_53_listener"));
-    \u0275\u0275text(54, "Completed");
-    \u0275\u0275elementEnd()()()();
-    \u0275\u0275template(55, ListDetailComponent_div_0_div_27_div_55_Template, 2, 1, "div", 30)(56, ListDetailComponent_div_0_div_27_div_56_Template, 8, 4, "div", 31);
-    \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
@@ -1220,16 +1332,10 @@ function ListDetailComponent_div_0_div_27_Template(rf, ctx) {
     \u0275\u0275textInterpolate(ctx_r1.itemsBought);
     \u0275\u0275advance(10);
     \u0275\u0275textInterpolate1("", ctx_r1.completionRate, "%");
-    \u0275\u0275advance(9);
-    \u0275\u0275property("selected", ctx_r1.currentFilter === "all");
-    \u0275\u0275advance(2);
-    \u0275\u0275property("selected", ctx_r1.currentFilter === "to_buy");
-    \u0275\u0275advance(2);
-    \u0275\u0275property("selected", ctx_r1.currentFilter === "bought");
-    \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r1.filteredItems.length > 0);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngIf", ctx_r1.itemsToBuyList.length > 0 || ctx_r1.itemsBoughtList.length === 0);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r1.filteredItems.length === 0);
+    \u0275\u0275property("ngIf", ctx_r1.itemsBoughtList.length > 0);
   }
 }
 __name(ListDetailComponent_div_0_div_27_Template, "ListDetailComponent_div_0_div_27_Template");
@@ -1275,11 +1381,11 @@ function ListDetailComponent_div_0_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(26, " Delete List ");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275template(27, ListDetailComponent_div_0_div_27_Template, 57, 10, "div", 15);
+    \u0275\u0275template(27, ListDetailComponent_div_0_div_27_Template, 45, 7, "div", 15);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const listMenu_r7 = \u0275\u0275reference(18);
+    const listMenu_r9 = \u0275\u0275reference(18);
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance(7);
     \u0275\u0275textInterpolate(ctx_r1.list == null ? null : ctx_r1.list.name);
@@ -1288,7 +1394,7 @@ function ListDetailComponent_div_0_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(7, _c03))("queryParams", \u0275\u0275pureFunction1(8, _c13, ctx_r1.list == null ? null : ctx_r1.list.id));
     \u0275\u0275advance(4);
-    \u0275\u0275property("matMenuTriggerFor", listMenu_r7);
+    \u0275\u0275property("matMenuTriggerFor", listMenu_r9);
     \u0275\u0275advance(5);
     \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(10, _c22, ctx_r1.list == null ? null : ctx_r1.list.id));
     \u0275\u0275advance(8);
@@ -1298,8 +1404,8 @@ function ListDetailComponent_div_0_Template(rf, ctx) {
 __name(ListDetailComponent_div_0_Template, "ListDetailComponent_div_0_Template");
 function ListDetailComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 59);
-    \u0275\u0275element(1, "mat-spinner", 60);
+    \u0275\u0275elementStart(0, "div", 63);
+    \u0275\u0275element(1, "mat-spinner", 64);
     \u0275\u0275elementStart(2, "p");
     \u0275\u0275text(3, "Loading list details...");
     \u0275\u0275elementEnd()();
@@ -1310,7 +1416,6 @@ var _ListDetailComponent = class _ListDetailComponent {
   constructor() {
     this.list = null;
     this.loading = true;
-    this.currentFilter = "all";
     this.destroy$ = new Subject();
     this.route = inject(ActivatedRoute);
     this.router = inject(Router);
@@ -1354,17 +1459,11 @@ var _ListDetailComponent = class _ListDetailComponent {
       return 0;
     return Math.round(this.itemsBought / this.list.items.length * 100);
   }
-  get filteredItems() {
-    if (!this.list)
-      return [];
-    switch (this.currentFilter) {
-      case "to_buy":
-        return this.list.items.filter((item) => item.status === "to_buy");
-      case "bought":
-        return this.list.items.filter((item) => item.status === "bought");
-      default:
-        return this.list.items;
-    }
+  get itemsToBuyList() {
+    return this.list?.items.filter((item) => item.status === "to_buy") || [];
+  }
+  get itemsBoughtList() {
+    return this.list?.items.filter((item) => item.status === "bought") || [];
   }
   toggleItemStatus(item) {
     this.apiItemService.updateItem(item.id, { status: item.status }).subscribe({
@@ -1418,36 +1517,6 @@ var _ListDetailComponent = class _ListDetailComponent {
       });
     }
   }
-  getEmptyStateIcon() {
-    switch (this.currentFilter) {
-      case "to_buy":
-        return "shopping_cart";
-      case "bought":
-        return "done";
-      default:
-        return "assignment";
-    }
-  }
-  getEmptyStateTitle() {
-    switch (this.currentFilter) {
-      case "to_buy":
-        return "No items to buy";
-      case "bought":
-        return "No completed items";
-      default:
-        return "No items yet";
-    }
-  }
-  getEmptyStateMessage() {
-    switch (this.currentFilter) {
-      case "to_buy":
-        return "All items have been completed!";
-      case "bought":
-        return "Complete some items to see them here.";
-      default:
-        return "Add your first item to get started.";
-    }
-  }
   goBack() {
     this.router.navigate(["/dashboard"]);
   }
@@ -1456,7 +1525,7 @@ __name(_ListDetailComponent, "ListDetailComponent");
 _ListDetailComponent.\u0275fac = /* @__PURE__ */ __name(function ListDetailComponent_Factory(__ngFactoryType__) {
   return new (__ngFactoryType__ || _ListDetailComponent)();
 }, "ListDetailComponent_Factory");
-_ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ListDetailComponent, selectors: [["app-list-detail"]], decls: 2, vars: 2, consts: [["listMenu", "matMenu"], ["itemMenu", "matMenu"], ["class", "list-detail-container", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], [1, "list-detail-container"], [1, "list-toolbar"], ["mat-icon-button", "", 3, "click"], [1, "list-header-info"], [1, "list-title"], ["class", "list-subtitle", 4, "ngIf"], [1, "spacer"], ["mat-button", "", 3, "routerLink", "queryParams"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "routerLink"], ["mat-menu-item", "", 1, "delete-button", 3, "click"], ["class", "list-content", 4, "ngIf"], [1, "list-subtitle"], [1, "list-content"], ["class", "list-hero", 4, "ngIf"], [1, "list-stats"], [1, "stat-card"], [1, "stat-content"], [1, "stat-icon"], [1, "stat-icon", "to-buy"], [1, "stat-icon", "bought"], [1, "stat-icon", "progress"], [1, "items-section"], [1, "section-header"], [1, "filter-chips"], [3, "click", "selected"], ["class", "items-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "list-hero"], [1, "list-image", 3, "src", "alt"], [1, "items-grid"], ["class", "item-card", 3, "completed", 4, "ngFor", "ngForOf"], [1, "item-card"], [1, "item-header"], [1, "item-checkbox", 3, "change", "checked"], ["class", "item-image", 4, "ngIf"], [1, "item-info"], [1, "item-name"], ["class", "item-comment", 4, "ngIf"], ["mat-icon-button", "", 1, "item-menu-button", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "item-details"], [1, "item-count"], ["class", "item-color", 4, "ngIf"], [1, "item-status"], [3, "disabled"], [1, "item-image"], [3, "src", "alt"], [1, "item-comment"], [1, "item-color"], [1, "color-indicator"], [1, "empty-state"], [1, "empty-icon"], ["mat-raised-button", "", "color", "primary", 3, "routerLink", "queryParams", 4, "ngIf"], ["mat-raised-button", "", "color", "primary", 3, "routerLink", "queryParams"], [1, "loading-container"], ["diameter", "50"]], template: /* @__PURE__ */ __name(function ListDetailComponent_Template(rf, ctx) {
+_ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ListDetailComponent, selectors: [["app-list-detail"]], decls: 2, vars: 2, consts: [["listMenu", "matMenu"], ["itemMenu", "matMenu"], ["class", "list-detail-container", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], [1, "list-detail-container"], [1, "list-toolbar"], ["mat-icon-button", "", 3, "click"], [1, "list-header-info"], [1, "list-title"], ["class", "list-subtitle", 4, "ngIf"], [1, "spacer"], ["mat-button", "", 3, "routerLink", "queryParams"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "routerLink"], ["mat-menu-item", "", 1, "delete-button", 3, "click"], ["class", "list-content", 4, "ngIf"], [1, "list-subtitle"], [1, "list-content"], ["class", "list-hero", 4, "ngIf"], [1, "list-stats"], [1, "stat-card"], [1, "stat-content"], [1, "stat-icon"], [1, "stat-icon", "to-buy"], [1, "stat-icon", "bought"], [1, "stat-icon", "progress"], ["class", "items-section", 4, "ngIf"], [1, "list-hero"], [1, "list-image", 3, "src", "alt"], [1, "items-section"], [1, "section-header"], [1, "item-count-badge"], ["class", "items-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "items-grid"], ["class", "item-card", 4, "ngFor", "ngForOf"], [1, "item-card"], [1, "item-header"], [1, "item-checkbox", 3, "change", "checked"], ["class", "item-image", 4, "ngIf"], [1, "item-info"], [1, "item-name"], ["class", "item-comment", 4, "ngIf"], ["mat-icon-button", "", 1, "item-menu-button", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "item-details"], [1, "item-count"], ["class", "item-color", 4, "ngIf"], [1, "item-image"], [3, "src", "alt"], [1, "item-comment"], [1, "item-color"], [1, "color-indicator"], [1, "empty-state"], [1, "empty-icon"], ["mat-raised-button", "", "color", "primary", 3, "routerLink", "queryParams"], [1, "item-count-badge", "completed"], ["class", "item-card bought", 4, "ngFor", "ngForOf"], [1, "item-card", "bought"], [1, "item-name", "bought-text"], ["class", "item-comment bought-text", 4, "ngIf"], [1, "bought-text"], [1, "item-comment", "bought-text"], [1, "loading-container"], ["diameter", "50"]], template: /* @__PURE__ */ __name(function ListDetailComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275template(0, ListDetailComponent_div_0_Template, 28, 12, "div", 2)(1, ListDetailComponent_div_1_Template, 4, 0, "div", 3);
   }
@@ -1478,8 +1547,6 @@ _ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ t
   MatIconModule,
   MatIcon,
   MatChipsModule,
-  MatChipOption,
-  MatChipSet,
   MatMenuModule,
   MatMenu,
   MatMenuItem,
@@ -1493,7 +1560,7 @@ _ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ t
   MatToolbar,
   RouterModule,
   RouterLink
-], styles: ["\n\n.list-detail-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar[_ngcontent-%COMP%] {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.list-content[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n}\n.stat-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon[_ngcontent-%COMP%] {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy[_ngcontent-%COMP%] {\n  color: #f57c00;\n}\n.stat-icon.bought[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.stat-icon.progress[_ngcontent-%COMP%] {\n  color: #9c27b0;\n}\n.stat-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section[_ngcontent-%COMP%] {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n}\n.filter-chips[_ngcontent-%COMP%]   mat-chip-set[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 8px;\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 16px;\n}\n.item-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-card.completed[_ngcontent-%COMP%] {\n  opacity: 0.7;\n}\n.item-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border-bottom: 1px solid #eee;\n}\n.item-checkbox[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.item-name[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-menu-button[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-details[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n  align-items: center;\n}\n.item-count[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 14px;\n}\n.item-color[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.color-indicator[_ngcontent-%COMP%] {\n  width: 16px;\n  height: 16px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-status[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.empty-state[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon[_ngcontent-%COMP%] {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .section-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    gap: 12px;\n  }\n  .item-header[_ngcontent-%COMP%] {\n    flex-wrap: wrap;\n    gap: 8px;\n  }\n  .item-details[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .item-status[_ngcontent-%COMP%] {\n    margin-left: 0;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */"] });
+], styles: ["\n\n.list-detail-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar[_ngcontent-%COMP%] {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.list-content[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n}\n.stat-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon[_ngcontent-%COMP%] {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy[_ngcontent-%COMP%] {\n  color: #f57c00;\n}\n.stat-icon.bought[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.stat-icon.progress[_ngcontent-%COMP%] {\n  color: #9c27b0;\n}\n.stat-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section[_ngcontent-%COMP%] {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge[_ngcontent-%COMP%] {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed[_ngcontent-%COMP%] {\n  background-color: #4caf50;\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 16px;\n}\n.item-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-card.bought[_ngcontent-%COMP%] {\n  opacity: 0.6;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n  background-color: #f5f5f5;\n  pointer-events: auto;\n}\n.item-card.bought[_ngcontent-%COMP%]:hover {\n  transform: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.bought-text[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-header[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border-bottom: 1px solid #eee;\n}\n.item-checkbox[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%] {\n  width: 48px;\n  height: 48px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info[_ngcontent-%COMP%] {\n  flex: 1;\n  min-width: 0;\n}\n.item-name[_ngcontent-%COMP%] {\n  font-size: 16px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-menu-button[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-details[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n  align-items: center;\n}\n.item-count[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 14px;\n}\n.item-color[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.color-indicator[_ngcontent-%COMP%] {\n  width: 16px;\n  height: 16px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-status[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.empty-state[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon[_ngcontent-%COMP%] {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .section-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    gap: 12px;\n  }\n  .item-header[_ngcontent-%COMP%] {\n    flex-wrap: wrap;\n    gap: 8px;\n  }\n  .item-details[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */"] });
 var ListDetailComponent = _ListDetailComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ListDetailComponent, [{
@@ -1599,32 +1666,20 @@ var ListDetailComponent = _ListDetailComponent;
           </mat-card>
         </div>
 
-        <div class="items-section">
+        <!-- Items To Buy Section -->
+        <div class="items-section" *ngIf="itemsToBuyList.length > 0 || itemsBoughtList.length === 0">
           <div class="section-header">
-            <h2>Items</h2>
-            <div class="filter-chips">
-              <mat-chip-set>
-                <mat-chip-option 
-                  [selected]="currentFilter === 'all'"
-                  (click)="currentFilter = 'all'">All</mat-chip-option>
-                <mat-chip-option 
-                  [selected]="currentFilter === 'to_buy'"
-                  (click)="currentFilter = 'to_buy'">To Buy</mat-chip-option>
-                <mat-chip-option 
-                  [selected]="currentFilter === 'bought'"
-                  (click)="currentFilter = 'bought'">Completed</mat-chip-option>
-              </mat-chip-set>
-            </div>
+            <h2>Items to Buy</h2>
+            <span class="item-count-badge">{{ itemsToBuyList.length }}</span>
           </div>
 
-          <div class="items-grid" *ngIf="filteredItems.length > 0">
+          <div class="items-grid" *ngIf="itemsToBuyList.length > 0">
             <mat-card 
-              *ngFor="let item of filteredItems" 
-              class="item-card"
-              [class.completed]="item.status === 'bought'">
+              *ngFor="let item of itemsToBuyList" 
+              class="item-card">
               <div class="item-header">
                 <mat-checkbox 
-                  [checked]="item.status === 'bought'"
+                  [checked]="false"
                   (change)="toggleItemStatus(item)"
                   class="item-checkbox">
                 </mat-checkbox>
@@ -1665,26 +1720,85 @@ var ListDetailComponent = _ListDetailComponent;
                     <mat-icon>palette</mat-icon>
                     <div class="color-indicator" [style.background-color]="item.color"></div>
                   </div>
-                  
-                  <div class="item-status">
-                    <mat-chip-option [disabled]="true">
-                      <mat-icon>{{ item.status === 'bought' ? 'done' : 'shopping_cart' }}</mat-icon>
-                      {{ item.status === 'bought' ? 'Completed' : 'To Buy' }}
-                    </mat-chip-option>
-                  </div>
                 </div>
               </mat-card-content>
             </mat-card>
           </div>
 
-          <div class="empty-state" *ngIf="filteredItems.length === 0">
-            <mat-icon class="empty-icon">{{ getEmptyStateIcon() }}</mat-icon>
-            <h3>{{ getEmptyStateTitle() }}</h3>
-            <p>{{ getEmptyStateMessage() }}</p>
-            <button mat-raised-button color="primary" [routerLink]="['/items/new']" [queryParams]="{listId: list.id}" *ngIf="currentFilter === 'all'">
+          <div class="empty-state" *ngIf="itemsToBuyList.length === 0 && itemsBoughtList.length === 0">
+            <mat-icon class="empty-icon">assignment</mat-icon>
+            <h3>No items yet</h3>
+            <p>Add your first item to get started.</p>
+            <button mat-raised-button color="primary" [routerLink]="['/items/new']" [queryParams]="{listId: list.id}">
               <mat-icon>add</mat-icon>
               Add First Item
             </button>
+          </div>
+
+          <div class="empty-state" *ngIf="itemsToBuyList.length === 0 && itemsBoughtList.length > 0">
+            <mat-icon class="empty-icon">done_all</mat-icon>
+            <h3>All items completed!</h3>
+            <p>Great job! You've completed all items in this list.</p>
+          </div>
+        </div>
+
+        <!-- Completed Items Section -->
+        <div class="items-section" *ngIf="itemsBoughtList.length > 0">
+          <div class="section-header">
+            <h2>Completed Items</h2>
+            <span class="item-count-badge completed">{{ itemsBoughtList.length }}</span>
+          </div>
+
+          <div class="items-grid">
+            <mat-card 
+              *ngFor="let item of itemsBoughtList" 
+              class="item-card bought">
+              <div class="item-header">
+                <mat-checkbox 
+                  [checked]="true"
+                  (change)="toggleItemStatus(item)"
+                  class="item-checkbox">
+                </mat-checkbox>
+                
+                <div class="item-image" *ngIf="item.item.img">
+                  <img [src]="item.item.img" [alt]="item.item.name">
+                </div>
+                
+                <div class="item-info">
+                  <h3 class="item-name bought-text">{{ item.item.name }}</h3>
+                  <p class="item-comment bought-text" *ngIf="item.item.comment">{{ item.item.comment }}</p>
+                </div>
+                
+                <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                
+                <mat-menu #itemMenu="matMenu">
+                  <button mat-menu-item (click)="editItem(item)">
+                    <mat-icon>edit</mat-icon>
+                    Edit
+                  </button>
+                  <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
+                    <mat-icon>delete</mat-icon>
+                    Delete
+                  </button>
+                </mat-menu>
+              </div>
+              
+              <mat-card-content>
+                <div class="item-details">
+                  <div class="item-count">
+                    <mat-icon>confirmation_number</mat-icon>
+                    <span class="bought-text">Quantity: {{ item.count }}</span>
+                  </div>
+                  
+                  <div class="item-color" *ngIf="item.color">
+                    <mat-icon>palette</mat-icon>
+                    <div class="color-indicator" [style.background-color]="item.color"></div>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
           </div>
         </div>
       </div>
@@ -1694,13 +1808,13 @@ var ListDetailComponent = _ListDetailComponent;
       <mat-spinner diameter="50"></mat-spinner>
       <p>Loading list details...</p>
     </div>
-`, styles: ["/* angular:styles/component:scss;163e528802698f8c597b065eef50cb3173d4feedf158335b304f77ce80b39686;/home/runner/work/listok-bolt/listok-bolt/src/app/components/list-detail/list-detail.component.ts */\n.list-detail-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.list-content {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 8px;\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy {\n  color: #f57c00;\n}\n.stat-icon.bought {\n  color: #4caf50;\n}\n.stat-icon.progress {\n  color: #9c27b0;\n}\n.stat-content h3 {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content p {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header h2 {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n}\n.filter-chips mat-chip-set {\n  display: flex;\n  gap: 8px;\n}\n.items-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 16px;\n}\n.item-card {\n  border-radius: 8px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-card.completed {\n  opacity: 0.7;\n}\n.item-header {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border-bottom: 1px solid #eee;\n}\n.item-checkbox {\n  flex-shrink: 0;\n}\n.item-image {\n  width: 48px;\n  height: 48px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info {\n  flex: 1;\n  min-width: 0;\n}\n.item-name {\n  font-size: 16px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-menu-button {\n  flex-shrink: 0;\n}\n.item-details {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n  align-items: center;\n}\n.item-count {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 14px;\n}\n.item-color {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.color-indicator {\n  width: 16px;\n  height: 16px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-status {\n  margin-left: auto;\n}\n.empty-state {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content {\n    padding: 16px;\n  }\n  .section-header {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid {\n    grid-template-columns: 1fr;\n    gap: 12px;\n  }\n  .item-header {\n    flex-wrap: wrap;\n    gap: 8px;\n  }\n  .item-details {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .item-status {\n    margin-left: 0;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */\n"] }]
+`, styles: ["/* angular:styles/component:scss;a5e9bc5ff686f4aa86272639a0b9df1ea8cfdc62c39a7e2d87fde60cc2991883;/home/runner/work/listok-bolt/listok-bolt/src/app/components/list-detail/list-detail.component.ts */\n.list-detail-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.list-content {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 8px;\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy {\n  color: #f57c00;\n}\n.stat-icon.bought {\n  color: #4caf50;\n}\n.stat-icon.progress {\n  color: #9c27b0;\n}\n.stat-content h3 {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content p {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header h2 {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed {\n  background-color: #4caf50;\n}\n.items-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 16px;\n}\n.item-card {\n  border-radius: 8px;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-card:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-card.bought {\n  opacity: 0.6;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n  background-color: #f5f5f5;\n  pointer-events: auto;\n}\n.item-card.bought:hover {\n  transform: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.bought-text {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-header {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  padding: 16px;\n  border-bottom: 1px solid #eee;\n}\n.item-checkbox {\n  flex-shrink: 0;\n}\n.item-image {\n  width: 48px;\n  height: 48px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info {\n  flex: 1;\n  min-width: 0;\n}\n.item-name {\n  font-size: 16px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-menu-button {\n  flex-shrink: 0;\n}\n.item-details {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n  align-items: center;\n}\n.item-count {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n  font-size: 14px;\n}\n.item-color {\n  display: flex;\n  align-items: center;\n  gap: 4px;\n}\n.color-indicator {\n  width: 16px;\n  height: 16px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-status {\n  margin-left: auto;\n}\n.empty-state {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content {\n    padding: 16px;\n  }\n  .section-header {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid {\n    grid-template-columns: 1fr;\n    gap: 12px;\n  }\n  .item-header {\n    flex-wrap: wrap;\n    gap: 8px;\n  }\n  .item-details {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */\n"] }]
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListDetailComponent, { className: "ListDetailComponent", filePath: "src/app/components/list-detail/list-detail.component.ts", lineNumber: 328 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListDetailComponent, { className: "ListDetailComponent", filePath: "src/app/components/list-detail/list-detail.component.ts", lineNumber: 348 });
 })();
 export {
   ListDetailComponent
 };
-//# sourceMappingURL=chunk-F4OB67XP.js.map
+//# sourceMappingURL=chunk-PECOVDKO.js.map
