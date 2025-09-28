@@ -245,7 +245,8 @@ var _ItemApiService = class _ItemApiService {
     for (const list of ALL_LISTS) {
       const itemIndex = list.items.findIndex((i) => i.id === id2);
       if (itemIndex !== -1) {
-        const updatedItem = __spreadProps(__spreadValues(__spreadValues({}, list.items[itemIndex]), itemData), { id: id2 });
+        let data = Object.fromEntries(Object.entries(itemData).filter(([_, v]) => v !== void 0));
+        const updatedItem = __spreadProps(__spreadValues(__spreadValues({}, list.items[itemIndex]), data), { id: id2 });
         let indexInData = ALL_ITEMS.findIndex((i) => i.id === id2);
         if (indexInData !== -1) {
           ALL_ITEMS[indexInData] = updatedItem;
@@ -332,7 +333,8 @@ var _ListApiService = class _ListApiService {
         message: "Not Found"
       }));
     }
-    const updatedList = __spreadProps(__spreadValues(__spreadValues({}, ALL_LISTS[index]), list), { id: listId });
+    let data = Object.fromEntries(Object.entries(list).filter(([_, v]) => v !== void 0));
+    const updatedList = __spreadProps(__spreadValues(__spreadValues({}, ALL_LISTS[index]), data), { id: listId });
     ALL_LISTS[index] = updatedList;
     return of(__spreadValues({}, updatedList)).pipe(delay(400));
   }
@@ -777,4 +779,4 @@ export {
   ListApiService,
   Configuration
 };
-//# sourceMappingURL=chunk-XZQ4J4WD.js.map
+//# sourceMappingURL=chunk-B5OWDCFR.js.map

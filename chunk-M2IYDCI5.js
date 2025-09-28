@@ -18,7 +18,7 @@ import {
   createFlexibleConnectedPositionStrategy,
   createOverlayRef,
   createRepositionScrollStrategy
-} from "./chunk-JGGOUNRC.js";
+} from "./chunk-5NOESLFW.js";
 import {
   BACKSPACE,
   DELETE,
@@ -4826,4 +4826,4 @@ export {
   MatMenuTrigger,
   MatMenuModule
 };
-//# sourceMappingURL=chunk-B456MKFK.js.map
+//# sourceMappingURL=chunk-M2IYDCI5.js.map

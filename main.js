@@ -3,7 +3,7 @@ import {
 } from "./chunk-DTVRW2I7.js";
 import {
   Configuration
-} from "./chunk-XZQ4J4WD.js";
+} from "./chunk-B5OWDCFR.js";
 import {
   CommonModule,
   Component,
@@ -48,17 +48,17 @@ var routes = [
   },
   {
     path: "dashboard",
-    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-OQEHQ5EK.js").then((m) => m.DashboardComponent), "loadComponent"),
+    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-LURGZ7JU.js").then((m) => m.DashboardComponent), "loadComponent"),
     canActivate: [authGuard]
   },
   {
     path: "lists/new",
-    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-BXCRIMTR.js").then((m) => m.ListCreateComponent), "loadComponent"),
+    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-KV3VVCBL.js").then((m) => m.ListCreateComponent), "loadComponent"),
     canActivate: [authGuard]
   },
   {
     path: "lists/:id",
-    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-PECOVDKO.js").then((m) => m.ListDetailComponent), "loadComponent"),
+    loadComponent: /* @__PURE__ */ __name(() => import("./chunk-KY4T74FT.js").then((m) => m.ListDetailComponent), "loadComponent"),
     canActivate: [authGuard]
   },
   {

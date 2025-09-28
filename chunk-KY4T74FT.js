@@ -4,21 +4,21 @@ import {
   MatMenuItem,
   MatMenuModule,
   MatMenuTrigger
-} from "./chunk-B456MKFK.js";
+} from "./chunk-M2IYDCI5.js";
 import {
   MatSnackBar,
   MatSnackBarModule
-} from "./chunk-FP7YL5LB.js";
+} from "./chunk-ZFZBX4YW.js";
 import {
   ListService,
   MatToolbar,
   MatToolbarModule,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR
-} from "./chunk-JGGOUNRC.js";
+} from "./chunk-5NOESLFW.js";
 import {
   ItemApiService
-} from "./chunk-XZQ4J4WD.js";
+} from "./chunk-B5OWDCFR.js";
 import {
   MatButton,
   MatButtonModule,
@@ -1466,7 +1466,8 @@ var _ListDetailComponent = class _ListDetailComponent {
     return this.list?.items.filter((item) => item.status === "bought") || [];
   }
   toggleItemStatus(item) {
-    this.apiItemService.updateItem(item.id, { status: item.status }).subscribe({
+    const newStatus = item.status === ItemStatus.Bought ? ItemStatus.ToBuy : ItemStatus.Bought;
+    this.apiItemService.updateItem(item.id, { status: newStatus }).subscribe({
       next: /* @__PURE__ */ __name((updatedItem) => {
         if (this.list && updatedItem) {
           const index = this.list.items.findIndex((i) => i.id === item.id);
@@ -1817,4 +1818,4 @@ var ListDetailComponent = _ListDetailComponent;
 export {
   ListDetailComponent
 };
-//# sourceMappingURL=chunk-PECOVDKO.js.map
+//# sourceMappingURL=chunk-KY4T74FT.js.map
