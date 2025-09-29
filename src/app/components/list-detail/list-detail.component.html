@@ -95,55 +95,44 @@
           </div>
 
           <div class="items-grid" *ngIf="itemsToBuyList.length > 0">
-            <mat-card 
-              *ngFor="let item of itemsToBuyList" 
-              class="item-card">
-              <div class="item-header">
-                <mat-checkbox 
-                  [checked]="false"
-                  (change)="toggleItemStatus(item)"
-                  class="item-checkbox">
-                </mat-checkbox>
-                
-                <div class="item-image" *ngIf="item.item.img">
-                  <img [src]="item.item.img" [alt]="item.item.name">
-                </div>
-                
-                <div class="item-info">
-                  <h3 class="item-name">{{ item.item.name }}</h3>
-                  <p class="item-comment" *ngIf="item.item.comment">{{ item.item.comment }}</p>
-                </div>
-                
-                <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
-                  <mat-icon>more_vert</mat-icon>
-                </button>
-                
-                <mat-menu #itemMenu="matMenu">
-                  <button mat-menu-item (click)="editItem(item)">
-                    <mat-icon>edit</mat-icon>
-                    Edit
-                  </button>
-                  <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
-                    <mat-icon>delete</mat-icon>
-                    Delete
-                  </button>
-                </mat-menu>
+            <div class="item-row" *ngFor="let item of itemsToBuyList">
+              <mat-checkbox 
+                [checked]="false"
+                (change)="toggleItemStatus(item)"
+                class="item-checkbox">
+              </mat-checkbox>
+              
+              <div class="item-image" *ngIf="item.item.img">
+                <img [src]="item.item.img" [alt]="item.item.name">
               </div>
               
-              <mat-card-content>
-                <div class="item-details">
-                  <div class="item-count">
-                    <mat-icon>confirmation_number</mat-icon>
-                    <span>Quantity: {{ item.count }}</span>
-                  </div>
-                  
-                  <div class="item-color" *ngIf="item.color">
-                    <mat-icon>palette</mat-icon>
-                    <div class="color-indicator" [style.background-color]="item.color"></div>
-                  </div>
+              <div class="item-info">
+                <h3 class="item-name">{{ item.item.name }}</h3>
+                <p class="item-comment" *ngIf="item.item.comment">{{ item.item.comment }}</p>
+              </div>
+              
+              <div class="item-details">
+                <span class="item-quantity">Quantity: {{ item.count }}</span>
+                <div class="item-color" *ngIf="item.color">
+                  <div class="color-indicator" [style.background-color]="item.color"></div>
                 </div>
-              </mat-card-content>
-            </mat-card>
+              </div>
+              
+              <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              
+              <mat-menu #itemMenu="matMenu">
+                <button mat-menu-item (click)="editItem(item)">
+                  <mat-icon>edit</mat-icon>
+                  Edit
+                </button>
+                <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
+                  <mat-icon>delete</mat-icon>
+                  Delete
+                </button>
+              </mat-menu>
+            </div>
           </div>
 
           <div class="empty-state" *ngIf="itemsToBuyList.length === 0 && itemsBoughtList.length === 0">
@@ -171,55 +160,44 @@
           </div>
 
           <div class="items-grid">
-            <mat-card 
-              *ngFor="let item of itemsBoughtList" 
-              class="item-card bought">
-              <div class="item-header">
-                <mat-checkbox 
-                  [checked]="true"
-                  (change)="toggleItemStatus(item)"
-                  class="item-checkbox">
-                </mat-checkbox>
-                
-                <div class="item-image" *ngIf="item.item.img">
-                  <img [src]="item.item.img" [alt]="item.item.name">
-                </div>
-                
-                <div class="item-info">
-                  <h3 class="item-name bought-text">{{ item.item.name }}</h3>
-                  <p class="item-comment bought-text" *ngIf="item.item.comment">{{ item.item.comment }}</p>
-                </div>
-                
-                <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
-                  <mat-icon>more_vert</mat-icon>
-                </button>
-                
-                <mat-menu #itemMenu="matMenu">
-                  <button mat-menu-item (click)="editItem(item)">
-                    <mat-icon>edit</mat-icon>
-                    Edit
-                  </button>
-                  <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
-                    <mat-icon>delete</mat-icon>
-                    Delete
-                  </button>
-                </mat-menu>
+            <div class="item-row bought" *ngFor="let item of itemsBoughtList">
+              <mat-checkbox 
+                [checked]="true"
+                (change)="toggleItemStatus(item)"
+                class="item-checkbox">
+              </mat-checkbox>
+              
+              <div class="item-image" *ngIf="item.item.img">
+                <img [src]="item.item.img" [alt]="item.item.name">
               </div>
               
-              <mat-card-content>
-                <div class="item-details">
-                  <div class="item-count">
-                    <mat-icon>confirmation_number</mat-icon>
-                    <span class="bought-text">Quantity: {{ item.count }}</span>
-                  </div>
-                  
-                  <div class="item-color" *ngIf="item.color">
-                    <mat-icon>palette</mat-icon>
-                    <div class="color-indicator" [style.background-color]="item.color"></div>
-                  </div>
+              <div class="item-info">
+                <h3 class="item-name bought-text">{{ item.item.name }}</h3>
+                <p class="item-comment bought-text" *ngIf="item.item.comment">{{ item.item.comment }}</p>
+              </div>
+              
+              <div class="item-details">
+                <span class="item-quantity bought-text">Quantity: {{ item.count }}</span>
+                <div class="item-color" *ngIf="item.color">
+                  <div class="color-indicator" [style.background-color]="item.color"></div>
                 </div>
-              </mat-card-content>
-            </mat-card>
+              </div>
+              
+              <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              
+              <mat-menu #itemMenu="matMenu">
+                <button mat-menu-item (click)="editItem(item)">
+                  <mat-icon>edit</mat-icon>
+                  Edit
+                </button>
+                <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
+                  <mat-icon>delete</mat-icon>
+                  Delete
+                </button>
+              </mat-menu>
+            </div>
           </div>
         </div>
       </div>

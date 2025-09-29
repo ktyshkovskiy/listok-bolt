@@ -170,31 +170,35 @@ import { ListService } from "../../services/list.service";
     }
 
     .items-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .item-card {
-      border-radius: 8px;
+    .item-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background-color: white;
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .item-card:hover {
+    .item-row:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
 
-    .item-card.bought {
+    .item-row.bought {
       opacity: 0.6;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       background-color: #f5f5f5;
-      pointer-events: auto;
     }
 
-    .item-card.bought:hover {
+    .item-row.bought:hover {
       transform: none;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .bought-text {
@@ -202,21 +206,13 @@ import { ListService } from "../../services/list.service";
       color: #999;
     }
 
-    .item-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px;
-      border-bottom: 1px solid #eee;
-    }
-
     .item-checkbox {
       flex-shrink: 0;
     }
 
     .item-image {
-      width: 48px;
-      height: 48px;
+      width: 56px;
+      height: 56px;
       border-radius: 8px;
       overflow: hidden;
       flex-shrink: 0;
@@ -229,55 +225,50 @@ import { ListService } from "../../services/list.service";
     }
 
     .item-info {
-      flex: 1;
+      flex: 2;
       min-width: 0;
     }
 
     .item-name {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
       margin: 0 0 4px 0;
     }
 
     .item-comment {
-      font-size: 14px;
+      font-size: 15px;
       opacity: 0.7;
       margin: 0;
     }
 
-    .item-menu-button {
-      flex-shrink: 0;
-    }
-
     .item-details {
       display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
       align-items: center;
+      gap: 16px;
+      flex: 1;
+      justify-content: flex-end;
     }
 
-    .item-count {
-      display: flex;
-      align-items: center;
-      gap: 4px;
+    .item-quantity {
       font-size: 14px;
+      color: #666;
+      white-space: nowrap;
     }
 
     .item-color {
       display: flex;
       align-items: center;
-      gap: 4px;
     }
 
     .color-indicator {
-      width: 16px;
-      height: 16px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       border: 1px solid #ddd;
     }
 
-    .item-status {
-      margin-left: auto;
+    .item-menu-button {
+      flex-shrink: 0;
     }
 
     .empty-state {
@@ -328,19 +319,25 @@ import { ListService } from "../../services/list.service";
       }
 
       .items-grid {
-        grid-template-columns: 1fr;
         gap: 12px;
       }
 
-      .item-header {
-        flex-wrap: wrap;
-        gap: 8px;
+      .item-row {
+        padding: 12px;
+        gap: 12px;
       }
 
       .item-details {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
+        flex-direction: row;
+        gap: 8px;
+      }
+
+      .item-info {
+        flex: 1;
+      }
+
+      .item-quantity {
+        font-size: 12px;
       }
     }
   `]
