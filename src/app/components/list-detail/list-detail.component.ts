@@ -12,6 +12,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Subject, takeUntil } from 'rxjs';
 import { Item, ItemStatus, List } from '../../models/list.model';
+
+interface ItemGroup {
+  color: string | null;
+  items: Item[];
+}
 import { ItemService } from "../../services/item.service";
 import { ListService } from "../../services/list.service";
 
@@ -172,6 +177,27 @@ import { ListService } from "../../services/list.service";
     .items-grid {
       display: flex;
       flex-direction: column;
+      gap: 16px;
+    }
+
+    .color-group {
+      display: flex;
+      gap: 0;
+      position: relative;
+    }
+
+    .color-bar {
+      width: 4px;
+      background-color: currentColor;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
+
+    .group-items {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       gap: 8px;
     }
 
@@ -253,18 +279,6 @@ import { ListService } from "../../services/list.service";
       font-size: 14px;
       color: #666;
       white-space: nowrap;
-    }
-
-    .item-color {
-      display: flex;
-      align-items: center;
-    }
-
-    .color-indicator {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 1px solid #ddd;
     }
 
     .item-menu-button {
@@ -396,11 +410,56 @@ export class ListDetailComponent implements OnInit, OnDestroy {
   }
 
   get itemsToBuyList(): Item[] {
-    return this.list?.items.filter(item => item.status === 'to_buy') || [];
+    return this.sortItemsByColor(
+      this.list?.items.filter(item => item.status === 'to_buy') || []
+    );
   }
 
   get itemsBoughtList(): Item[] {
-    return this.list?.items.filter(item => item.status === 'bought') || [];
+    return this.sortItemsByColor(
+      this.list?.items.filter(item => item.status === 'bought') || []
+    );
+  }
+
+  get itemsToBuyGroups(): ItemGroup[] {
+    return this.groupItemsByColor(this.itemsToBuyList);
+  }
+
+  get itemsBoughtGroups(): ItemGroup[] {
+    return this.groupItemsByColor(this.itemsBoughtList);
+  }
+
+  private sortItemsByColor(items: Item[]): Item[] {
+    return items.sort((a, b) => {
+      const colorA = a.color || '';
+      const colorB = b.color || '';
+
+      // Items without color go to the end
+      if (!colorA && colorB) return 1;
+      if (colorA && !colorB) return -1;
+      if (!colorA && !colorB) return 0;
+
+      // Sort by color value
+      return colorA.localeCompare(colorB);
+    });
+  }
+
+  private groupItemsByColor(items: Item[]): ItemGroup[] {
+    const groups: ItemGroup[] = [];
+    let currentGroup: ItemGroup | null = null;
+
+    items.forEach(item => {
+      const color = item.color || null;
+
+      if (!currentGroup || currentGroup.color !== color) {
+        currentGroup = { color, items: [] };
+        groups.push(currentGroup);
+      }
+
+      currentGroup.items.push(item);
+    });
+
+    return groups;
   }
 
   toggleItemStatus(item: Item): void {

@@ -10,6 +10,14 @@ export const ITEM_APPLES: Item = {
   status: ItemStatus.ToBuy
 };
 
+export const ITEM_BANANAS: Item = {
+  id: '1-4',
+  product: {id: 'item-8', name: 'Bananas', img: 'https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg'},
+  count: 6,
+  groupColor: '#4CAF50',
+  status: ItemStatus.ToBuy
+};
+
 export const ITEM_BREAD: Item = {
   id: '1-2',
   product: {id: 'item-2', name: 'Bread', img: 'https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg'},
@@ -63,7 +71,7 @@ export const LIST_GROCERY_SHOPPING: List = {
   name: 'Grocery Shopping',
   comment: 'Weekly grocery list',
   img: 'https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg',
-  items: [ITEM_APPLES, ITEM_BREAD, ITEM_MILK]
+  items: [ITEM_APPLES, ITEM_BREAD, ITEM_MILK, ITEM_BANANAS]
 };
 
 export const LIST_OFFICE_SUPPLIES: List = {
@@ -82,7 +90,7 @@ export const LIST_HOME_RENOVATION: List = {
   items: [ ITEM_TILES, ITEM_PAINT ]
 };
 
-export const ALL_ITEMS: Item[] = [ITEM_APPLES, ITEM_BREAD, ITEM_MILK, ITEM_NOTEBOOKS, ITEM_PENS, ITEM_TILES, ITEM_PAINT];
+export const ALL_ITEMS: Item[] = [ITEM_APPLES, ITEM_BANANAS, ITEM_BREAD, ITEM_MILK, ITEM_NOTEBOOKS, ITEM_PENS, ITEM_TILES, ITEM_PAINT];
 export const ALL_LISTS: List[] = [ LIST_GROCERY_SHOPPING, LIST_OFFICE_SUPPLIES, LIST_HOME_RENOVATION];
 
 export const id = function() {
