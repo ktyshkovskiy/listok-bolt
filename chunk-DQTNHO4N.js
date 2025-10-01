@@ -4,21 +4,21 @@ import {
   MatMenuItem,
   MatMenuModule,
   MatMenuTrigger
-} from "./chunk-M2IYDCI5.js";
+} from "./chunk-IJJDWTEV.js";
 import {
   MatSnackBar,
   MatSnackBarModule
-} from "./chunk-ZFZBX4YW.js";
+} from "./chunk-FYAVXNJV.js";
 import {
   ListService,
   MatToolbar,
   MatToolbarModule,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR
-} from "./chunk-5NOESLFW.js";
+} from "./chunk-GCIVMIT5.js";
 import {
   ItemApiService
-} from "./chunk-B5OWDCFR.js";
+} from "./chunk-3376JENV.js";
 import {
   MatButton,
   MatButtonModule,
@@ -959,128 +959,138 @@ function ListDetailComponent_div_0_div_27_div_1_Template(rf, ctx) {
   }
 }
 __name(ListDetailComponent_div_0_div_27_div_1_Template, "ListDetailComponent_div_0_div_27_div_1_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_2_Template(rf, ctx) {
+function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 47);
-    \u0275\u0275element(1, "img", 48);
+    \u0275\u0275element(0, "div", 40);
+  }
+  if (rf & 2) {
+    const group_r3 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275styleProp("background-color", group_r3.color);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_1_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_1_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 51);
+    \u0275\u0275element(1, "img", 52);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r4 = \u0275\u0275nextContext().$implicit;
+    const item_r5 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275property("src", item_r4.item.img, \u0275\u0275sanitizeUrl)("alt", item_r4.item.name);
+    \u0275\u0275property("src", item_r5.item.img, \u0275\u0275sanitizeUrl)("alt", item_r5.item.name);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_2_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_2_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_p_6_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_div_2_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_div_2_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_p_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 49);
+    \u0275\u0275elementStart(0, "p", 53);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r4 = \u0275\u0275nextContext().$implicit;
+    const item_r5 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(item_r4.item.comment);
+    \u0275\u0275textInterpolate(item_r5.item.comment);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_p_6_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_p_6_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_10_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_p_6_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_p_6_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 50);
-    \u0275\u0275element(1, "div", 51);
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 41)(1, "mat-checkbox", 42);
+    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_mat_checkbox_change_1_listener() {
+      const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(6);
+      return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r5));
+    }, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_mat_checkbox_change_1_listener"));
     \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const item_r4 = \u0275\u0275nextContext().$implicit;
-    \u0275\u0275advance();
-    \u0275\u0275styleProp("background-color", item_r4.color);
-  }
-}
-__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_10_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_10_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 36)(1, "mat-checkbox", 37);
-    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template_mat_checkbox_change_1_listener() {
-      const item_r4 = \u0275\u0275restoreView(_r3).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(5);
-      return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r4));
-    }, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template_mat_checkbox_change_1_listener"));
-    \u0275\u0275elementEnd();
-    \u0275\u0275template(2, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_2_Template, 2, 2, "div", 38);
-    \u0275\u0275elementStart(3, "div", 39)(4, "h3", 40);
+    \u0275\u0275template(2, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_div_2_Template, 2, 2, "div", 43);
+    \u0275\u0275elementStart(3, "div", 44)(4, "h3", 45);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_p_6_Template, 2, 1, "p", 41);
+    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_p_6_Template, 2, 1, "p", 46);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "div", 42)(8, "span", 43);
+    \u0275\u0275elementStart(7, "div", 47)(8, "span", 48);
     \u0275\u0275text(9);
-    \u0275\u0275elementEnd();
-    \u0275\u0275template(10, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_10_Template, 2, 2, "div", 44);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(11, "button", 45)(12, "mat-icon");
-    \u0275\u0275text(13, "more_vert");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "mat-menu", null, 1)(16, "button", 46);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template_button_click_16_listener() {
-      const item_r4 = \u0275\u0275restoreView(_r3).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(5);
-      return \u0275\u0275resetView(ctx_r1.editItem(item_r4));
-    }, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template_button_click_16_listener"));
-    \u0275\u0275elementStart(17, "mat-icon");
-    \u0275\u0275text(18, "edit");
+    \u0275\u0275elementStart(10, "button", 49)(11, "mat-icon");
+    \u0275\u0275text(12, "more_vert");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(13, "mat-menu", null, 1)(15, "button", 50);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_button_click_15_listener() {
+      const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(6);
+      return \u0275\u0275resetView(ctx_r1.editItem(item_r5));
+    }, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_button_click_15_listener"));
+    \u0275\u0275elementStart(16, "mat-icon");
+    \u0275\u0275text(17, "edit");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(19, " Edit ");
+    \u0275\u0275text(18, " Edit ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "button", 14);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template_button_click_20_listener() {
-      const item_r4 = \u0275\u0275restoreView(_r3).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(5);
-      return \u0275\u0275resetView(ctx_r1.deleteItem(item_r4));
-    }, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template_button_click_20_listener"));
-    \u0275\u0275elementStart(21, "mat-icon");
-    \u0275\u0275text(22, "delete");
+    \u0275\u0275elementStart(19, "button", 14);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_button_click_19_listener() {
+      const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(6);
+      return \u0275\u0275resetView(ctx_r1.deleteItem(item_r5));
+    }, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_button_click_19_listener"));
+    \u0275\u0275elementStart(20, "mat-icon");
+    \u0275\u0275text(21, "delete");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(23, " Delete ");
+    \u0275\u0275text(22, " Delete ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const item_r4 = ctx.$implicit;
-    const itemMenu_r5 = \u0275\u0275reference(15);
+    const item_r5 = ctx.$implicit;
+    const itemMenu_r6 = \u0275\u0275reference(14);
     \u0275\u0275advance();
     \u0275\u0275property("checked", false);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r4.item.img);
+    \u0275\u0275property("ngIf", item_r5.item.img);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(item_r4.item.name);
+    \u0275\u0275textInterpolate(item_r5.item.name);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r4.item.comment);
+    \u0275\u0275property("ngIf", item_r5.item.comment);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("Quantity: ", item_r4.count);
+    \u0275\u0275textInterpolate1("Quantity: ", item_r5.count);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r4.color);
+    \u0275\u0275property("matMenuTriggerFor", itemMenu_r6);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template");
+function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 36);
+    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_1_Template, 1, 2, "div", 37);
+    \u0275\u0275elementStart(2, "div", 38);
+    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template, 23, 6, "div", 39);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const group_r3 = ctx.$implicit;
     \u0275\u0275advance();
-    \u0275\u0275property("matMenuTriggerFor", itemMenu_r5);
+    \u0275\u0275property("ngIf", group_r3.color);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", group_r3.items);
   }
 }
 __name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template");
 function ListDetailComponent_div_0_div_27_div_43_div_6_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 34);
-    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template, 24, 7, "div", 35);
+    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template, 4, 2, "div", 35);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(4);
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", ctx_r1.itemsToBuyList);
+    \u0275\u0275property("ngForOf", ctx_r1.itemsToBuyGroups);
   }
 }
 __name(ListDetailComponent_div_0_div_27_div_43_div_6_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_Template");
 function ListDetailComponent_div_0_div_27_div_43_div_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 52)(1, "mat-icon", 53);
+    \u0275\u0275elementStart(0, "div", 54)(1, "mat-icon", 55);
     \u0275\u0275text(2, "assignment");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
@@ -1089,7 +1099,7 @@ function ListDetailComponent_div_0_div_27_div_43_div_7_Template(rf, ctx) {
     \u0275\u0275elementStart(5, "p");
     \u0275\u0275text(6, "Add your first item to get started.");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "button", 54)(8, "mat-icon");
+    \u0275\u0275elementStart(7, "button", 56)(8, "mat-icon");
     \u0275\u0275text(9, "add");
     \u0275\u0275elementEnd();
     \u0275\u0275text(10, " Add First Item ");
@@ -1104,7 +1114,7 @@ function ListDetailComponent_div_0_div_27_div_43_div_7_Template(rf, ctx) {
 __name(ListDetailComponent_div_0_div_27_div_43_div_7_Template, "ListDetailComponent_div_0_div_27_div_43_div_7_Template");
 function ListDetailComponent_div_0_div_27_div_43_div_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 52)(1, "mat-icon", 53);
+    \u0275\u0275elementStart(0, "div", 54)(1, "mat-icon", 55);
     \u0275\u0275text(2, "done_all");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "h3");
@@ -1140,109 +1150,119 @@ function ListDetailComponent_div_0_div_27_div_43_Template(rf, ctx) {
   }
 }
 __name(ListDetailComponent_div_0_div_27_div_43_Template, "ListDetailComponent_div_0_div_27_div_43_Template");
-function ListDetailComponent_div_0_div_27_div_44_div_7_div_2_Template(rf, ctx) {
+function ListDetailComponent_div_0_div_27_div_44_div_7_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 47);
-    \u0275\u0275element(1, "img", 48);
+    \u0275\u0275element(0, "div", 40);
+  }
+  if (rf & 2) {
+    const group_r7 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275styleProp("background-color", group_r7.color);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_1_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_1_Template");
+function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 51);
+    \u0275\u0275element(1, "img", 52);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r7 = \u0275\u0275nextContext().$implicit;
+    const item_r9 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275property("src", item_r7.item.img, \u0275\u0275sanitizeUrl)("alt", item_r7.item.name);
+    \u0275\u0275property("src", item_r9.item.img, \u0275\u0275sanitizeUrl)("alt", item_r9.item.name);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_2_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_2_Template");
-function ListDetailComponent_div_0_div_27_div_44_div_7_p_6_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_3_div_2_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_div_2_Template");
+function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_p_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 61);
+    \u0275\u0275elementStart(0, "p", 63);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const item_r7 = \u0275\u0275nextContext().$implicit;
+    const item_r9 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(item_r7.item.comment);
+    \u0275\u0275textInterpolate(item_r9.item.comment);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_44_div_7_p_6_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_p_6_Template");
-function ListDetailComponent_div_0_div_27_div_44_div_7_div_10_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_3_p_6_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_p_6_Template");
+function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 50);
-    \u0275\u0275element(1, "div", 51);
+    const _r8 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 59)(1, "mat-checkbox", 42);
+    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_mat_checkbox_change_1_listener() {
+      const item_r9 = \u0275\u0275restoreView(_r8).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(5);
+      return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r9));
+    }, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_mat_checkbox_change_1_listener"));
     \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const item_r7 = \u0275\u0275nextContext().$implicit;
-    \u0275\u0275advance();
-    \u0275\u0275styleProp("background-color", item_r7.color);
-  }
-}
-__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_10_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_10_Template");
-function ListDetailComponent_div_0_div_27_div_44_div_7_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 57)(1, "mat-checkbox", 37);
-    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_div_7_Template_mat_checkbox_change_1_listener() {
-      const item_r7 = \u0275\u0275restoreView(_r6).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r7));
-    }, "ListDetailComponent_div_0_div_27_div_44_div_7_Template_mat_checkbox_change_1_listener"));
-    \u0275\u0275elementEnd();
-    \u0275\u0275template(2, ListDetailComponent_div_0_div_27_div_44_div_7_div_2_Template, 2, 2, "div", 38);
-    \u0275\u0275elementStart(3, "div", 39)(4, "h3", 58);
+    \u0275\u0275template(2, ListDetailComponent_div_0_div_27_div_44_div_7_div_3_div_2_Template, 2, 2, "div", 43);
+    \u0275\u0275elementStart(3, "div", 44)(4, "h3", 60);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_44_div_7_p_6_Template, 2, 1, "p", 59);
+    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_44_div_7_div_3_p_6_Template, 2, 1, "p", 61);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "div", 42)(8, "span", 60);
+    \u0275\u0275elementStart(7, "div", 47)(8, "span", 62);
     \u0275\u0275text(9);
-    \u0275\u0275elementEnd();
-    \u0275\u0275template(10, ListDetailComponent_div_0_div_27_div_44_div_7_div_10_Template, 2, 2, "div", 44);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(11, "button", 45)(12, "mat-icon");
-    \u0275\u0275text(13, "more_vert");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(14, "mat-menu", null, 1)(16, "button", 46);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_div_7_Template_button_click_16_listener() {
-      const item_r7 = \u0275\u0275restoreView(_r6).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.editItem(item_r7));
-    }, "ListDetailComponent_div_0_div_27_div_44_div_7_Template_button_click_16_listener"));
-    \u0275\u0275elementStart(17, "mat-icon");
-    \u0275\u0275text(18, "edit");
+    \u0275\u0275elementStart(10, "button", 49)(11, "mat-icon");
+    \u0275\u0275text(12, "more_vert");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(13, "mat-menu", null, 1)(15, "button", 50);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_button_click_15_listener() {
+      const item_r9 = \u0275\u0275restoreView(_r8).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(5);
+      return \u0275\u0275resetView(ctx_r1.editItem(item_r9));
+    }, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_button_click_15_listener"));
+    \u0275\u0275elementStart(16, "mat-icon");
+    \u0275\u0275text(17, "edit");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(19, " Edit ");
+    \u0275\u0275text(18, " Edit ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "button", 14);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_div_7_Template_button_click_20_listener() {
-      const item_r7 = \u0275\u0275restoreView(_r6).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext(4);
-      return \u0275\u0275resetView(ctx_r1.deleteItem(item_r7));
-    }, "ListDetailComponent_div_0_div_27_div_44_div_7_Template_button_click_20_listener"));
-    \u0275\u0275elementStart(21, "mat-icon");
-    \u0275\u0275text(22, "delete");
+    \u0275\u0275elementStart(19, "button", 14);
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_button_click_19_listener() {
+      const item_r9 = \u0275\u0275restoreView(_r8).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext(5);
+      return \u0275\u0275resetView(ctx_r1.deleteItem(item_r9));
+    }, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_button_click_19_listener"));
+    \u0275\u0275elementStart(20, "mat-icon");
+    \u0275\u0275text(21, "delete");
     \u0275\u0275elementEnd();
-    \u0275\u0275text(23, " Delete ");
+    \u0275\u0275text(22, " Delete ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const item_r7 = ctx.$implicit;
-    const itemMenu_r8 = \u0275\u0275reference(15);
+    const item_r9 = ctx.$implicit;
+    const itemMenu_r10 = \u0275\u0275reference(14);
     \u0275\u0275advance();
     \u0275\u0275property("checked", true);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r7.item.img);
+    \u0275\u0275property("ngIf", item_r9.item.img);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(item_r7.item.name);
+    \u0275\u0275textInterpolate(item_r9.item.name);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r7.item.comment);
+    \u0275\u0275property("ngIf", item_r9.item.comment);
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("Quantity: ", item_r7.count);
+    \u0275\u0275textInterpolate1("Quantity: ", item_r9.count);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", item_r7.color);
+    \u0275\u0275property("matMenuTriggerFor", itemMenu_r10);
+  }
+}
+__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template");
+function ListDetailComponent_div_0_div_27_div_44_div_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 36);
+    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_44_div_7_div_1_Template, 1, 2, "div", 37);
+    \u0275\u0275elementStart(2, "div", 38);
+    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template, 23, 6, "div", 58);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const group_r7 = ctx.$implicit;
     \u0275\u0275advance();
-    \u0275\u0275property("matMenuTriggerFor", itemMenu_r8);
+    \u0275\u0275property("ngIf", group_r7.color);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", group_r7.items);
   }
 }
 __name(ListDetailComponent_div_0_div_27_div_44_div_7_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_Template");
@@ -1251,11 +1271,11 @@ function ListDetailComponent_div_0_div_27_div_44_Template(rf, ctx) {
     \u0275\u0275elementStart(0, "div", 29)(1, "div", 30)(2, "h2");
     \u0275\u0275text(3, "Completed Items");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span", 55);
+    \u0275\u0275elementStart(4, "span", 57);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(6, "div", 34);
-    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_44_div_7_Template, 24, 7, "div", 56);
+    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_44_div_7_Template, 4, 2, "div", 35);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -1263,7 +1283,7 @@ function ListDetailComponent_div_0_div_27_div_44_Template(rf, ctx) {
     \u0275\u0275advance(5);
     \u0275\u0275textInterpolate(ctx_r1.itemsBoughtList.length);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", ctx_r1.itemsBoughtList);
+    \u0275\u0275property("ngForOf", ctx_r1.itemsBoughtGroups);
   }
 }
 __name(ListDetailComponent_div_0_div_27_div_44_Template, "ListDetailComponent_div_0_div_27_div_44_Template");
@@ -1375,7 +1395,7 @@ function ListDetailComponent_div_0_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const listMenu_r9 = \u0275\u0275reference(18);
+    const listMenu_r11 = \u0275\u0275reference(18);
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance(7);
     \u0275\u0275textInterpolate(ctx_r1.list == null ? null : ctx_r1.list.name);
@@ -1384,7 +1404,7 @@ function ListDetailComponent_div_0_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(7, _c03))("queryParams", \u0275\u0275pureFunction1(8, _c13, ctx_r1.list == null ? null : ctx_r1.list.id));
     \u0275\u0275advance(4);
-    \u0275\u0275property("matMenuTriggerFor", listMenu_r9);
+    \u0275\u0275property("matMenuTriggerFor", listMenu_r11);
     \u0275\u0275advance(5);
     \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(10, _c22, ctx_r1.list == null ? null : ctx_r1.list.id));
     \u0275\u0275advance(8);
@@ -1394,8 +1414,8 @@ function ListDetailComponent_div_0_Template(rf, ctx) {
 __name(ListDetailComponent_div_0_Template, "ListDetailComponent_div_0_Template");
 function ListDetailComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 62);
-    \u0275\u0275element(1, "mat-spinner", 63);
+    \u0275\u0275elementStart(0, "div", 64);
+    \u0275\u0275element(1, "mat-spinner", 65);
     \u0275\u0275elementStart(2, "p");
     \u0275\u0275text(3, "Loading list details...");
     \u0275\u0275elementEnd()();
@@ -1450,10 +1470,42 @@ var _ListDetailComponent = class _ListDetailComponent {
     return Math.round(this.itemsBought / this.list.items.length * 100);
   }
   get itemsToBuyList() {
-    return this.list?.items.filter((item) => item.status === "to_buy") || [];
+    return this.sortItemsByColor(this.list?.items.filter((item) => item.status === "to_buy") || []);
   }
   get itemsBoughtList() {
-    return this.list?.items.filter((item) => item.status === "bought") || [];
+    return this.sortItemsByColor(this.list?.items.filter((item) => item.status === "bought") || []);
+  }
+  get itemsToBuyGroups() {
+    return this.groupItemsByColor(this.itemsToBuyList);
+  }
+  get itemsBoughtGroups() {
+    return this.groupItemsByColor(this.itemsBoughtList);
+  }
+  sortItemsByColor(items) {
+    return items.sort((a, b) => {
+      const colorA = a.color || "";
+      const colorB = b.color || "";
+      if (!colorA && colorB)
+        return 1;
+      if (colorA && !colorB)
+        return -1;
+      if (!colorA && !colorB)
+        return 0;
+      return colorA.localeCompare(colorB);
+    });
+  }
+  groupItemsByColor(items) {
+    const groups = [];
+    let currentGroup = null;
+    items.forEach((item) => {
+      const color = item.color || null;
+      if (!currentGroup || currentGroup.color !== color) {
+        currentGroup = { color, items: [] };
+        groups.push(currentGroup);
+      }
+      currentGroup.items.push(item);
+    });
+    return groups;
   }
   toggleItemStatus(item) {
     const newStatus = item.status === ItemStatus.Bought ? ItemStatus.ToBuy : ItemStatus.Bought;
@@ -1516,7 +1568,7 @@ __name(_ListDetailComponent, "ListDetailComponent");
 _ListDetailComponent.\u0275fac = /* @__PURE__ */ __name(function ListDetailComponent_Factory(__ngFactoryType__) {
   return new (__ngFactoryType__ || _ListDetailComponent)();
 }, "ListDetailComponent_Factory");
-_ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ListDetailComponent, selectors: [["app-list-detail"]], decls: 2, vars: 2, consts: [["listMenu", "matMenu"], ["itemMenu", "matMenu"], ["class", "list-detail-container", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], [1, "list-detail-container"], [1, "list-toolbar"], ["mat-icon-button", "", 3, "click"], [1, "list-header-info"], [1, "list-title"], ["class", "list-subtitle", 4, "ngIf"], [1, "spacer"], ["mat-button", "", 3, "routerLink", "queryParams"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "routerLink"], ["mat-menu-item", "", 1, "delete-button", 3, "click"], ["class", "list-content", 4, "ngIf"], [1, "list-subtitle"], [1, "list-content"], ["class", "list-hero", 4, "ngIf"], [1, "list-stats"], [1, "stat-card"], [1, "stat-content"], [1, "stat-icon"], [1, "stat-icon", "to-buy"], [1, "stat-icon", "bought"], [1, "stat-icon", "progress"], ["class", "items-section", 4, "ngIf"], [1, "list-hero"], [1, "list-image", 3, "src", "alt"], [1, "items-section"], [1, "section-header"], [1, "item-count-badge"], ["class", "items-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "items-grid"], ["class", "item-row", 4, "ngFor", "ngForOf"], [1, "item-row"], [1, "item-checkbox", 3, "change", "checked"], ["class", "item-image", 4, "ngIf"], [1, "item-info"], [1, "item-name"], ["class", "item-comment", 4, "ngIf"], [1, "item-details"], [1, "item-quantity"], ["class", "item-color", 4, "ngIf"], ["mat-icon-button", "", 1, "item-menu-button", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "item-image"], [3, "src", "alt"], [1, "item-comment"], [1, "item-color"], [1, "color-indicator"], [1, "empty-state"], [1, "empty-icon"], ["mat-raised-button", "", "color", "primary", 3, "routerLink", "queryParams"], [1, "item-count-badge", "completed"], ["class", "item-row bought", 4, "ngFor", "ngForOf"], [1, "item-row", "bought"], [1, "item-name", "bought-text"], ["class", "item-comment bought-text", 4, "ngIf"], [1, "item-quantity", "bought-text"], [1, "item-comment", "bought-text"], [1, "loading-container"], ["diameter", "50"]], template: /* @__PURE__ */ __name(function ListDetailComponent_Template(rf, ctx) {
+_ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ListDetailComponent, selectors: [["app-list-detail"]], decls: 2, vars: 2, consts: [["listMenu", "matMenu"], ["itemMenu", "matMenu"], ["class", "list-detail-container", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], [1, "list-detail-container"], [1, "list-toolbar"], ["mat-icon-button", "", 3, "click"], [1, "list-header-info"], [1, "list-title"], ["class", "list-subtitle", 4, "ngIf"], [1, "spacer"], ["mat-button", "", 3, "routerLink", "queryParams"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "routerLink"], ["mat-menu-item", "", 1, "delete-button", 3, "click"], ["class", "list-content", 4, "ngIf"], [1, "list-subtitle"], [1, "list-content"], ["class", "list-hero", 4, "ngIf"], [1, "list-stats"], [1, "stat-card"], [1, "stat-content"], [1, "stat-icon"], [1, "stat-icon", "to-buy"], [1, "stat-icon", "bought"], [1, "stat-icon", "progress"], ["class", "items-section", 4, "ngIf"], [1, "list-hero"], [1, "list-image", 3, "src", "alt"], [1, "items-section"], [1, "section-header"], [1, "item-count-badge"], ["class", "items-grid", 4, "ngIf"], ["class", "empty-state", 4, "ngIf"], [1, "items-grid"], ["class", "color-group", 4, "ngFor", "ngForOf"], [1, "color-group"], ["class", "color-bar", 3, "background-color", 4, "ngIf"], [1, "group-items"], ["class", "item-row", 4, "ngFor", "ngForOf"], [1, "color-bar"], [1, "item-row"], [1, "item-checkbox", 3, "change", "checked"], ["class", "item-image", 4, "ngIf"], [1, "item-info"], [1, "item-name"], ["class", "item-comment", 4, "ngIf"], [1, "item-details"], [1, "item-quantity"], ["mat-icon-button", "", 1, "item-menu-button", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "item-image"], [3, "src", "alt"], [1, "item-comment"], [1, "empty-state"], [1, "empty-icon"], ["mat-raised-button", "", "color", "primary", 3, "routerLink", "queryParams"], [1, "item-count-badge", "completed"], ["class", "item-row bought", 4, "ngFor", "ngForOf"], [1, "item-row", "bought"], [1, "item-name", "bought-text"], ["class", "item-comment bought-text", 4, "ngIf"], [1, "item-quantity", "bought-text"], [1, "item-comment", "bought-text"], [1, "loading-container"], ["diameter", "50"]], template: /* @__PURE__ */ __name(function ListDetailComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275template(0, ListDetailComponent_div_0_Template, 28, 12, "div", 2)(1, ListDetailComponent_div_1_Template, 4, 0, "div", 3);
   }
@@ -1551,7 +1603,7 @@ _ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ t
   MatToolbar,
   RouterModule,
   RouterLink
-], styles: ["\n\n.list-detail-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar[_ngcontent-%COMP%] {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.list-content[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n}\n.stat-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon[_ngcontent-%COMP%] {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy[_ngcontent-%COMP%] {\n  color: #f57c00;\n}\n.stat-icon.bought[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.stat-icon.progress[_ngcontent-%COMP%] {\n  color: #9c27b0;\n}\n.stat-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section[_ngcontent-%COMP%] {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge[_ngcontent-%COMP%] {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed[_ngcontent-%COMP%] {\n  background-color: #4caf50;\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.item-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background-color: white;\n  border-radius: 12px;\n  border: 1px solid #e0e0e0;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-row[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-row.bought[_ngcontent-%COMP%] {\n  opacity: 0.6;\n  background-color: #f5f5f5;\n}\n.item-row.bought[_ngcontent-%COMP%]:hover {\n  transform: none;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.bought-text[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-checkbox[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info[_ngcontent-%COMP%] {\n  flex: 2;\n  min-width: 0;\n}\n.item-name[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment[_ngcontent-%COMP%] {\n  font-size: 15px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-details[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex: 1;\n  justify-content: flex-end;\n}\n.item-quantity[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #666;\n  white-space: nowrap;\n}\n.item-color[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n.color-indicator[_ngcontent-%COMP%] {\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-menu-button[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.empty-state[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon[_ngcontent-%COMP%] {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .section-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid[_ngcontent-%COMP%] {\n    gap: 12px;\n  }\n  .item-row[_ngcontent-%COMP%] {\n    padding: 12px;\n    gap: 12px;\n  }\n  .item-details[_ngcontent-%COMP%] {\n    flex-direction: row;\n    gap: 8px;\n  }\n  .item-info[_ngcontent-%COMP%] {\n    flex: 1;\n  }\n  .item-quantity[_ngcontent-%COMP%] {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */"] });
+], styles: ["\n\n.list-detail-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar[_ngcontent-%COMP%] {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.list-content[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n}\n.stat-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon[_ngcontent-%COMP%] {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy[_ngcontent-%COMP%] {\n  color: #f57c00;\n}\n.stat-icon.bought[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.stat-icon.progress[_ngcontent-%COMP%] {\n  color: #9c27b0;\n}\n.stat-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section[_ngcontent-%COMP%] {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge[_ngcontent-%COMP%] {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed[_ngcontent-%COMP%] {\n  background-color: #4caf50;\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.color-group[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0;\n  position: relative;\n}\n.color-bar[_ngcontent-%COMP%] {\n  width: 4px;\n  background-color: currentColor;\n  border-radius: 4px;\n  flex-shrink: 0;\n  margin-right: 12px;\n}\n.group-items[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.item-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background-color: white;\n  border-radius: 12px;\n  border: 1px solid #e0e0e0;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-row[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-row.bought[_ngcontent-%COMP%] {\n  opacity: 0.6;\n  background-color: #f5f5f5;\n}\n.item-row.bought[_ngcontent-%COMP%]:hover {\n  transform: none;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.bought-text[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-checkbox[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info[_ngcontent-%COMP%] {\n  flex: 2;\n  min-width: 0;\n}\n.item-name[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment[_ngcontent-%COMP%] {\n  font-size: 15px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-details[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex: 1;\n  justify-content: flex-end;\n}\n.item-quantity[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #666;\n  white-space: nowrap;\n}\n.item-menu-button[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.empty-state[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon[_ngcontent-%COMP%] {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .section-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid[_ngcontent-%COMP%] {\n    gap: 12px;\n  }\n  .item-row[_ngcontent-%COMP%] {\n    padding: 12px;\n    gap: 12px;\n  }\n  .item-details[_ngcontent-%COMP%] {\n    flex-direction: row;\n    gap: 8px;\n  }\n  .item-info[_ngcontent-%COMP%] {\n    flex: 1;\n  }\n  .item-quantity[_ngcontent-%COMP%] {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */"] });
 var ListDetailComponent = _ListDetailComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ListDetailComponent, [{
@@ -1665,43 +1717,45 @@ var ListDetailComponent = _ListDetailComponent;
           </div>
 
           <div class="items-grid" *ngIf="itemsToBuyList.length > 0">
-            <div class="item-row" *ngFor="let item of itemsToBuyList">
-              <mat-checkbox 
-                [checked]="false"
-                (change)="toggleItemStatus(item)"
-                class="item-checkbox">
-              </mat-checkbox>
-              
-              <div class="item-image" *ngIf="item.item.img">
-                <img [src]="item.item.img" [alt]="item.item.name">
-              </div>
-              
-              <div class="item-info">
-                <h3 class="item-name">{{ item.item.name }}</h3>
-                <p class="item-comment" *ngIf="item.item.comment">{{ item.item.comment }}</p>
-              </div>
-              
-              <div class="item-details">
-                <span class="item-quantity">Quantity: {{ item.count }}</span>
-                <div class="item-color" *ngIf="item.color">
-                  <div class="color-indicator" [style.background-color]="item.color"></div>
+            <div class="color-group" *ngFor="let group of itemsToBuyGroups">
+              <div class="color-bar" *ngIf="group.color" [style.background-color]="group.color"></div>
+              <div class="group-items">
+                <div class="item-row" *ngFor="let item of group.items">
+                  <mat-checkbox
+                    [checked]="false"
+                    (change)="toggleItemStatus(item)"
+                    class="item-checkbox">
+                  </mat-checkbox>
+
+                  <div class="item-image" *ngIf="item.item.img">
+                    <img [src]="item.item.img" [alt]="item.item.name">
+                  </div>
+
+                  <div class="item-info">
+                    <h3 class="item-name">{{ item.item.name }}</h3>
+                    <p class="item-comment" *ngIf="item.item.comment">{{ item.item.comment }}</p>
+                  </div>
+
+                  <div class="item-details">
+                    <span class="item-quantity">Quantity: {{ item.count }}</span>
+                  </div>
+
+                  <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+
+                  <mat-menu #itemMenu="matMenu">
+                    <button mat-menu-item (click)="editItem(item)">
+                      <mat-icon>edit</mat-icon>
+                      Edit
+                    </button>
+                    <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
+                      <mat-icon>delete</mat-icon>
+                      Delete
+                    </button>
+                  </mat-menu>
                 </div>
               </div>
-              
-              <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              
-              <mat-menu #itemMenu="matMenu">
-                <button mat-menu-item (click)="editItem(item)">
-                  <mat-icon>edit</mat-icon>
-                  Edit
-                </button>
-                <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
-                  <mat-icon>delete</mat-icon>
-                  Delete
-                </button>
-              </mat-menu>
             </div>
           </div>
 
@@ -1730,43 +1784,45 @@ var ListDetailComponent = _ListDetailComponent;
           </div>
 
           <div class="items-grid">
-            <div class="item-row bought" *ngFor="let item of itemsBoughtList">
-              <mat-checkbox 
-                [checked]="true"
-                (change)="toggleItemStatus(item)"
-                class="item-checkbox">
-              </mat-checkbox>
-              
-              <div class="item-image" *ngIf="item.item.img">
-                <img [src]="item.item.img" [alt]="item.item.name">
-              </div>
-              
-              <div class="item-info">
-                <h3 class="item-name bought-text">{{ item.item.name }}</h3>
-                <p class="item-comment bought-text" *ngIf="item.item.comment">{{ item.item.comment }}</p>
-              </div>
-              
-              <div class="item-details">
-                <span class="item-quantity bought-text">Quantity: {{ item.count }}</span>
-                <div class="item-color" *ngIf="item.color">
-                  <div class="color-indicator" [style.background-color]="item.color"></div>
+            <div class="color-group" *ngFor="let group of itemsBoughtGroups">
+              <div class="color-bar" *ngIf="group.color" [style.background-color]="group.color"></div>
+              <div class="group-items">
+                <div class="item-row bought" *ngFor="let item of group.items">
+                  <mat-checkbox
+                    [checked]="true"
+                    (change)="toggleItemStatus(item)"
+                    class="item-checkbox">
+                  </mat-checkbox>
+
+                  <div class="item-image" *ngIf="item.item.img">
+                    <img [src]="item.item.img" [alt]="item.item.name">
+                  </div>
+
+                  <div class="item-info">
+                    <h3 class="item-name bought-text">{{ item.item.name }}</h3>
+                    <p class="item-comment bought-text" *ngIf="item.item.comment">{{ item.item.comment }}</p>
+                  </div>
+
+                  <div class="item-details">
+                    <span class="item-quantity bought-text">Quantity: {{ item.count }}</span>
+                  </div>
+
+                  <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+
+                  <mat-menu #itemMenu="matMenu">
+                    <button mat-menu-item (click)="editItem(item)">
+                      <mat-icon>edit</mat-icon>
+                      Edit
+                    </button>
+                    <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
+                      <mat-icon>delete</mat-icon>
+                      Delete
+                    </button>
+                  </mat-menu>
                 </div>
               </div>
-              
-              <button mat-icon-button [matMenuTriggerFor]="itemMenu" class="item-menu-button">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              
-              <mat-menu #itemMenu="matMenu">
-                <button mat-menu-item (click)="editItem(item)">
-                  <mat-icon>edit</mat-icon>
-                  Edit
-                </button>
-                <button mat-menu-item (click)="deleteItem(item)" class="delete-button">
-                  <mat-icon>delete</mat-icon>
-                  Delete
-                </button>
-              </mat-menu>
             </div>
           </div>
         </div>
@@ -1777,13 +1833,13 @@ var ListDetailComponent = _ListDetailComponent;
       <mat-spinner diameter="50"></mat-spinner>
       <p>Loading list details...</p>
     </div>
-`, styles: ["/* angular:styles/component:scss;ca2876a5690a88250f539efdf664deed3780aef58f69a2c643c0bc06c06e4854;/home/runner/work/listok-bolt/listok-bolt/src/app/components/list-detail/list-detail.component.ts */\n.list-detail-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.list-content {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 8px;\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy {\n  color: #f57c00;\n}\n.stat-icon.bought {\n  color: #4caf50;\n}\n.stat-icon.progress {\n  color: #9c27b0;\n}\n.stat-content h3 {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content p {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header h2 {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed {\n  background-color: #4caf50;\n}\n.items-grid {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.item-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background-color: white;\n  border-radius: 12px;\n  border: 1px solid #e0e0e0;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-row:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-row.bought {\n  opacity: 0.6;\n  background-color: #f5f5f5;\n}\n.item-row.bought:hover {\n  transform: none;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.bought-text {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-checkbox {\n  flex-shrink: 0;\n}\n.item-image {\n  width: 56px;\n  height: 56px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info {\n  flex: 2;\n  min-width: 0;\n}\n.item-name {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment {\n  font-size: 15px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-details {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex: 1;\n  justify-content: flex-end;\n}\n.item-quantity {\n  font-size: 14px;\n  color: #666;\n  white-space: nowrap;\n}\n.item-color {\n  display: flex;\n  align-items: center;\n}\n.color-indicator {\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  border: 1px solid #ddd;\n}\n.item-menu-button {\n  flex-shrink: 0;\n}\n.empty-state {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content {\n    padding: 16px;\n  }\n  .section-header {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid {\n    gap: 12px;\n  }\n  .item-row {\n    padding: 12px;\n    gap: 12px;\n  }\n  .item-details {\n    flex-direction: row;\n    gap: 8px;\n  }\n  .item-info {\n    flex: 1;\n  }\n  .item-quantity {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */\n"] }]
+`, styles: ["/* angular:styles/component:scss;7e1315fcecfd379f99ac39e35c52ba13465b2aa4e26ce0b3012d616ba6214d77;/home/runner/work/listok-bolt/listok-bolt/src/app/components/list-detail/list-detail.component.ts */\n.list-detail-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.list-content {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 8px;\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy {\n  color: #f57c00;\n}\n.stat-icon.bought {\n  color: #4caf50;\n}\n.stat-icon.progress {\n  color: #9c27b0;\n}\n.stat-content h3 {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content p {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header h2 {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed {\n  background-color: #4caf50;\n}\n.items-grid {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.color-group {\n  display: flex;\n  gap: 0;\n  position: relative;\n}\n.color-bar {\n  width: 4px;\n  background-color: currentColor;\n  border-radius: 4px;\n  flex-shrink: 0;\n  margin-right: 12px;\n}\n.group-items {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.item-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background-color: white;\n  border-radius: 12px;\n  border: 1px solid #e0e0e0;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-row:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-row.bought {\n  opacity: 0.6;\n  background-color: #f5f5f5;\n}\n.item-row.bought:hover {\n  transform: none;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.bought-text {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-checkbox {\n  flex-shrink: 0;\n}\n.item-image {\n  width: 56px;\n  height: 56px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info {\n  flex: 2;\n  min-width: 0;\n}\n.item-name {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment {\n  font-size: 15px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-details {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex: 1;\n  justify-content: flex-end;\n}\n.item-quantity {\n  font-size: 14px;\n  color: #666;\n  white-space: nowrap;\n}\n.item-menu-button {\n  flex-shrink: 0;\n}\n.empty-state {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content {\n    padding: 16px;\n  }\n  .section-header {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid {\n    gap: 12px;\n  }\n  .item-row {\n    padding: 12px;\n    gap: 12px;\n  }\n  .item-details {\n    flex-direction: row;\n    gap: 8px;\n  }\n  .item-info {\n    flex: 1;\n  }\n  .item-quantity {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */\n"] }]
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListDetailComponent, { className: "ListDetailComponent", filePath: "src/app/components/list-detail/list-detail.component.ts", lineNumber: 345 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListDetailComponent, { className: "ListDetailComponent", filePath: "src/app/components/list-detail/list-detail.component.ts", lineNumber: 359 });
 })();
 export {
   ListDetailComponent
 };
-//# sourceMappingURL=chunk-Q6N3ZOCO.js.map
+//# sourceMappingURL=chunk-DQTNHO4N.js.map
