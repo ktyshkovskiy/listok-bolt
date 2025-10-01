@@ -12,7 +12,7 @@ export const ITEM_APPLES: Item = {
 
 export const ITEM_BANANAS: Item = {
   id: '1-4',
-  product: {id: 'item-8', name: 'Bananas', img: 'https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg'},
+  product: {id: 'item-8', name: 'Bananananas', img: 'https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg'},
   count: 6,
   groupColor: '#4CAF50',
   status: ItemStatus.ToBuy
