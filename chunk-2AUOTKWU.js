@@ -4,21 +4,21 @@ import {
   MatMenuItem,
   MatMenuModule,
   MatMenuTrigger
-} from "./chunk-IJJDWTEV.js";
+} from "./chunk-G3BCYBM2.js";
 import {
   MatSnackBar,
   MatSnackBarModule
-} from "./chunk-FYAVXNJV.js";
+} from "./chunk-KJLW2G5Q.js";
 import {
   ListService,
   MatToolbar,
   MatToolbarModule,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR
-} from "./chunk-GCIVMIT5.js";
+} from "./chunk-MBA56NPS.js";
 import {
   ItemApiService
-} from "./chunk-3376JENV.js";
+} from "./chunk-3ZBWVIZK.js";
 import {
   MatButton,
   MatButtonModule,
@@ -959,7 +959,7 @@ function ListDetailComponent_div_0_div_27_div_1_Template(rf, ctx) {
   }
 }
 __name(ListDetailComponent_div_0_div_27_div_1_Template, "ListDetailComponent_div_0_div_27_div_1_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_1_Template(rf, ctx) {
+function ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "div", 40);
   }
@@ -968,8 +968,8 @@ function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_1_Template(rf, 
     \u0275\u0275styleProp("background-color", group_r3.color);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_1_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_1_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_div_2_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_1_Template, "ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_1_Template");
+function ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_div_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 51);
     \u0275\u0275element(1, "img", 52);
@@ -981,8 +981,8 @@ function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_div_2_Templat
     \u0275\u0275property("src", item_r5.item.img, \u0275\u0275sanitizeUrl)("alt", item_r5.item.name);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_div_2_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_div_2_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_p_6_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_div_2_Template, "ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_div_2_Template");
+function ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_p_6_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "p", 53);
     \u0275\u0275text(1);
@@ -994,22 +994,22 @@ function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_p_6_Template(
     \u0275\u0275textInterpolate(item_r5.item.comment);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_p_6_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_p_6_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_p_6_Template, "ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_p_6_Template");
+function ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "div", 41)(1, "mat-checkbox", 42);
-    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_mat_checkbox_change_1_listener() {
+    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template_mat_checkbox_change_1_listener() {
       const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(6);
       return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r5));
-    }, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_mat_checkbox_change_1_listener"));
+    }, "ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template_mat_checkbox_change_1_listener"));
     \u0275\u0275elementEnd();
-    \u0275\u0275template(2, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_div_2_Template, 2, 2, "div", 43);
+    \u0275\u0275template(2, ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_div_2_Template, 2, 2, "div", 43);
     \u0275\u0275elementStart(3, "div", 44)(4, "h3", 45);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_p_6_Template, 2, 1, "p", 46);
+    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_p_6_Template, 2, 1, "p", 46);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(7, "div", 47)(8, "span", 48);
     \u0275\u0275text(9);
@@ -1018,22 +1018,22 @@ function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template(rf, 
     \u0275\u0275text(12, "more_vert");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(13, "mat-menu", null, 1)(15, "button", 50);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_button_click_15_listener() {
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template_button_click_15_listener() {
       const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(6);
       return \u0275\u0275resetView(ctx_r1.editItem(item_r5));
-    }, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_button_click_15_listener"));
+    }, "ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template_button_click_15_listener"));
     \u0275\u0275elementStart(16, "mat-icon");
     \u0275\u0275text(17, "edit");
     \u0275\u0275elementEnd();
     \u0275\u0275text(18, " Edit ");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(19, "button", 14);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_button_click_19_listener() {
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template_button_click_19_listener() {
       const item_r5 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(6);
       return \u0275\u0275resetView(ctx_r1.deleteItem(item_r5));
-    }, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template_button_click_19_listener"));
+    }, "ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template_button_click_19_listener"));
     \u0275\u0275elementStart(20, "mat-icon");
     \u0275\u0275text(21, "delete");
     \u0275\u0275elementEnd();
@@ -1057,13 +1057,13 @@ function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template(rf, 
     \u0275\u0275property("matMenuTriggerFor", itemMenu_r6);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template, "ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template");
+function ListDetailComponent_div_0_div_27_div_39_div_6_div_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 36);
-    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_1_Template, 1, 2, "div", 37);
+    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_1_Template, 1, 2, "div", 37);
     \u0275\u0275elementStart(2, "div", 38);
-    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_div_3_Template, 23, 6, "div", 39);
+    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_39_div_6_div_1_div_3_Template, 23, 6, "div", 39);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -1074,11 +1074,11 @@ function ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", group_r3.items);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_6_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_39_div_6_div_1_Template, "ListDetailComponent_div_0_div_27_div_39_div_6_div_1_Template");
+function ListDetailComponent_div_0_div_27_div_39_div_6_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 34);
-    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_43_div_6_div_1_Template, 4, 2, "div", 35);
+    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_39_div_6_div_1_Template, 4, 2, "div", 35);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1087,8 +1087,8 @@ function ListDetailComponent_div_0_div_27_div_43_div_6_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r1.itemsToBuyGroups);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_6_Template, "ListDetailComponent_div_0_div_27_div_43_div_6_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_7_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_39_div_6_Template, "ListDetailComponent_div_0_div_27_div_39_div_6_Template");
+function ListDetailComponent_div_0_div_27_div_39_div_7_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 54)(1, "mat-icon", 55);
     \u0275\u0275text(2, "assignment");
@@ -1111,8 +1111,8 @@ function ListDetailComponent_div_0_div_27_div_43_div_7_Template(rf, ctx) {
     \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(2, _c03))("queryParams", \u0275\u0275pureFunction1(3, _c13, ctx_r1.list.id));
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_7_Template, "ListDetailComponent_div_0_div_27_div_43_div_7_Template");
-function ListDetailComponent_div_0_div_27_div_43_div_8_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_39_div_7_Template, "ListDetailComponent_div_0_div_27_div_39_div_7_Template");
+function ListDetailComponent_div_0_div_27_div_39_div_8_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 54)(1, "mat-icon", 55);
     \u0275\u0275text(2, "done_all");
@@ -1125,8 +1125,8 @@ function ListDetailComponent_div_0_div_27_div_43_div_8_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_div_8_Template, "ListDetailComponent_div_0_div_27_div_43_div_8_Template");
-function ListDetailComponent_div_0_div_27_div_43_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_39_div_8_Template, "ListDetailComponent_div_0_div_27_div_39_div_8_Template");
+function ListDetailComponent_div_0_div_27_div_39_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 29)(1, "div", 30)(2, "h2");
     \u0275\u0275text(3, "Items to Buy");
@@ -1134,7 +1134,7 @@ function ListDetailComponent_div_0_div_27_div_43_Template(rf, ctx) {
     \u0275\u0275elementStart(4, "span", 31);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_43_div_6_Template, 2, 1, "div", 32)(7, ListDetailComponent_div_0_div_27_div_43_div_7_Template, 11, 5, "div", 33)(8, ListDetailComponent_div_0_div_27_div_43_div_8_Template, 7, 0, "div", 33);
+    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_39_div_6_Template, 2, 1, "div", 32)(7, ListDetailComponent_div_0_div_27_div_39_div_7_Template, 11, 5, "div", 33)(8, ListDetailComponent_div_0_div_27_div_39_div_8_Template, 7, 0, "div", 33);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1149,8 +1149,8 @@ function ListDetailComponent_div_0_div_27_div_43_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.itemsToBuyList.length === 0 && ctx_r1.itemsBoughtList.length > 0);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_43_Template, "ListDetailComponent_div_0_div_27_div_43_Template");
-function ListDetailComponent_div_0_div_27_div_44_div_7_div_1_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_39_Template, "ListDetailComponent_div_0_div_27_div_39_Template");
+function ListDetailComponent_div_0_div_27_div_40_div_7_div_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "div", 40);
   }
@@ -1159,8 +1159,8 @@ function ListDetailComponent_div_0_div_27_div_44_div_7_div_1_Template(rf, ctx) {
     \u0275\u0275styleProp("background-color", group_r7.color);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_1_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_1_Template");
-function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_div_2_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_40_div_7_div_1_Template, "ListDetailComponent_div_0_div_27_div_40_div_7_div_1_Template");
+function ListDetailComponent_div_0_div_27_div_40_div_7_div_3_div_2_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 51);
     \u0275\u0275element(1, "img", 52);
@@ -1172,8 +1172,8 @@ function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_div_2_Template(rf, 
     \u0275\u0275property("src", item_r9.item.img, \u0275\u0275sanitizeUrl)("alt", item_r9.item.name);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_3_div_2_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_div_2_Template");
-function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_p_6_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_40_div_7_div_3_div_2_Template, "ListDetailComponent_div_0_div_27_div_40_div_7_div_3_div_2_Template");
+function ListDetailComponent_div_0_div_27_div_40_div_7_div_3_p_6_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "p", 63);
     \u0275\u0275text(1);
@@ -1185,22 +1185,22 @@ function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_p_6_Template(rf, ct
     \u0275\u0275textInterpolate(item_r9.item.comment);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_3_p_6_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_p_6_Template");
-function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_40_div_7_div_3_p_6_Template, "ListDetailComponent_div_0_div_27_div_40_div_7_div_3_p_6_Template");
+function ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "div", 59)(1, "mat-checkbox", 42);
-    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_mat_checkbox_change_1_listener() {
+    \u0275\u0275listener("change", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template_mat_checkbox_change_1_listener() {
       const item_r9 = \u0275\u0275restoreView(_r8).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(5);
       return \u0275\u0275resetView(ctx_r1.toggleItemStatus(item_r9));
-    }, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_mat_checkbox_change_1_listener"));
+    }, "ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template_mat_checkbox_change_1_listener"));
     \u0275\u0275elementEnd();
-    \u0275\u0275template(2, ListDetailComponent_div_0_div_27_div_44_div_7_div_3_div_2_Template, 2, 2, "div", 43);
+    \u0275\u0275template(2, ListDetailComponent_div_0_div_27_div_40_div_7_div_3_div_2_Template, 2, 2, "div", 43);
     \u0275\u0275elementStart(3, "div", 44)(4, "h3", 60);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_44_div_7_div_3_p_6_Template, 2, 1, "p", 61);
+    \u0275\u0275template(6, ListDetailComponent_div_0_div_27_div_40_div_7_div_3_p_6_Template, 2, 1, "p", 61);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(7, "div", 47)(8, "span", 62);
     \u0275\u0275text(9);
@@ -1209,22 +1209,22 @@ function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template(rf, ctx) {
     \u0275\u0275text(12, "more_vert");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(13, "mat-menu", null, 1)(15, "button", 50);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_button_click_15_listener() {
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template_button_click_15_listener() {
       const item_r9 = \u0275\u0275restoreView(_r8).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(5);
       return \u0275\u0275resetView(ctx_r1.editItem(item_r9));
-    }, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_button_click_15_listener"));
+    }, "ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template_button_click_15_listener"));
     \u0275\u0275elementStart(16, "mat-icon");
     \u0275\u0275text(17, "edit");
     \u0275\u0275elementEnd();
     \u0275\u0275text(18, " Edit ");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(19, "button", 14);
-    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_button_click_19_listener() {
+    \u0275\u0275listener("click", /* @__PURE__ */ __name(function ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template_button_click_19_listener() {
       const item_r9 = \u0275\u0275restoreView(_r8).$implicit;
       const ctx_r1 = \u0275\u0275nextContext(5);
       return \u0275\u0275resetView(ctx_r1.deleteItem(item_r9));
-    }, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template_button_click_19_listener"));
+    }, "ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template_button_click_19_listener"));
     \u0275\u0275elementStart(20, "mat-icon");
     \u0275\u0275text(21, "delete");
     \u0275\u0275elementEnd();
@@ -1248,13 +1248,13 @@ function ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template(rf, ctx) {
     \u0275\u0275property("matMenuTriggerFor", itemMenu_r10);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template");
-function ListDetailComponent_div_0_div_27_div_44_div_7_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template, "ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template");
+function ListDetailComponent_div_0_div_27_div_40_div_7_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 36);
-    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_44_div_7_div_1_Template, 1, 2, "div", 37);
+    \u0275\u0275template(1, ListDetailComponent_div_0_div_27_div_40_div_7_div_1_Template, 1, 2, "div", 37);
     \u0275\u0275elementStart(2, "div", 38);
-    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_44_div_7_div_3_Template, 23, 6, "div", 58);
+    \u0275\u0275template(3, ListDetailComponent_div_0_div_27_div_40_div_7_div_3_Template, 23, 6, "div", 58);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -1265,8 +1265,8 @@ function ListDetailComponent_div_0_div_27_div_44_div_7_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", group_r7.items);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_44_div_7_Template, "ListDetailComponent_div_0_div_27_div_44_div_7_Template");
-function ListDetailComponent_div_0_div_27_div_44_Template(rf, ctx) {
+__name(ListDetailComponent_div_0_div_27_div_40_div_7_Template, "ListDetailComponent_div_0_div_27_div_40_div_7_Template");
+function ListDetailComponent_div_0_div_27_div_40_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 29)(1, "div", 30)(2, "h2");
     \u0275\u0275text(3, "Completed Items");
@@ -1275,7 +1275,7 @@ function ListDetailComponent_div_0_div_27_div_44_Template(rf, ctx) {
     \u0275\u0275text(5);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(6, "div", 34);
-    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_44_div_7_Template, 4, 2, "div", 35);
+    \u0275\u0275template(7, ListDetailComponent_div_0_div_27_div_40_div_7_Template, 4, 2, "div", 35);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -1286,7 +1286,7 @@ function ListDetailComponent_div_0_div_27_div_44_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r1.itemsBoughtGroups);
   }
 }
-__name(ListDetailComponent_div_0_div_27_div_44_Template, "ListDetailComponent_div_0_div_27_div_44_Template");
+__name(ListDetailComponent_div_0_div_27_div_40_Template, "ListDetailComponent_div_0_div_27_div_40_Template");
 function ListDetailComponent_div_0_div_27_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 17);
@@ -1294,53 +1294,53 @@ function ListDetailComponent_div_0_div_27_Template(rf, ctx) {
     \u0275\u0275elementStart(2, "div", 19)(3, "mat-card", 20)(4, "mat-card-content")(5, "div", 21)(6, "mat-icon", 22);
     \u0275\u0275text(7, "assignment");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "div")(9, "h3");
-    \u0275\u0275text(10);
+    \u0275\u0275elementStart(8, "h3");
+    \u0275\u0275text(9);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(11, "p");
-    \u0275\u0275text(12, "Total Items");
+    \u0275\u0275elementStart(10, "p");
+    \u0275\u0275text(11, "Total Items");
+    \u0275\u0275elementEnd()()()();
+    \u0275\u0275elementStart(12, "mat-card", 20)(13, "mat-card-content")(14, "div", 21)(15, "mat-icon", 23);
+    \u0275\u0275text(16, "shopping_cart");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "h3");
+    \u0275\u0275text(18);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(19, "p");
+    \u0275\u0275text(20, "To Buy");
+    \u0275\u0275elementEnd()()()();
+    \u0275\u0275elementStart(21, "mat-card", 20)(22, "mat-card-content")(23, "div", 21)(24, "mat-icon", 24);
+    \u0275\u0275text(25, "done");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(26, "h3");
+    \u0275\u0275text(27);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(28, "p");
+    \u0275\u0275text(29, "Completed");
+    \u0275\u0275elementEnd()()()();
+    \u0275\u0275elementStart(30, "mat-card", 20)(31, "mat-card-content")(32, "div", 21)(33, "mat-icon", 25);
+    \u0275\u0275text(34, "percent");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(35, "h3");
+    \u0275\u0275text(36);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(37, "p");
+    \u0275\u0275text(38, "Progress");
     \u0275\u0275elementEnd()()()()();
-    \u0275\u0275elementStart(13, "mat-card", 20)(14, "mat-card-content")(15, "div", 21)(16, "mat-icon", 23);
-    \u0275\u0275text(17, "shopping_cart");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "div")(19, "h3");
-    \u0275\u0275text(20);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(21, "p");
-    \u0275\u0275text(22, "To Buy");
-    \u0275\u0275elementEnd()()()()();
-    \u0275\u0275elementStart(23, "mat-card", 20)(24, "mat-card-content")(25, "div", 21)(26, "mat-icon", 24);
-    \u0275\u0275text(27, "done");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(28, "div")(29, "h3");
-    \u0275\u0275text(30);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(31, "p");
-    \u0275\u0275text(32, "Completed");
-    \u0275\u0275elementEnd()()()()();
-    \u0275\u0275elementStart(33, "mat-card", 20)(34, "mat-card-content")(35, "div", 21)(36, "mat-icon", 25);
-    \u0275\u0275text(37, "percent");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(38, "div")(39, "h3");
-    \u0275\u0275text(40);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(41, "p");
-    \u0275\u0275text(42, "Progress");
-    \u0275\u0275elementEnd()()()()()();
-    \u0275\u0275template(43, ListDetailComponent_div_0_div_27_div_43_Template, 9, 4, "div", 26)(44, ListDetailComponent_div_0_div_27_div_44_Template, 8, 2, "div", 26);
+    \u0275\u0275template(39, ListDetailComponent_div_0_div_27_div_39_Template, 9, 4, "div", 26)(40, ListDetailComponent_div_0_div_27_div_40_Template, 8, 2, "div", 26);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r1.list.img);
-    \u0275\u0275advance(9);
+    \u0275\u0275advance(8);
     \u0275\u0275textInterpolate(ctx_r1.list.items.length);
-    \u0275\u0275advance(10);
+    \u0275\u0275advance(9);
     \u0275\u0275textInterpolate(ctx_r1.itemsToBuy);
-    \u0275\u0275advance(10);
+    \u0275\u0275advance(9);
     \u0275\u0275textInterpolate(ctx_r1.itemsBought);
-    \u0275\u0275advance(10);
+    \u0275\u0275advance(9);
     \u0275\u0275textInterpolate1("", ctx_r1.completionRate, "%");
     \u0275\u0275advance(3);
     \u0275\u0275property("ngIf", ctx_r1.itemsToBuyList.length > 0 || ctx_r1.itemsBoughtList.length === 0);
@@ -1391,7 +1391,7 @@ function ListDetailComponent_div_0_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(26, " Delete List ");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275template(27, ListDetailComponent_div_0_div_27_Template, 45, 7, "div", 15);
+    \u0275\u0275template(27, ListDetailComponent_div_0_div_27_Template, 41, 7, "div", 15);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -1603,7 +1603,7 @@ _ListDetailComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ t
   MatToolbar,
   RouterModule,
   RouterLink
-], styles: ["\n\n.list-detail-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar[_ngcontent-%COMP%] {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.list-content[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n}\n.stat-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon[_ngcontent-%COMP%] {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy[_ngcontent-%COMP%] {\n  color: #f57c00;\n}\n.stat-icon.bought[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.stat-icon.progress[_ngcontent-%COMP%] {\n  color: #9c27b0;\n}\n.stat-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section[_ngcontent-%COMP%] {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge[_ngcontent-%COMP%] {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed[_ngcontent-%COMP%] {\n  background-color: #4caf50;\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.color-group[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0;\n  position: relative;\n}\n.color-bar[_ngcontent-%COMP%] {\n  width: 4px;\n  background-color: currentColor;\n  border-radius: 4px;\n  flex-shrink: 0;\n  margin-right: 12px;\n}\n.group-items[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.item-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background-color: white;\n  border-radius: 12px;\n  border: 1px solid #e0e0e0;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-row[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-row.bought[_ngcontent-%COMP%] {\n  opacity: 0.6;\n  background-color: #f5f5f5;\n}\n.item-row.bought[_ngcontent-%COMP%]:hover {\n  transform: none;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.bought-text[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-checkbox[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info[_ngcontent-%COMP%] {\n  flex: 2;\n  min-width: 0;\n}\n.item-name[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment[_ngcontent-%COMP%] {\n  font-size: 15px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-details[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex: 1;\n  justify-content: flex-end;\n}\n.item-quantity[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #666;\n  white-space: nowrap;\n}\n.item-menu-button[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.empty-state[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon[_ngcontent-%COMP%] {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .section-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid[_ngcontent-%COMP%] {\n    gap: 12px;\n  }\n  .item-row[_ngcontent-%COMP%] {\n    padding: 12px;\n    gap: 12px;\n  }\n  .item-details[_ngcontent-%COMP%] {\n    flex-direction: row;\n    gap: 8px;\n  }\n  .item-info[_ngcontent-%COMP%] {\n    flex: 1;\n  }\n  .item-quantity[_ngcontent-%COMP%] {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */"] });
+], styles: ["\n\n.list-detail-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar[_ngcontent-%COMP%] {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.list-content[_ngcontent-%COMP%] {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero[_ngcontent-%COMP%] {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: nowrap;\n  gap: 12px;\n  overflow-x: auto;\n  margin-bottom: 32px;\n  padding-bottom: 8px;\n}\n.list-stats[_ngcontent-%COMP%]::-webkit-scrollbar {\n  height: 4px;\n}\n.list-stats[_ngcontent-%COMP%]::-webkit-scrollbar-track {\n  background: #f1f1f1;\n  border-radius: 2px;\n}\n.list-stats[_ngcontent-%COMP%]::-webkit-scrollbar-thumb {\n  background: #c1c1c1;\n  border-radius: 2px;\n}\n.list-stats[_ngcontent-%COMP%]::-webkit-scrollbar-thumb:hover {\n  background: #a8a8a8;\n}\n.stat-card[_ngcontent-%COMP%] {\n  border-radius: 8px;\n  flex: 1 0 auto;\n  min-width: 140px;\n  transition: min-width 0.3s ease;\n}\n.stat-content[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon[_ngcontent-%COMP%] {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy[_ngcontent-%COMP%] {\n  color: #f57c00;\n}\n.stat-icon.bought[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.stat-icon.progress[_ngcontent-%COMP%] {\n  color: #9c27b0;\n}\n.stat-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n  white-space: nowrap;\n}\n@media (max-width: 480px) {\n  .stat-card[_ngcontent-%COMP%] {\n    min-width: 80px;\n  }\n  .stat-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    display: none;\n  }\n  .stat-content[_ngcontent-%COMP%] {\n    gap: 2px;\n  }\n  .stat-icon[_ngcontent-%COMP%] {\n    font-size: 24px;\n    width: 24px;\n    height: 24px;\n  }\n  .stat-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n    font-size: 16px;\n  }\n}\n.items-section[_ngcontent-%COMP%] {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge[_ngcontent-%COMP%] {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed[_ngcontent-%COMP%] {\n  background-color: #4caf50;\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.color-group[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0;\n  position: relative;\n}\n.color-bar[_ngcontent-%COMP%] {\n  width: 4px;\n  background-color: currentColor;\n  border-radius: 4px;\n  flex-shrink: 0;\n  margin-right: 12px;\n}\n.group-items[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.item-row[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background-color: white;\n  border-radius: 12px;\n  border: 1px solid #e0e0e0;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-row[_ngcontent-%COMP%]:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-row.bought[_ngcontent-%COMP%] {\n  opacity: 0.6;\n  background-color: #f5f5f5;\n}\n.item-row.bought[_ngcontent-%COMP%]:hover {\n  transform: none;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.bought-text[_ngcontent-%COMP%] {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-checkbox[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%] {\n  width: 56px;\n  height: 56px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info[_ngcontent-%COMP%] {\n  flex: 2;\n  min-width: 0;\n}\n.item-name[_ngcontent-%COMP%] {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment[_ngcontent-%COMP%] {\n  font-size: 15px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-details[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex: 1;\n  justify-content: flex-end;\n}\n.item-quantity[_ngcontent-%COMP%] {\n  font-size: 14px;\n  color: #666;\n  white-space: nowrap;\n}\n.item-menu-button[_ngcontent-%COMP%] {\n  flex-shrink: 0;\n}\n.empty-state[_ngcontent-%COMP%] {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon[_ngcontent-%COMP%] {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .list-stats[_ngcontent-%COMP%] {\n    gap: 8px;\n    margin-bottom: 24px;\n  }\n  .section-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid[_ngcontent-%COMP%] {\n    gap: 12px;\n  }\n  .item-row[_ngcontent-%COMP%] {\n    padding: 12px;\n    gap: 12px;\n  }\n  .item-details[_ngcontent-%COMP%] {\n    flex-direction: row;\n    gap: 8px;\n  }\n  .item-info[_ngcontent-%COMP%] {\n    flex: 1;\n  }\n  .item-quantity[_ngcontent-%COMP%] {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */"] });
 var ListDetailComponent = _ListDetailComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ListDetailComponent, [{
@@ -1664,10 +1664,8 @@ var ListDetailComponent = _ListDetailComponent;
             <mat-card-content>
               <div class="stat-content">
                 <mat-icon class="stat-icon">assignment</mat-icon>
-                <div>
-                  <h3>{{ list.items.length }}</h3>
-                  <p>Total Items</p>
-                </div>
+                <h3>{{ list.items.length }}</h3>
+                <p>Total Items</p>
               </div>
             </mat-card-content>
           </mat-card>
@@ -1676,10 +1674,8 @@ var ListDetailComponent = _ListDetailComponent;
             <mat-card-content>
               <div class="stat-content">
                 <mat-icon class="stat-icon to-buy">shopping_cart</mat-icon>
-                <div>
-                  <h3>{{ itemsToBuy }}</h3>
-                  <p>To Buy</p>
-                </div>
+                <h3>{{ itemsToBuy }}</h3>
+                <p>To Buy</p>
               </div>
             </mat-card-content>
           </mat-card>
@@ -1688,10 +1684,8 @@ var ListDetailComponent = _ListDetailComponent;
             <mat-card-content>
               <div class="stat-content">
                 <mat-icon class="stat-icon bought">done</mat-icon>
-                <div>
-                  <h3>{{ itemsBought }}</h3>
-                  <p>Completed</p>
-                </div>
+                <h3>{{ itemsBought }}</h3>
+                <p>Completed</p>
               </div>
             </mat-card-content>
           </mat-card>
@@ -1700,10 +1694,8 @@ var ListDetailComponent = _ListDetailComponent;
             <mat-card-content>
               <div class="stat-content">
                 <mat-icon class="stat-icon progress">percent</mat-icon>
-                <div>
-                  <h3>{{ completionRate }}%</h3>
-                  <p>Progress</p>
-                </div>
+                <h3>{{ completionRate }}%</h3>
+                <p>Progress</p>
               </div>
             </mat-card-content>
           </mat-card>
@@ -1833,13 +1825,13 @@ var ListDetailComponent = _ListDetailComponent;
       <mat-spinner diameter="50"></mat-spinner>
       <p>Loading list details...</p>
     </div>
-`, styles: ["/* angular:styles/component:scss;7e1315fcecfd379f99ac39e35c52ba13465b2aa4e26ce0b3012d616ba6214d77;/home/runner/work/listok-bolt/listok-bolt/src/app/components/list-detail/list-detail.component.ts */\n.list-detail-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.list-content {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  gap: 16px;\n  margin-bottom: 32px;\n}\n.stat-card {\n  border-radius: 8px;\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy {\n  color: #f57c00;\n}\n.stat-icon.bought {\n  color: #4caf50;\n}\n.stat-icon.progress {\n  color: #9c27b0;\n}\n.stat-content h3 {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content p {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.items-section {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header h2 {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed {\n  background-color: #4caf50;\n}\n.items-grid {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.color-group {\n  display: flex;\n  gap: 0;\n  position: relative;\n}\n.color-bar {\n  width: 4px;\n  background-color: currentColor;\n  border-radius: 4px;\n  flex-shrink: 0;\n  margin-right: 12px;\n}\n.group-items {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.item-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background-color: white;\n  border-radius: 12px;\n  border: 1px solid #e0e0e0;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-row:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-row.bought {\n  opacity: 0.6;\n  background-color: #f5f5f5;\n}\n.item-row.bought:hover {\n  transform: none;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.bought-text {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-checkbox {\n  flex-shrink: 0;\n}\n.item-image {\n  width: 56px;\n  height: 56px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info {\n  flex: 2;\n  min-width: 0;\n}\n.item-name {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment {\n  font-size: 15px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-details {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex: 1;\n  justify-content: flex-end;\n}\n.item-quantity {\n  font-size: 14px;\n  color: #666;\n  white-space: nowrap;\n}\n.item-menu-button {\n  flex-shrink: 0;\n}\n.empty-state {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content {\n    padding: 16px;\n  }\n  .section-header {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid {\n    gap: 12px;\n  }\n  .item-row {\n    padding: 12px;\n    gap: 12px;\n  }\n  .item-details {\n    flex-direction: row;\n    gap: 8px;\n  }\n  .item-info {\n    flex: 1;\n  }\n  .item-quantity {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */\n"] }]
+`, styles: ["/* src/app/components/list-detail/list-detail.component.scss */\n.list-detail-container {\n  min-height: 100vh;\n  background-color: #fafafa;\n}\n.list-toolbar {\n  background-color: white;\n  color: #333;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n}\n.list-header-info {\n  flex: 1;\n  margin-left: 16px;\n}\n.list-title {\n  font-size: 20px;\n  font-weight: 600;\n  margin: 0;\n}\n.list-subtitle {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n}\n.spacer {\n  flex: 1 1 auto;\n}\n.list-content {\n  padding: 24px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.list-hero {\n  margin-bottom: 24px;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n.list-image {\n  width: 100%;\n  height: 300px;\n  object-fit: cover;\n}\n.list-stats {\n  display: flex;\n  flex-wrap: nowrap;\n  gap: 12px;\n  overflow-x: auto;\n  margin-bottom: 32px;\n  padding-bottom: 8px;\n}\n.list-stats::-webkit-scrollbar {\n  height: 4px;\n}\n.list-stats::-webkit-scrollbar-track {\n  background: #f1f1f1;\n  border-radius: 2px;\n}\n.list-stats::-webkit-scrollbar-thumb {\n  background: #c1c1c1;\n  border-radius: 2px;\n}\n.list-stats::-webkit-scrollbar-thumb:hover {\n  background: #a8a8a8;\n}\n.stat-card {\n  border-radius: 8px;\n  flex: 1 0 auto;\n  min-width: 140px;\n  transition: min-width 0.3s ease;\n}\n.stat-content {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n}\n.stat-icon {\n  font-size: 32px;\n  width: 32px;\n  height: 32px;\n  color: #1976d2;\n}\n.stat-icon.to-buy {\n  color: #f57c00;\n}\n.stat-icon.bought {\n  color: #4caf50;\n}\n.stat-icon.progress {\n  color: #9c27b0;\n}\n.stat-content h3 {\n  font-size: 24px;\n  font-weight: 700;\n  margin: 0;\n}\n.stat-content p {\n  font-size: 14px;\n  opacity: 0.7;\n  margin: 0;\n  white-space: nowrap;\n}\n@media (max-width: 480px) {\n  .stat-card {\n    min-width: 80px;\n  }\n  .stat-content p {\n    display: none;\n  }\n  .stat-content {\n    gap: 2px;\n  }\n  .stat-icon {\n    font-size: 24px;\n    width: 24px;\n    height: 24px;\n  }\n  .stat-content h3 {\n    font-size: 16px;\n  }\n}\n.items-section {\n  background-color: white;\n  border-radius: 12px;\n  padding: 24px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.section-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 24px;\n  gap: 16px;\n}\n.section-header h2 {\n  font-size: 24px;\n  font-weight: 600;\n  margin: 0;\n  flex: 1;\n}\n.item-count-badge {\n  background-color: #1976d2;\n  color: white;\n  padding: 4px 12px;\n  border-radius: 16px;\n  font-size: 14px;\n  font-weight: 600;\n  min-width: 24px;\n  text-align: center;\n}\n.item-count-badge.completed {\n  background-color: #4caf50;\n}\n.items-grid {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n.color-group {\n  display: flex;\n  gap: 0;\n  position: relative;\n}\n.color-bar {\n  width: 4px;\n  background-color: currentColor;\n  border-radius: 4px;\n  flex-shrink: 0;\n  margin-right: 12px;\n}\n.group-items {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n.item-row {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  padding: 16px;\n  background-color: white;\n  border-radius: 12px;\n  border: 1px solid #e0e0e0;\n  transition: transform 0.2s, box-shadow 0.2s;\n}\n.item-row:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);\n}\n.item-row.bought {\n  opacity: 0.6;\n  background-color: #f5f5f5;\n}\n.item-row.bought:hover {\n  transform: none;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n}\n.bought-text {\n  text-decoration: line-through;\n  color: #999;\n}\n.item-checkbox {\n  flex-shrink: 0;\n}\n.item-image {\n  width: 56px;\n  height: 56px;\n  border-radius: 8px;\n  overflow: hidden;\n  flex-shrink: 0;\n}\n.item-image img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n.item-info {\n  flex: 2;\n  min-width: 0;\n}\n.item-name {\n  font-size: 18px;\n  font-weight: 600;\n  margin: 0 0 4px 0;\n}\n.item-comment {\n  font-size: 15px;\n  opacity: 0.7;\n  margin: 0;\n}\n.item-details {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  flex: 1;\n  justify-content: flex-end;\n}\n.item-quantity {\n  font-size: 14px;\n  color: #666;\n  white-space: nowrap;\n}\n.item-menu-button {\n  flex-shrink: 0;\n}\n.empty-state {\n  text-align: center;\n  padding: 40px;\n}\n.empty-icon {\n  font-size: 64px;\n  width: 64px;\n  height: 64px;\n  opacity: 0.3;\n  margin-bottom: 16px;\n}\n.empty-state h3 {\n  margin: 0 0 8px 0;\n  font-size: 20px;\n}\n.empty-state p {\n  margin: 0 0 24px 0;\n  opacity: 0.7;\n}\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  min-height: 100vh;\n  gap: 16px;\n}\n.delete-button {\n  color: #f44336;\n}\n@media (max-width: 768px) {\n  .list-content {\n    padding: 16px;\n  }\n  .list-stats {\n    gap: 8px;\n    margin-bottom: 24px;\n  }\n  .section-header {\n    flex-direction: column;\n    align-items: stretch;\n    gap: 12px;\n  }\n  .items-grid {\n    gap: 12px;\n  }\n  .item-row {\n    padding: 12px;\n    gap: 12px;\n  }\n  .item-details {\n    flex-direction: row;\n    gap: 8px;\n  }\n  .item-info {\n    flex: 1;\n  }\n  .item-quantity {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=list-detail.component.css.map */\n"] }]
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListDetailComponent, { className: "ListDetailComponent", filePath: "src/app/components/list-detail/list-detail.component.ts", lineNumber: 359 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListDetailComponent, { className: "ListDetailComponent", filePath: "src/app/components/list-detail/list-detail.component.ts", lineNumber: 43 });
 })();
 export {
   ListDetailComponent
 };
-//# sourceMappingURL=chunk-DQTNHO4N.js.map
+//# sourceMappingURL=chunk-2AUOTKWU.js.map

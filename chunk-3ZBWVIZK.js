@@ -124,7 +124,7 @@ var ITEM_APPLES = {
 };
 var ITEM_BANANAS = {
   id: "1-4",
-  product: { id: "item-8", name: "Bananas", img: "https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg" },
+  product: { id: "item-8", name: "Bananananas", img: "https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg" },
   count: 6,
   groupColor: "#4CAF50",
   status: ItemStatus.ToBuy
@@ -786,4 +786,4 @@ export {
   ListApiService,
   Configuration
 };
-//# sourceMappingURL=chunk-3376JENV.js.map
+//# sourceMappingURL=chunk-3ZBWVIZK.js.map
