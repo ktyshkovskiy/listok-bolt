@@ -32,4 +32,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          npm run ng -- deploy --base-href "https://ktyshkovskiy.github.io/listok-bolt/" -c development --name=ktyshkovskiy --email=ktyshkovskii@gmail.com
+          npm run ng -- deploy --base-href "https://ktyshkovskii.github.io/listok-bolt/" -c development --name=ktyshkovskii --email=ktyshkovskii@gmail.com
